@@ -44,5 +44,18 @@ namespace Datos.LoginConexion
                 }
             }
         }
+
+        //Administrar permisos segun el rol
+        public void VerificarRol()
+        {
+            if(CacheDeInicioDeSesion.Rol == Roles.Administrador)
+            {
+
+            }
+            if(CacheDeInicioDeSesion.Rol == Roles.Empleado)
+            {
+
+            }
+        }
     }
 }

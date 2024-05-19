@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using Datos.LoginConexion;
+using Soporte.Cache;
 
 namespace Negocio.Login_cn
 {
@@ -15,5 +16,24 @@ namespace Negocio.Login_cn
         {
             return userdatos.Login(usuario, pass);
         }
+
+        //Seguridad y permisos
+        public void VerificarRol()
+        {
+            if (CacheDeInicioDeSesion.Rol == Roles.Administrador)
+            {
+
+            }
+            if (CacheDeInicioDeSesion.Rol == Roles.Empleado)
+            {
+                
+            }
+        }
+
     }
+
+
+   
+    
+
 }

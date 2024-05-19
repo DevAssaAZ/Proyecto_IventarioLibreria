@@ -130,6 +130,14 @@ namespace Presentacion.MenuPrincipal
         }
 
 
+        //Administrar permisos de roles
+        private void RolesPermisos()
+        {
+            if(CacheDeInicioDeSesion.Rol == Roles.Empleado)
+            {
+                btnRegistroUsuarios.Enabled = false;
+            }
+        }
 
 
         #endregion
@@ -140,6 +148,8 @@ namespace Presentacion.MenuPrincipal
         {
             MostrarLogo();
             LoadDatosUsuario();
+            //funcion de Administrar Permisos del Rol
+            RolesPermisos();
         }
 
 
