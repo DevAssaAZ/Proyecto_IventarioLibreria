@@ -158,5 +158,11 @@ namespace Presentacion.Login
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void linkRecuperarPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recuperarpass = new RecuperarPassword();
+            recuperarpass.ShowDialog();
+        }
     }
 }

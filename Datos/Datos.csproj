@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSQL\ConnectionToSql.cs" />
+    <Compile Include="EmailServices\ServidorDeCorreosMaestro.cs" />
+    <Compile Include="EmailServices\SystemSoportMail.cs" />
     <Compile Include="LoginConexion\DatosUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

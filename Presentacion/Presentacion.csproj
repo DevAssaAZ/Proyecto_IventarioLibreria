@@ -56,6 +56,12 @@
     <Compile Include="Login\Login_.Designer.cs">
       <DependentUpon>Login_.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\RecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\RecuperarPassword.Designer.cs">
+      <DependentUpon>RecuperarPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal\Logo\MarcaLogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login\Login_.resx">
       <DependentUpon>Login_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\RecuperarPassword.resx">
+      <DependentUpon>RecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal\Logo\MarcaLogo.resx">
       <DependentUpon>MarcaLogo.cs</DependentUpon>

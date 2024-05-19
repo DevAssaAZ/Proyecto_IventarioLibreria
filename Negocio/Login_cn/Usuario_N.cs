@@ -17,6 +17,19 @@ namespace Negocio.Login_cn
             return userdatos.Login(usuario, pass);
         }
 
+        //
+        public string RecuperarPassword(string userRequeresting)
+        {
+            DatosUsuario datosUsuario = new DatosUsuario();
+            return datosUsuario.RecuperarPassword(userRequeresting);
+        }
+
+
+
+
+
+
+
         //Seguridad y permisos
         public void VerificarRol()
         {

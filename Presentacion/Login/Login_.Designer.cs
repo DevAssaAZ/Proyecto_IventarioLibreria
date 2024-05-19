@@ -182,6 +182,7 @@
             this.linkRecuperarPass.TabIndex = 0;
             this.linkRecuperarPass.TabStop = true;
             this.linkRecuperarPass.Text = "RECUPERAR CONTRASEÑA";
+            this.linkRecuperarPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRecuperarPass_LinkClicked);
             // 
             // lblMensajeError
             // 
