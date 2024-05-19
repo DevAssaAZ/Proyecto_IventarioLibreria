@@ -13,7 +13,7 @@ namespace Datos.ConexionSQL
         private readonly string conexionString;
         public ConnectionToSql()
         {
-            conexionString = "Server = DESKTOP-4J9EM3K\\SQLEXPRESS; DataBase = PROYECTO_INVENTARIO; integrated security = true";
+            conexionString = "Server = DESKTOP-4J9EM3K\\SQLEXPRESS; DataBase = PROYECTO_INVENTARIO; integrated security = true"; hola uwu
 
         }
         protected SqlConnection GetConnection()
