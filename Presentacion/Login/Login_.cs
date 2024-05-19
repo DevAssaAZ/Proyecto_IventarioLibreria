@@ -31,7 +31,7 @@ namespace Presentacion.Login
             if (txtUsuario.Text == "USUARIO")
             {
                 txtUsuario.Text = "";
-                txtUsuario.ForeColor = Color.LightGray;
+                txtUsuario.ForeColor = Color.White;
             }
         }
 
@@ -41,7 +41,7 @@ namespace Presentacion.Login
             if(txtUsuario.Text == "")
             {
                 txtUsuario.Text = "USUARIO";
-                txtUsuario.ForeColor = Color.DimGray; 
+                txtUsuario.ForeColor = Color.White; 
             }
         }
 
@@ -63,7 +63,7 @@ namespace Presentacion.Login
             if (txtPass.Text == "")
             {
                 txtPass.Text = "CONTRASEÑA";
-                txtPass.ForeColor = Color.DimGray;
+                txtPass.ForeColor = Color.White;
                 //Desactivar el ocultamiento de la contraseña
                 txtPass.UseSystemPasswordChar = false;
             }
