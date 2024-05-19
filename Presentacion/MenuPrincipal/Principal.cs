@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Presentacion.Modulos.RegistroUsuarios;
+using Presentacion.MenuPrincipal.Logo;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -54,19 +56,33 @@ namespace Presentacion.MenuPrincipal
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Seguro que desea cerrar el programa? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
+        int LX, LY;
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+
+            //Capturar posiciones del form
+            LX = this.Location.X;
+            LY = this.Location.Y;
+            //Maximizar solo en el area de trabajo
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             btnRestaurar.Visible = true;
             btnMaximizar.Visible = false;
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
+            this.Size=new Size(1300, 650);
+            this.Location = new Point(LX, LY);
             btnRestaurar.Visible = false;
             btnMaximizar.Visible = true;
         }
@@ -74,6 +90,52 @@ namespace Presentacion.MenuPrincipal
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+
+        #region MisMetodos
+        //Funcion para abrir el formulario en el panel
+        private void AbrirFormularioEnPanel(object FormHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            Form formularioHijo = FormHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(formularioHijo);
+            this.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
+
+
+        //Funcione para cargar el logo como marca de agua
+        private void MostrarLogo()
+        {
+            AbrirFormularioEnPanel(new MarcaLogo());
+        }
+        private void MostrarLogoAlCerrarFormulario(object sender, FormClosedEventArgs e)
+        {
+            MostrarLogo();
+        }
+
+
+
+        #endregion
+
+
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            MostrarLogo();
+        }
+
+
+        private void btnRegistroUsuarios_Click(object sender, EventArgs e)
+        {
+            RegistroUsuarios form = new RegistroUsuarios();
+            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            AbrirFormularioEnPanel(form);
         }
     }
 }
