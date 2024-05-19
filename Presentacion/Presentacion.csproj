@@ -116,6 +116,10 @@
       <Project>{12005197-48bd-42b9-9f60-5a74c78862b2}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Soporte\Soporte.csproj">
+      <Project>{8e52db93-e5f8-494c-9aac-0844245acca0}</Project>
+      <Name>Soporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\Errores\Error.png" />
@@ -131,6 +135,8 @@
     <Content Include="Imagenes\Navegacion\Menu.png" />
     <Content Include="Imagenes\Navegacion\Minimizar.png" />
     <Content Include="Imagenes\Navegacion\Restaurar.png" />
+    <Content Include="Imagenes\Perfil\User.png" />
+    <Content Include="Imagenes\Perfil\User2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

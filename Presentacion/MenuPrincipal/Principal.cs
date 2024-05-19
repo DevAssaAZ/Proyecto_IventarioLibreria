@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Presentacion.Modulos.RegistroUsuarios;
 using Presentacion.MenuPrincipal.Logo;
+using Soporte.Cache;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -30,13 +31,13 @@ namespace Presentacion.MenuPrincipal
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (panelMenuVertical.Width == 250)
+            if (panelMenuVertical.Width == 321)
             {
-                panelMenuVertical.Width = 58;
+                panelMenuVertical.Width = 69;
             }
             else
             {
-                panelMenuVertical.Width = 250; 
+                panelMenuVertical.Width = 321; 
             }
         }
 
@@ -120,6 +121,16 @@ namespace Presentacion.MenuPrincipal
         }
 
 
+        //Metodos para mostrar informacion en el perfil
+        private void LoadDatosUsuario()
+        {
+            lbRol.Text = CacheDeInicioDeSesion.Rol;
+            lbNombre.Text = CacheDeInicioDeSesion.NombreCompleto;
+            lbEmail.Text = CacheDeInicioDeSesion.Email;
+        }
+
+
+
 
         #endregion
 
@@ -128,6 +139,7 @@ namespace Presentacion.MenuPrincipal
         private void Principal_Load(object sender, EventArgs e)
         {
             MostrarLogo();
+            LoadDatosUsuario();
         }
 
 

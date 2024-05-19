@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Soporte.Cache;
 
 namespace Datos.LoginConexion
 {
@@ -26,6 +27,14 @@ namespace Datos.LoginConexion
                     //Si la consulta existe o no existe
                     if (reader.HasRows)
                     {
+                        while (reader.Read())
+                        {
+                            CacheDeInicioDeSesion.IdUser = reader.GetInt32(0);
+                            CacheDeInicioDeSesion.NombreCompleto = reader.GetString(3);
+                            CacheDeInicioDeSesion.Email = reader.GetString(4);
+                            CacheDeInicioDeSesion.Rol = reader.GetString(5);
+
+                        }
                         return true;
                     }
                     else
