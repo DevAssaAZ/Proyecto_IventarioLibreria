@@ -90,17 +90,7 @@ namespace Presentacion.Login
             mover = false;
         }
 
-        //Funcion de boton para cerrar la ventana(X)
-        private void iconCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        //Funcion de boton para minimizar ventana(-)
-        private void iconMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
@@ -151,8 +141,22 @@ namespace Presentacion.Login
         }
 
 
+
         #endregion
 
 
+
+        //Funcion de boton para cerrar la ventana(X)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        //Funcion de boton para minimizar ventana(-)
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

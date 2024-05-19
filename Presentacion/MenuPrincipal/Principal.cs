@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 
 namespace Presentacion.MenuPrincipal
@@ -39,30 +38,6 @@ namespace Presentacion.MenuPrincipal
             }
         }
 
-        private void iconExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void iconMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            iconRestaurar.Visible = true;
-            iconMaximizar.Visible = false;
-        }
-
-        private void iconRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            iconRestaurar.Visible = false;
-            iconMaximizar.Visible = true;
-        }
-
-        private void iconMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         //Mover el formulario desde la barra
         private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -75,6 +50,30 @@ namespace Presentacion.MenuPrincipal
             if (MessageBox.Show("Deseas cerrar sesión?", "Warning", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnRestaurar.Visible = true;
+            btnMaximizar.Visible = false;
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnRestaurar.Visible = false;
+            btnMaximizar.Visible = true;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

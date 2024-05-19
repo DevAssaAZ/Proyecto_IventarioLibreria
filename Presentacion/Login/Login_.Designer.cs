@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbLibreria = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pbLibreria = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -40,14 +40,14 @@
             this.btnAcceder = new System.Windows.Forms.Button();
             this.linkCrearCuenta = new System.Windows.Forms.LinkLabel();
             this.linkRecuperarPass = new System.Windows.Forms.LinkLabel();
-            this.iconCerrar = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMinimizar = new FontAwesome.Sharp.IconPictureBox();
             this.lblMensajeError = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLibreria)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLibreria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,16 +59,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 355);
             this.panel1.TabIndex = 0;
-            // 
-            // pbLibreria
-            // 
-            this.pbLibreria.Image = ((System.Drawing.Image)(resources.GetObject("pbLibreria.Image")));
-            this.pbLibreria.Location = new System.Drawing.Point(34, 53);
-            this.pbLibreria.Name = "pbLibreria";
-            this.pbLibreria.Size = new System.Drawing.Size(174, 224);
-            this.pbLibreria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLibreria.TabIndex = 0;
-            this.pbLibreria.TabStop = false;
             // 
             // panel2
             // 
@@ -82,6 +72,16 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // pbLibreria
+            // 
+            this.pbLibreria.Image = ((System.Drawing.Image)(resources.GetObject("pbLibreria.Image")));
+            this.pbLibreria.Location = new System.Drawing.Point(34, 53);
+            this.pbLibreria.Name = "pbLibreria";
+            this.pbLibreria.Size = new System.Drawing.Size(174, 224);
+            this.pbLibreria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLibreria.TabIndex = 0;
+            this.pbLibreria.TabStop = false;
             // 
             // label1
             // 
@@ -183,34 +183,6 @@
             this.linkRecuperarPass.TabStop = true;
             this.linkRecuperarPass.Text = "RECUPERAR CONTRASEÑA";
             // 
-            // iconCerrar
-            // 
-            this.iconCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.iconCerrar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.iconCerrar.IconColor = System.Drawing.Color.White;
-            this.iconCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCerrar.IconSize = 25;
-            this.iconCerrar.Location = new System.Drawing.Point(750, 10);
-            this.iconCerrar.Name = "iconCerrar";
-            this.iconCerrar.Size = new System.Drawing.Size(25, 25);
-            this.iconCerrar.TabIndex = 12;
-            this.iconCerrar.TabStop = false;
-            this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.iconMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconMinimizar.IconColor = System.Drawing.Color.White;
-            this.iconMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMinimizar.IconSize = 25;
-            this.iconMinimizar.Location = new System.Drawing.Point(719, 3);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(25, 34);
-            this.iconMinimizar.TabIndex = 13;
-            this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
-            // 
             // lblMensajeError
             // 
             this.lblMensajeError.BackColor = System.Drawing.Color.Transparent;
@@ -226,15 +198,38 @@
             this.lblMensajeError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblMensajeError.Visible = false;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(756, 11);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(722, 11);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
             // Login_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(798, 355);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblMensajeError);
-            this.Controls.Add(this.iconMinimizar);
-            this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.linkRecuperarPass);
             this.Controls.Add(this.linkCrearCuenta);
             this.Controls.Add(this.btnAcceder);
@@ -250,10 +245,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLibreria)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLibreria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,8 +267,8 @@
         private System.Windows.Forms.LinkLabel linkRecuperarPass;
         private System.Windows.Forms.PictureBox pbLibreria;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconPictureBox iconCerrar;
-        private FontAwesome.Sharp.IconPictureBox iconMinimizar;
         private System.Windows.Forms.Label lblMensajeError;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.PictureBox btnMinimizar;
     }
 }
