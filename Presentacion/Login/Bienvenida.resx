@@ -151,7 +151,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAigAAAH0CAYAAAAXGdZMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsIAAA7CARUoSoAAAP+WSURBVHhetP1lkGRLsucJRvdI
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsEAAA7BAbiRa+0AAP+WSURBVHhetP1lkGRLsucJRvdI
         9+sHhbcuJGcwM7h7OAQzMzMzMzMzM2MGZkQGZ0bipaJH3SuzuzO7Ii0ruzszX/Z7j/xX1SI9KvO+W5X1
         6MNfjodT+DlmR/WnampmGg0hgSjzckejtQxtOqbo/UwLHT+7g+7PH2BYUx+j+iaYMrHEPL2+KnPBjL0L
         Oq3kKNExQvgjLZh8+Rj6n2tC9/NH0PlKB4aPjGCsaw1jfVuYGNjBwsRePNbRMsXjh4bQ1DGEgYU1rJUq
@@ -9407,5 +9407,8 @@
   </metadata>
   <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>43</value>
   </metadata>
 </root>
