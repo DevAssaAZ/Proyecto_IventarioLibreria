@@ -18,7 +18,7 @@ namespace Datos.EmailServices
         protected string password { get; set; }
         protected string host { get; set; }
         protected int port { get; set; }
-        protected bool ssl { get; set; }
+        protected bool STARTTLS { get; set; }
 
 
 
@@ -29,7 +29,7 @@ namespace Datos.EmailServices
             smtpClient.Credentials = new NetworkCredential(senderMail, password);
             smtpClient.Host = host;
             smtpClient.Port = port;
-            smtpClient.EnableSsl = ssl;
+            smtpClient.EnableSsl = STARTTLS;
 
         }
 

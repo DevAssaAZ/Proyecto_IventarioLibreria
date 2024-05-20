@@ -11,13 +11,13 @@ namespace Datos.EmailServices
         //Constructor
         public SystemSoportMail()
         {
-            //senderMail = "soporteproyectoinventarioug@gmail.com";
-            //password = "@admin1234";
-            senderMail = Environment.GetEnvironmentVariable("SUPPORT_EMAIL") ?? "soporteproyectoinventarioug@gmail.com";
-            password = Environment.GetEnvironmentVariable("SUPPORT_EMAIL_PASSWORD") ?? "@admin1234";
-            host = "smtp.gmail.com";
+            senderMail = "soporteproyectoinventarioug@hotmail.com";
+            password = "saqfapiskssctslo";
+            //senderMail = Environment.GetEnvironmentVariable("SUPPORT_EMAIL") ?? "soporteproyectoinventarioug@hotmail.com";
+            //password = Environment.GetEnvironmentVariable("SUPPORT_EMAIL_PASSWORD") ?? "saqfapiskssctslo";
+            host = "smtp-mail.outlook.com";
             port = 587;
-            ssl = true;
+            STARTTLS = true;
             inicializarSmtpClient();
         }
 
