@@ -61,7 +61,7 @@ namespace Datos.EmailServices
                 
             }catch(Exception ex)
             {
-
+                Console.WriteLine("Error al enviar correo: " + ex.Message);
             }
             finally
             {

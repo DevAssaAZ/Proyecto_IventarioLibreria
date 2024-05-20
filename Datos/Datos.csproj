@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSQL\ConnectionToSql.cs" />
+    <Compile Include="EmailServices\EmailTest.cs" />
     <Compile Include="EmailServices\ServidorDeCorreosMaestro.cs" />
     <Compile Include="EmailServices\SystemSoportMail.cs" />
     <Compile Include="LoginConexion\DatosUsuario.cs" />

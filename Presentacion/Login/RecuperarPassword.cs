@@ -26,5 +26,10 @@ namespace Presentacion.Login
             var resultado = user.RecuperarPassword(txtUserRequest.Text);
             lblResultado.Text = resultado;
         }
+
+        private void RecuperarPassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

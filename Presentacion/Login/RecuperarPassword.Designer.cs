@@ -115,6 +115,7 @@
             this.Name = "RecuperarPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarPassword";
+            this.Load += new System.EventHandler(this.RecuperarPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

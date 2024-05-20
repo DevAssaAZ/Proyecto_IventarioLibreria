@@ -164,5 +164,10 @@ namespace Presentacion.Login
             var recuperarpass = new RecuperarPassword();
             recuperarpass.ShowDialog();
         }
+
+        private void Login__Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
