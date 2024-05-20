@@ -144,8 +144,10 @@
     <Content Include="Imagenes\Navegacion\Menu.png" />
     <Content Include="Imagenes\Navegacion\Minimizar.png" />
     <Content Include="Imagenes\Navegacion\Restaurar.png" />
+    <Content Include="Imagenes\Otros\Aviso.png" />
     <Content Include="Imagenes\Perfil\User.png" />
     <Content Include="Imagenes\Perfil\User2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

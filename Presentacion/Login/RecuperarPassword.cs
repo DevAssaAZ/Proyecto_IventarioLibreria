@@ -24,12 +24,20 @@ namespace Presentacion.Login
 
             var user = new Usuario_N();
             var resultado = user.RecuperarPassword(txtUserRequest.Text);
-            lblResultado.Text = resultado;
+            lblResultado.Text = "         "+ resultado;
+            lblResultado.Visible = true;
         }
 
         private void RecuperarPassword_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Login_ lg = new Login_();
+            lg.Show();
+            this.Hide();
         }
     }
 }

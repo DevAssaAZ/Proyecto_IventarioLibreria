@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecuperarPassword));
             this.titulo = new System.Windows.Forms.Label();
             this.txtUserRequest = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titulo
@@ -92,6 +94,7 @@
             this.lblResultado.BackColor = System.Drawing.Color.Transparent;
             this.lblResultado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblResultado.Image = ((System.Drawing.Image)(resources.GetObject("lblResultado.Image")));
             this.lblResultado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblResultado.Location = new System.Drawing.Point(99, 197);
             this.lblResultado.Name = "lblResultado";
@@ -99,6 +102,24 @@
             this.lblResultado.TabIndex = 15;
             this.lblResultado.Text = "Resultado";
             this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblResultado.Visible = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRegresar.Location = new System.Drawing.Point(538, 282);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(162, 40);
+            this.btnRegresar.TabIndex = 16;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // RecuperarPassword
             // 
@@ -106,6 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(798, 355);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.titulo);
@@ -128,5 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
