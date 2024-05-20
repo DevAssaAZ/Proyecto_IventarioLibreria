@@ -102,10 +102,14 @@ namespace Presentacion.Login
                     var validarLogin = user.LoginUsuario(txtUsuario.Text, txtPass.Text);
                     if(validarLogin == true)
                     {
+                        this.Hide();
+                        Bienvenida bienvenida = new Bienvenida();
+                        bienvenida.ShowDialog();
                         Principal mainMenu = new Principal();
+
                         mainMenu.Show();
                         mainMenu.FormClosed += CerrarSession;
-                        this.Hide();
+                        
                     }else
                     {
                         msgError("Usuario o contraseña incorrectos. Por favor, intente denuevo.");

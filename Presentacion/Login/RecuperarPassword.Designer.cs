@@ -90,18 +90,16 @@
             // 
             // lblResultado
             // 
-            this.lblResultado.AutoSize = true;
             this.lblResultado.BackColor = System.Drawing.Color.Transparent;
-            this.lblResultado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblResultado.Image = ((System.Drawing.Image)(resources.GetObject("lblResultado.Image")));
-            this.lblResultado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblResultado.Location = new System.Drawing.Point(99, 197);
+            this.lblResultado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblResultado.Location = new System.Drawing.Point(99, 189);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(67, 17);
+            this.lblResultado.Size = new System.Drawing.Size(601, 90);
             this.lblResultado.TabIndex = 15;
             this.lblResultado.Text = "Resultado";
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblResultado.Visible = false;
             // 
             // btnRegresar
@@ -137,7 +135,6 @@
             this.Name = "RecuperarPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarPassword";
-            this.Load += new System.EventHandler(this.RecuperarPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

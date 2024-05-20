@@ -24,12 +24,18 @@ namespace Presentacion.Login
 
             var user = new Usuario_N();
             var resultado = user.RecuperarPassword(txtUserRequest.Text);
-            lblResultado.Text = "         "+ resultado;
             lblResultado.Visible = true;
-        }
-
-        private void RecuperarPassword_Load(object sender, EventArgs e)
-        {
+            if (txtUserRequest.Text == "")
+            {
+                string msg = "Debe de ingresar un parametro";
+                lblResultado.Text = "         " + msg;
+            }
+            else
+            {
+                lblResultado.Text = "         " + resultado;
+                
+            }
+            
 
         }
 
