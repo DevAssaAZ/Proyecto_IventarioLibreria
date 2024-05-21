@@ -87,7 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(296, 90);
+            this.label1.Location = new System.Drawing.Point(296, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(445, 13);
             this.label1.TabIndex = 1;
@@ -170,6 +170,7 @@
             this.linkCrearCuenta.TabIndex = 1;
             this.linkCrearCuenta.TabStop = true;
             this.linkCrearCuenta.Text = "CREAR NUEVA CUENTA";
+            this.linkCrearCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCrearCuenta_LinkClicked);
             // 
             // linkRecuperarPass
             // 
