@@ -62,6 +62,12 @@
     <Compile Include="Login\Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\CrearCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\CrearCuenta.Designer.cs">
+      <DependentUpon>CrearCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login_.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\CrearCuenta.resx">
+      <DependentUpon>CrearCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login_.resx">
       <DependentUpon>Login_.cs</DependentUpon>
