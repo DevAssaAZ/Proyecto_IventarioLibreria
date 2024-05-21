@@ -89,7 +89,7 @@
             this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.linkLabel1.Location = new System.Drawing.Point(10, 103);
+            this.linkLabel1.Location = new System.Drawing.Point(8, 103);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(58, 17);
             this.linkLabel1.TabIndex = 21;
@@ -102,7 +102,7 @@
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.ForeColor = System.Drawing.Color.White;
-            this.lbEmail.Location = new System.Drawing.Point(76, 85);
+            this.lbEmail.Location = new System.Drawing.Point(74, 85);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(35, 16);
             this.lbEmail.TabIndex = 20;
@@ -113,7 +113,7 @@
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.White;
-            this.lbNombre.Location = new System.Drawing.Point(76, 62);
+            this.lbNombre.Location = new System.Drawing.Point(74, 62);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(40, 16);
             this.lbNombre.TabIndex = 19;
@@ -124,7 +124,7 @@
             this.lbRol.AutoSize = true;
             this.lbRol.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRol.ForeColor = System.Drawing.Color.White;
-            this.lbRol.Location = new System.Drawing.Point(76, 39);
+            this.lbRol.Location = new System.Drawing.Point(74, 39);
             this.lbRol.Name = "lbRol";
             this.lbRol.Size = new System.Drawing.Size(27, 16);
             this.lbRol.TabIndex = 18;
@@ -133,7 +133,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
