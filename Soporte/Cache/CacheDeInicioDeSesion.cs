@@ -10,6 +10,8 @@ namespace Soporte.Cache
     {
         public static int IdUser { get; set; }
         public static string NombreCompleto { get; set; }
+        public static string UserName { get; set; }
+        public static string Password { get; set; }
         public static string Rol { get; set; }
         public static string Email { get; set; }
     }

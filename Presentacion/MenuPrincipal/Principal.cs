@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using Presentacion.Modulos.RegistroUsuarios;
 using Presentacion.MenuPrincipal.Logo;
 using Soporte.Cache;
+using Presentacion.MenuPrincipal.PerfilUsuario;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -152,6 +153,12 @@ namespace Presentacion.MenuPrincipal
             RolesPermisos();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UsuarioPerfil form = new UsuarioPerfil();
+            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            AbrirFormularioEnPanel(form);
+        }
 
         private void btnRegistroUsuarios_Click(object sender, EventArgs e)
         {
