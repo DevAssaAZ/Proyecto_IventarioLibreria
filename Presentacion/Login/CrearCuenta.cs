@@ -16,5 +16,12 @@ namespace Presentacion.Login
         {
             InitializeComponent();
         }
+
+        private void linkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var volverinicio = new Login_();
+            volverinicio.ShowDialog();
+
+        }
     }
 }

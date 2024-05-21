@@ -40,13 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.linkRecuperarPass = new System.Windows.Forms.LinkLabel();
+            this.linkInicio = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbRol
             // 
-            this.cmbRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.cmbRol.BackColor = System.Drawing.Color.Black;
             this.cmbRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbRol.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.cmbRol.ForeColor = System.Drawing.Color.White;
@@ -62,7 +62,7 @@
             // 
             // txtUsuarioRecuperar
             // 
-            this.txtUsuarioRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtUsuarioRecuperar.BackColor = System.Drawing.Color.Black;
             this.txtUsuarioRecuperar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuarioRecuperar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioRecuperar.ForeColor = System.Drawing.Color.White;
@@ -74,7 +74,7 @@
             // 
             // txtContraseñaRecuperar
             // 
-            this.txtContraseñaRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtContraseñaRecuperar.BackColor = System.Drawing.Color.Black;
             this.txtContraseñaRecuperar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseñaRecuperar.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtContraseñaRecuperar.ForeColor = System.Drawing.Color.White;
@@ -179,25 +179,26 @@
             this.button1.Text = "NUEVO";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // linkRecuperarPass
+            // linkInicio
             // 
-            this.linkRecuperarPass.AutoSize = true;
-            this.linkRecuperarPass.ForeColor = System.Drawing.Color.White;
-            this.linkRecuperarPass.LinkColor = System.Drawing.Color.DimGray;
-            this.linkRecuperarPass.Location = new System.Drawing.Point(605, 314);
-            this.linkRecuperarPass.Name = "linkRecuperarPass";
-            this.linkRecuperarPass.Size = new System.Drawing.Size(50, 13);
-            this.linkRecuperarPass.TabIndex = 14;
-            this.linkRecuperarPass.TabStop = true;
-            this.linkRecuperarPass.Text = "VOLVER";
+            this.linkInicio.AutoSize = true;
+            this.linkInicio.ForeColor = System.Drawing.Color.White;
+            this.linkInicio.LinkColor = System.Drawing.Color.DimGray;
+            this.linkInicio.Location = new System.Drawing.Point(605, 314);
+            this.linkInicio.Name = "linkInicio";
+            this.linkInicio.Size = new System.Drawing.Size(50, 13);
+            this.linkInicio.TabIndex = 14;
+            this.linkInicio.TabStop = true;
+            this.linkInicio.Text = "VOLVER";
+            this.linkInicio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkInicio_LinkClicked);
             // 
             // CrearCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(798, 355);
-            this.Controls.Add(this.linkRecuperarPass);
+            this.Controls.Add(this.linkInicio);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.label3);
@@ -233,6 +234,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAcceder;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel linkRecuperarPass;
+        private System.Windows.Forms.LinkLabel linkInicio;
     }
 }

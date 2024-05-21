@@ -170,6 +170,7 @@
             this.linkCrearCuenta.TabIndex = 1;
             this.linkCrearCuenta.TabStop = true;
             this.linkCrearCuenta.Text = "CREAR NUEVA CUENTA";
+            this.linkCrearCuenta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCrearCuenta_LinkClicked);
             // 
             // linkRecuperarPass
             // 
