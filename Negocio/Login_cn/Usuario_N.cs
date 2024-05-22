@@ -101,14 +101,13 @@ namespace Negocio.Login_cn
         {
             try
             {
-                return userdatos.CrearUsuario(usuario.rol, usuario.nombreCompleto, usuario.email, usuario.userName, usuario.password);
+                return userdatos.CrearUsuario(usuario.rol, usuario.userName, usuario.password, usuario.nombreCompleto, usuario.email);
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al crear usuario: " + ex.Message);
             }
         }
-
 
 
     }

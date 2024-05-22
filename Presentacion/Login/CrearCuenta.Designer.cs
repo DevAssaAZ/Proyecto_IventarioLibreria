@@ -38,7 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAcceder = new System.Windows.Forms.Button();
+            this.btnRegistro = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.linkInicio = new System.Windows.Forms.LinkLabel();
             this.txtNombreCrear = new System.Windows.Forms.TextBox();
@@ -152,22 +152,22 @@
             this.label3.Text = "_________________________________________________________________________________" +
     "______________________________________________________";
             // 
-            // btnAcceder
+            // btnRegistro
             // 
-            this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAcceder.FlatAppearance.BorderSize = 0;
-            this.btnAcceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceder.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAcceder.Location = new System.Drawing.Point(288, 267);
-            this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(199, 44);
-            this.btnAcceder.TabIndex = 12;
-            this.btnAcceder.Text = "REGISTRARSE";
-            this.btnAcceder.UseVisualStyleBackColor = false;
-            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
+            this.btnRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRegistro.Location = new System.Drawing.Point(288, 267);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(199, 44);
+            this.btnRegistro.TabIndex = 12;
+            this.btnRegistro.Text = "REGISTRARSE";
+            this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // button1
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.txtNombreCrear);
             this.Controls.Add(this.linkInicio);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAcceder);
+            this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkInicio;
         private System.Windows.Forms.TextBox txtNombreCrear;

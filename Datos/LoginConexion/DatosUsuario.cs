@@ -145,7 +145,7 @@ namespace Datos.LoginConexion
 
         public bool CrearUsuario(string rol, string usuario, string contraseña, string nombreCompleto, string email)
         {
-            string query = "INSERT INTO Usuarios (Rol, Usuario, Password, NombreCompleto, Email) VALUES (@Rol, @Usuario, @Password, @NombreCompleto, @Email)";
+            string query = "INSERT INTO TB_LOGIN (Rol, Usuario, Password, NombreCompleto, Email) VALUES (@Rol, @Usuario, @Password, @NombreCompleto, @Email)";
 
             try
             {

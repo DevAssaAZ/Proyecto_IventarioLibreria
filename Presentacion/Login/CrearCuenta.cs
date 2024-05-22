@@ -27,7 +27,12 @@ namespace Presentacion.Login
 
         }
 
-        private void btnAcceder_Click(object sender, EventArgs e)
+        private void txtUsuarioRecuperar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
         {
             try
             {
@@ -37,21 +42,24 @@ namespace Presentacion.Login
                 obj_Usuario.password = txtContraseñaCrear.Text;
                 obj_Usuario.userName = txtUsuarioCrear.Text;
 
-                obj_Usuario.CrearUsuario(obj_Usuario);
-                MessageBox.Show("Registrado con exito");
-                txtUsuarioCrear.Clear();
-                txtContraseñaCrear.Clear();
+                if (obj_Usuario.CrearUsuario(obj_Usuario))
+                {
+                    MessageBox.Show("Registrado con éxito");
+                    txtUsuarioCrear.Clear();
+                    txtContraseñaCrear.Clear();
+                    txtNombreCrear.Clear();
+                    txtCorreoCrear.Clear();
+                    cmbRol.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el usuario");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al comprobar usuario: " + ex.Message);
             }
-
-        }
-
-        private void txtUsuarioRecuperar_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
