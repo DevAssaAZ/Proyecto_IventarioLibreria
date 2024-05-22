@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,21 +15,21 @@ namespace Negocio.Login_cn
 
         DatosUsuario userdatos = new DatosUsuario();
 
-        //Atributos
-        private int id;
-        private string userName;
-        private string password;
-        private string nombreCompleto;
-        private string email;
-        private string rol;
+        //Atributos         //Cambio de 21052024anthony solo a publico para que funcione
+        public int id;
+        public string userName;
+        public string password;
+        public string nombreCompleto;
+        public string email;
+        public string rol;
 
-        public Usuario_N(int id, string userName, string password, string nombreCompleto, string email, string rol)
+        public Usuario_N(int id, string nombreCompleto, string email, string userName, string password, string rol)
         {
             this.id = id;
-            this.userName = userName;
-            this.password = password;
             this.nombreCompleto = nombreCompleto;
             this.email = email;
+            this.userName = userName;
+            this.password = password;
             this.rol = rol;
         }
 
@@ -95,10 +96,25 @@ namespace Negocio.Login_cn
             }
         }
 
+        //Cambio de 21052024anthony
+        public bool CrearUsuario(Usuario_N usuario)
+        {
+            try
+            {
+                return userdatos.CrearUsuario(usuario.rol, usuario.nombreCompleto, usuario.email, usuario.userName, usuario.password);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al crear usuario: " + ex.Message);
+            }
+        }
+
+
+
     }
 
 
-   
-    
+
+
 
 }
