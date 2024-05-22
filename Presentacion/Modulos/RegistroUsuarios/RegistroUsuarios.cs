@@ -40,14 +40,28 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void AbrirFormularioEnPanel(object FormHijo)
         {
-            if (this.panelPrincipal.Controls.Count > 0)
-                this.panelPrincipal.Controls.RemoveAt(0);
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
             Form formularioHijo = FormHijo as Form;
             formularioHijo.TopLevel = false;
             formularioHijo.Dock = DockStyle.Fill;
-            this.panelPrincipal.Controls.Add(formularioHijo);
-            this.panelPrincipal.Tag = formularioHijo;
+            this.panelContenedor.Controls.Add(formularioHijo);
+            this.panelContenedor.Tag = formularioHijo;
             formularioHijo.Show();
+        }
+
+
+
+        
+        private void ShowMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+               
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
         }
 
 
@@ -55,13 +69,10 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            textBuscar.Visible = false;
-            btnBuscar.Visible = false;
-            dataUsuarios.Visible = false;
-
-            
+            ShowMenu(panelContenedor);
             CrearCuenta form = new CrearCuenta();
-            form.panelCrearCuenta.BackColor = Color.FromArgb(46, 68, 96);
+            form.BackColor = Color.FromArgb(46, 68, 96);
+            form.linkInicio.Visible = false;
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
 

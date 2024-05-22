@@ -176,9 +176,10 @@ namespace Presentacion.Login
 
         private void linkCrearCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             var crearcuenta = new CrearCuenta();
             crearcuenta.ShowDialog();
-            this.Hide();
+            
 
         }
     }

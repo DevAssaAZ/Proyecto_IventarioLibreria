@@ -22,8 +22,10 @@ namespace Presentacion.Login
 
         private void linkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             var volverinicio = new Login_();
             volverinicio.ShowDialog();
+            
 
         }
 

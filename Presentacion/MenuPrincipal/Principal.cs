@@ -130,6 +130,9 @@ namespace Presentacion.MenuPrincipal
             if(CacheDeInicioDeSesion.Rol == Roles.Empleado)
             {
                 btnRegistroUsuarios.Enabled = false;
+                btnRegistroUsuarios.Visible = false;
+                btnLibros.Enabled = false;
+                btnLibros.Visible = false;
             }
         }
 
@@ -251,6 +254,7 @@ namespace Presentacion.MenuPrincipal
         private void btnRegistroUsuarios_Click(object sender, EventArgs e)
         {
             RegistroUsuarios form = new RegistroUsuarios();
+            
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
         }
