@@ -178,6 +178,7 @@ namespace Presentacion.Login
         {
             var crearcuenta = new CrearCuenta();
             crearcuenta.ShowDialog();
+            this.Hide();
 
         }
     }

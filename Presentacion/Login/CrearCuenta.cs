@@ -36,22 +36,22 @@ namespace Presentacion.Login
         {
             try
             {
-                obj_Usuario.rol = cmbRol.Text;
-                obj_Usuario.nombreCompleto = txtNombreCrear.Text;
-                obj_Usuario.email = txtCorreoCrear.Text;
-                obj_Usuario.password = txtContraseñaCrear.Text;
-                obj_Usuario.userName = txtUsuarioCrear.Text;
+                obj_Usuario.Rol = cmbRol.Text;
+                obj_Usuario.NombreCompleto = txtNombreCrear.Text;
+                obj_Usuario.Email = txtCorreoCrear.Text;
+                obj_Usuario.Password = txtContraseñaCrear.Text;
+                obj_Usuario.UserName = txtUsuarioCrear.Text;
 
                 // Debug: Mostrar los valores que se están pasando
-                MessageBox.Show($"Rol: {obj_Usuario.rol}, Nombre Completo: {obj_Usuario.nombreCompleto}, Email: {obj_Usuario.email}, Password: {obj_Usuario.password}, Usuario: {obj_Usuario.userName}");
+                MessageBox.Show($"Rol: {obj_Usuario.Rol}, Nombre Completo: {obj_Usuario.NombreCompleto}, Email: {obj_Usuario.Email}, Password: {obj_Usuario.Password}, Usuario: {obj_Usuario.UserName}");
 
                 if (obj_Usuario.CrearUsuario(obj_Usuario))
                 {
                     MessageBox.Show("Registrado con éxito");
-                    txtUsuarioCrear.Clear();
-                    txtContraseñaCrear.Clear();
-                    txtNombreCrear.Clear();
-                    txtCorreoCrear.Clear();
+                    txtUsuarioCrear.Text = "USUARIO";
+                    txtContraseñaCrear.Text = "CONTRASEÑA";
+                    txtNombreCrear.Text = "NOMBRE COMPLETO (APELLIDOS Y NOMBRES)";
+                    txtCorreoCrear.Text = "EMAIL";
                     cmbRol.SelectedIndex = -1;
                 }
                 else
