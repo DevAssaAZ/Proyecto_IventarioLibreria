@@ -42,6 +42,9 @@ namespace Presentacion.Login
                 obj_Usuario.password = txtContraseñaCrear.Text;
                 obj_Usuario.userName = txtUsuarioCrear.Text;
 
+                // Debug: Mostrar los valores que se están pasando
+                MessageBox.Show($"Rol: {obj_Usuario.rol}, Nombre Completo: {obj_Usuario.nombreCompleto}, Email: {obj_Usuario.email}, Password: {obj_Usuario.password}, Usuario: {obj_Usuario.userName}");
+
                 if (obj_Usuario.CrearUsuario(obj_Usuario))
                 {
                     MessageBox.Show("Registrado con éxito");
