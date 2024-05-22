@@ -9,11 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio.Usuarios_cn;
 
 namespace Presentacion.Modulos.RegistroUsuarios
 {
     public partial class RegistroUsuarios : Form
     {
+        //Instancia de la clase de N_usuarios de Negocio
+        N_Usuarios obj_usuarios = new N_Usuarios();
+
+
+
+
+
+
+
         public RegistroUsuarios()
         {
             InitializeComponent();
@@ -65,6 +75,15 @@ namespace Presentacion.Modulos.RegistroUsuarios
         }
 
 
+        //Mostrar usuarios
+        private void MostrarUsuarios()
+        {
+            dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
+        }
+
+
+
+
 
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -82,6 +101,11 @@ namespace Presentacion.Modulos.RegistroUsuarios
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistroUsuarios_Load(object sender, EventArgs e)
+        {
+            MostrarUsuarios();
         }
     }
 }

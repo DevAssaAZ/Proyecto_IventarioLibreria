@@ -1,9 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Datos.ConexionSQL
 {
@@ -22,5 +24,24 @@ namespace Datos.ConexionSQL
         {
             return new SqlConnection(conexionString);
         }
+
+
+        protected SqlConnection AbrirConexion()
+        {
+            SqlConnection Conexion = new SqlConnection(conexionString);
+            if (Conexion.State == ConnectionState.Closed)
+                Conexion.Open();
+            return Conexion;
+        }
+
+
+        protected SqlConnection CerrarConexion()
+        {
+            SqlConnection Conexion = new SqlConnection(conexionString);
+            if (Conexion.State == ConnectionState.Open)
+                Conexion.Close();
+            return Conexion;
+        }
+
     }
 }
