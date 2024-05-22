@@ -57,11 +57,11 @@ namespace Presentacion.Modulos.RegistroUsuarios
         {
             if (subMenu.Visible == false)
             {
-               
+
                 subMenu.Visible = true;
             }
             else
-                subMenu.Visible = false;
+                MessageBox.Show("YA ESTA ABIERTA LA PESTAÑA");
         }
 
 
@@ -69,12 +69,18 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            panelPrincipal.Size = new Size(469, 539);
             ShowMenu(panelContenedor);
             CrearCuenta form = new CrearCuenta();
             form.BackColor = Color.FromArgb(46, 68, 96);
             form.linkInicio.Visible = false;
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
+
+        }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

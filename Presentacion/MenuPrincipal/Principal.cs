@@ -254,7 +254,7 @@ namespace Presentacion.MenuPrincipal
         private void btnRegistroUsuarios_Click(object sender, EventArgs e)
         {
             RegistroUsuarios form = new RegistroUsuarios();
-            
+            form.panelPrincipal.Size = new Size(873, 539);
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
         }

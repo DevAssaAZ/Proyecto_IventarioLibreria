@@ -57,9 +57,9 @@
             this.cmbRol.Items.AddRange(new object[] {
             "ADMINISTRADOR",
             "EMPLEADO"});
-            this.cmbRol.Location = new System.Drawing.Point(203, 81);
+            this.cmbRol.Location = new System.Drawing.Point(176, 81);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(250, 29);
+            this.cmbRol.Size = new System.Drawing.Size(192, 29);
             this.cmbRol.TabIndex = 0;
             this.cmbRol.Text = "ROL";
             // 
@@ -71,7 +71,7 @@
             this.txtUsuarioCrear.ForeColor = System.Drawing.Color.Black;
             this.txtUsuarioCrear.Location = new System.Drawing.Point(36, 326);
             this.txtUsuarioCrear.Name = "txtUsuarioCrear";
-            this.txtUsuarioCrear.Size = new System.Drawing.Size(417, 20);
+            this.txtUsuarioCrear.Size = new System.Drawing.Size(332, 20);
             this.txtUsuarioCrear.TabIndex = 3;
             this.txtUsuarioCrear.Text = "USUARIO";
             this.txtUsuarioCrear.TextChanged += new System.EventHandler(this.txtUsuarioRecuperar_TextChanged);
@@ -84,7 +84,7 @@
             this.txtContraseñaCrear.ForeColor = System.Drawing.Color.Black;
             this.txtContraseñaCrear.Location = new System.Drawing.Point(36, 397);
             this.txtContraseñaCrear.Name = "txtContraseñaCrear";
-            this.txtContraseñaCrear.Size = new System.Drawing.Size(417, 20);
+            this.txtContraseñaCrear.Size = new System.Drawing.Size(332, 20);
             this.txtContraseñaCrear.TabIndex = 3;
             this.txtContraseñaCrear.Text = "CONTRASEÑA";
             // 
@@ -92,11 +92,11 @@
             // 
             this.titulo.AutoSize = true;
             this.titulo.BackColor = System.Drawing.Color.Transparent;
-            this.titulo.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.ForeColor = System.Drawing.Color.White;
-            this.titulo.Location = new System.Drawing.Point(30, -2);
+            this.titulo.Location = new System.Drawing.Point(36, 6);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(212, 33);
+            this.titulo.Size = new System.Drawing.Size(153, 22);
             this.titulo.TabIndex = 7;
             this.titulo.Text = "CREAR CUENTA";
             // 
@@ -120,7 +120,7 @@
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRegistro.Location = new System.Drawing.Point(316, 441);
+            this.btnRegistro.Location = new System.Drawing.Point(231, 432);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(137, 44);
             this.btnRegistro.TabIndex = 12;
@@ -134,7 +134,7 @@
             this.linkInicio.BackColor = System.Drawing.Color.Transparent;
             this.linkInicio.ForeColor = System.Drawing.Color.White;
             this.linkInicio.LinkColor = System.Drawing.Color.DimGray;
-            this.linkInicio.Location = new System.Drawing.Point(403, 499);
+            this.linkInicio.Location = new System.Drawing.Point(318, 488);
             this.linkInicio.Name = "linkInicio";
             this.linkInicio.Size = new System.Drawing.Size(50, 13);
             this.linkInicio.TabIndex = 14;
@@ -150,7 +150,7 @@
             this.txtNombreCrear.ForeColor = System.Drawing.Color.Black;
             this.txtNombreCrear.Location = new System.Drawing.Point(36, 183);
             this.txtNombreCrear.Name = "txtNombreCrear";
-            this.txtNombreCrear.Size = new System.Drawing.Size(417, 27);
+            this.txtNombreCrear.Size = new System.Drawing.Size(332, 27);
             this.txtNombreCrear.TabIndex = 15;
             this.txtNombreCrear.Text = "APELLIDOS Y NOMBRES";
             // 
@@ -162,7 +162,7 @@
             this.txtCorreoCrear.ForeColor = System.Drawing.Color.Black;
             this.txtCorreoCrear.Location = new System.Drawing.Point(36, 256);
             this.txtCorreoCrear.Name = "txtCorreoCrear";
-            this.txtCorreoCrear.Size = new System.Drawing.Size(417, 20);
+            this.txtCorreoCrear.Size = new System.Drawing.Size(332, 20);
             this.txtCorreoCrear.TabIndex = 16;
             this.txtCorreoCrear.Text = "CORREO ELECTRONICO";
             // 
@@ -184,7 +184,7 @@
             this.panelCrearCuenta.Controls.Add(this.cmbRol);
             this.panelCrearCuenta.Location = new System.Drawing.Point(12, 10);
             this.panelCrearCuenta.Name = "panelCrearCuenta";
-            this.panelCrearCuenta.Size = new System.Drawing.Size(471, 517);
+            this.panelCrearCuenta.Size = new System.Drawing.Size(396, 517);
             this.panelCrearCuenta.TabIndex = 19;
             // 
             // label4
@@ -240,7 +240,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(500, 539);
+            this.ClientSize = new System.Drawing.Size(423, 539);
             this.Controls.Add(this.panelCrearCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearCuenta";
