@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.Login_cn;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Presentacion.Login
 {
     public partial class CrearCuenta : Form
     {
+        private Usuario_N obj_Usuario = new Usuario_N();
+
         public CrearCuenta()
         {
             InitializeComponent();
@@ -22,6 +25,44 @@ namespace Presentacion.Login
             var volverinicio = new Login_();
             volverinicio.ShowDialog();
 
+        }
+
+        private void txtUsuarioRecuperar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                obj_Usuario.rol = cmbRol.Text;
+                obj_Usuario.nombreCompleto = txtNombreCrear.Text;
+                obj_Usuario.email = txtCorreoCrear.Text;
+                obj_Usuario.password = txtContraseñaCrear.Text;
+                obj_Usuario.userName = txtUsuarioCrear.Text;
+
+                // Debug: Mostrar los valores que se están pasando
+                MessageBox.Show($"Rol: {obj_Usuario.rol}, Nombre Completo: {obj_Usuario.nombreCompleto}, Email: {obj_Usuario.email}, Password: {obj_Usuario.password}, Usuario: {obj_Usuario.userName}");
+
+                if (obj_Usuario.CrearUsuario(obj_Usuario))
+                {
+                    MessageBox.Show("Registrado con éxito");
+                    txtUsuarioCrear.Clear();
+                    txtContraseñaCrear.Clear();
+                    txtNombreCrear.Clear();
+                    txtCorreoCrear.Clear();
+                    cmbRol.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el usuario");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al comprobar usuario: " + ex.Message);
+            }
         }
     }
 }

@@ -128,5 +128,47 @@ namespace Datos.LoginConexion
 
             }
         }
+
+
+
+
+
+        //Para agregar usuarios con rol y contrasena 21052024anthony
+        private readonly string connectionString;
+
+        public DatosUsuario()
+        {
+           //connectionString = "server=DESKTOP-4J9EM3K\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=12345678;"; // Reemplaza con tu cadena de conexión real
+           connectionString = "server=DESKTOP-H040T0U; database=PROYECTO_INVENTARIO; user=SA; password=evita;"; // Reemplaza con tu cadena de conexión real
+
+        }
+
+        public bool CrearUsuario(string rol, string usuario, string contraseña, string nombreCompleto, string email)
+        {
+            string query = "INSERT INTO TB_LOGIN (ROL, USUARIO, CONTRASEÑA, APELLIDOS_NOMBRES, CORREO_ELECTRONICO) VALUES (@Rol, @Usuario, @Password, @NombreCompleto, @Email)";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Rol", rol);
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Password", contraseña);
+                        command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
+                        command.Parameters.AddWithValue("@Email", email);
+
+                        connection.Open();
+                        int result = command.ExecuteNonQuery();
+                        return result > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al crear usuario: " + ex.Message);
+            }
+        }
     }
+
 }
