@@ -32,14 +32,7 @@ namespace Presentacion.MenuPrincipal
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (panelMenuVertical.Width == 321)
-            {
-                panelMenuVertical.Width = 69;
-            }
-            else
-            {
-                panelMenuVertical.Width = 321; 
-            }
+
         }
 
         //Mover el formulario desde la barra
@@ -83,7 +76,7 @@ namespace Presentacion.MenuPrincipal
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Normal;
-            this.Size=new Size(1300, 650);
+            this.Size=new Size(1300, 682);
             this.Location = new Point(LX, LY);
             btnRestaurar.Visible = false;
             btnMaximizar.Visible = true;
@@ -141,6 +134,29 @@ namespace Presentacion.MenuPrincipal
         }
 
 
+        //Personalizar diseño de los paneles para botones desplegables
+        private void HideMenu()
+        {
+            if(panelSubInventario.Visible == true)
+                panelSubInventario.Visible = false;
+            if (panelClientes.Visible == true)
+                panelClientes.Visible = false;
+            if (panelVentas.Visible == true)
+                panelVentas.Visible = false;
+
+        }
+        private void ShowMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+
+
         #endregion
 
 
@@ -158,6 +174,78 @@ namespace Presentacion.MenuPrincipal
             UsuarioPerfil form = new UsuarioPerfil();
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            ShowMenu(panelSubInventario);
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ShowMenu(panelClientes);
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            ShowMenu(panelVentas);
+        }
+
+        private void btnLibros_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            HideMenu();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
+            HideMenu();
+        }
+
+        private void btnRegistrarClientes_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+            HideMenu();
+        }
+
+        private void btnRegistrarVentas_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+            HideMenu();
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+            HideMenu();
         }
 
         private void btnRegistroUsuarios_Click(object sender, EventArgs e)

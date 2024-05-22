@@ -168,7 +168,15 @@
     <Content Include="Imagenes\Errores\Error.png" />
     <Content Include="Imagenes\Errores\Errores.png" />
     <Content Include="Imagenes\Errores\Errorr.png" />
+    <Content Include="Imagenes\ImgModulos\ImgClientes\Clientes.png" />
+    <Content Include="Imagenes\ImgModulos\ImgClientes\RegistrarCliente.png" />
+    <Content Include="Imagenes\ImgModulos\ImgInventario\Inventario.png" />
+    <Content Include="Imagenes\ImgModulos\ImgInventario\Libros.png" />
+    <Content Include="Imagenes\ImgModulos\ImgInventario\Stock.png" />
     <Content Include="Imagenes\ImgModulos\ImgRegistroUsuarios\RegistrarUsuario.png" />
+    <Content Include="Imagenes\ImgModulos\ImgVentas\AgregarVenta.png" />
+    <Content Include="Imagenes\ImgModulos\ImgVentas\Facturaciones.png" />
+    <Content Include="Imagenes\ImgModulos\ImgVentas\Ventas.png" />
     <Content Include="Imagenes\LogoLibreria\LibreriaImagen.png" />
     <Content Include="Imagenes\LogoLibreria\LibroLogo.png" />
     <Content Include="Imagenes\LogoLibreria\LogoLogin.png" />
