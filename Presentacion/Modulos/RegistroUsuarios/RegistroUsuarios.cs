@@ -64,7 +64,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
 
-        private void ShowMenu(Panel subMenu)
+        private void ShowMenu(System.Windows.Forms.Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -76,7 +76,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
         //Mostrar usuarios
-        private void MostrarUsuarios()
+        public void MostrarUsuarios()
         {
             dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
             dataUsuarios.Columns["ID"].DisplayIndex = 0;
@@ -97,12 +97,20 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            panelPrincipal.Size = new Size(469, 539);
+            btnVolver.Visible = true;
+            btnNuevo.Visible = false;
+            
+            panelPrincipal.Size = new Size(482, 539);
             ShowMenu(panelContenedor);
             CrearCuenta form = new CrearCuenta();
             form.BackColor = Color.FromArgb(46, 68, 96);
             form.linkInicio.Visible = false;
-            form.btnCancelar.Visible = true;
+            AddOwnedForm(form);
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            this.Controls.Add(form);  // Corrected line
+            this.Tag = form;
+            form.BringToFront();
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
 
@@ -134,6 +142,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void dataUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (dataUsuarios.Columns[e.ColumnIndex].Name == "Editar")
             {
                 if (e.RowIndex >= 0)
@@ -150,7 +159,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
                     // Abrir la ventana de edición y pasar los datos
-                    panelPrincipal.Size = new Size(469, 539);
+                    panelPrincipal.Size = new Size(482, 539);
                     ShowMenu(panelContenedor);
                     CrearCuenta form = new CrearCuenta(idUsuario, rol, usuario, contraseña, nombreCompleto, email);
                     form.BackColor = Color.FromArgb(46, 68, 96);
@@ -163,10 +172,30 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void panel1_DoubleClick(object sender, EventArgs e)
         {
-            if(panelContenedor.Visible == false)
-            {
-                panelPrincipal.Size = new Size(873, 539);
-            }
+           
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            btnNuevo.Visible = true;
+            btnVolver.Visible = false;
+            panelContenedor.Visible = false;
+            panelPrincipal.Size = new Size(1020, 632);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
