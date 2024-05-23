@@ -129,6 +129,7 @@
             this.dataUsuarios.Name = "dataUsuarios";
             this.dataUsuarios.Size = new System.Drawing.Size(414, 389);
             this.dataUsuarios.TabIndex = 0;
+            this.dataUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsuarios_CellContentClick);
             // 
             // panel1
             // 

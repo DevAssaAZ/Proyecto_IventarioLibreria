@@ -107,5 +107,10 @@ namespace Presentacion.Modulos.RegistroUsuarios
         {
             MostrarUsuarios();
         }
+
+        private void dataUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
