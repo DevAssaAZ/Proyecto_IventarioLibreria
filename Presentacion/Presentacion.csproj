@@ -98,12 +98,6 @@
     <Compile Include="MenuPrincipal\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroClientes\RegistroClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\RegistroClientes\RegistroClientes.Designer.cs">
-      <DependentUpon>RegistroClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroClientes\RegistroClientes.resx">
-      <DependentUpon>RegistroClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
