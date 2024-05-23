@@ -17,6 +17,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
     {
         //Instancia de la clase de N_usuarios de Negocio
         MetodosUsuario obj_usuarios = new MetodosUsuario();
+        private string idUsuario = null;
 
 
 
@@ -62,7 +63,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
 
-        
+
         private void ShowMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -79,6 +80,15 @@ namespace Presentacion.Modulos.RegistroUsuarios
         private void MostrarUsuarios()
         {
             dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
+            dataUsuarios.Columns["ID"].DisplayIndex = 0;
+            dataUsuarios.Columns["USUARIO"].DisplayIndex = 1;
+            dataUsuarios.Columns["CONTRASEÑA"].DisplayIndex = 2;
+            dataUsuarios.Columns["APELLIDOS_NOMBRES"].DisplayIndex = 3;
+            dataUsuarios.Columns["CORREO_ELECTRONICO"].DisplayIndex = 4;
+            dataUsuarios.Columns["ROL"].DisplayIndex = 5;
+            dataUsuarios.Columns["Ver"].DisplayIndex = 6;
+            dataUsuarios.Columns["Editar"].DisplayIndex = 7;
+            dataUsuarios.Columns["Eliminar"].DisplayIndex = 8;
         }
 
 
@@ -98,6 +108,15 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         }
 
+
+
+
+
+
+
+
+
+
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
 
@@ -108,9 +127,38 @@ namespace Presentacion.Modulos.RegistroUsuarios
             MostrarUsuarios();
         }
 
-        private void dataUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataUsuarios.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dataUsuarios.Rows[e.RowIndex];
+
+                    // Capturar los datos de la fila seleccionada
+                    string rol = row.Cells["ROL"].Value.ToString();
+                    string usuario = row.Cells["USUARIO"].Value.ToString();
+                    string contraseña = row.Cells["CONTRASEÑA"].Value.ToString();
+                    string nombreCompleto = row.Cells["APELLIDOS_NOMBRES"].Value.ToString();
+                    string email = row.Cells["CORREO_ELECTRONICO"].Value.ToString();
+                    idUsuario = row.Cells["ID"].Value.ToString();
+
+
+                    // Abrir la ventana de edición y pasar los datos
+                    panelPrincipal.Size = new Size(469, 539);
+                    ShowMenu(panelContenedor);
+                    CrearCuenta form = new CrearCuenta(idUsuario, rol, usuario, contraseña, nombreCompleto, email);
+                    form.BackColor = Color.FromArgb(46, 68, 96);
+                    form.linkInicio.Visible = false;
+                    form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+                    AbrirFormularioEnPanel(form);
+                }
+            }
         }
     }
 }

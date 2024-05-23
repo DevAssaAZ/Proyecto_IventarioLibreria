@@ -573,7 +573,6 @@
 
         private System.Windows.Forms.Panel panelMenuVertical;
         private System.Windows.Forms.Panel panelBarraTitulo;
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnRegistroUsuarios;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnInventario;
@@ -600,5 +599,6 @@
         private System.Windows.Forms.Button btnRegistrarVentas;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Panel panelContenedor;
     }
 }

@@ -12,7 +12,33 @@ namespace Negocio.Usuarios_cn
 {
     public class MetodosUsuario : Usuario_N
     {
+
+
         private ConsultasUsuario obj_usuario = new ConsultasUsuario();
+
+
+
+        public MetodosUsuario(string nombreCompleto, string email, string userName, string password, string rol)
+        {
+  
+            this.NombreCompleto = nombreCompleto;
+            this.Email = email;
+            this.UserName = userName;
+            this.Password = password;
+            this.Rol = rol;
+        }
+        public MetodosUsuario()
+        {
+
+        }
+
+
+
+
+
+
+
+
 
         //Metodo para mostrar en tabla
         public DataTable MostrarUsuarios()
@@ -26,15 +52,31 @@ namespace Negocio.Usuarios_cn
         //Metodo Insertar Usuarios
         public bool InsertarUsuario()
         {
-            ConsultasUsuario consultasUsuario = new ConsultasUsuario();
+           
             try
             {
-                return consultasUsuario.InsertarUsuario(Rol, UserName, Password, NombreCompleto, Email);
+                return obj_usuario.InsertarUsuario(Rol, UserName, Password, NombreCompleto, Email);
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al Insertar usuario: " + ex.Message);
             }
+        }
+
+
+        //Metodo Editar Usuarios
+        public bool EditarUsuario()
+        {
+
+            try
+            {
+                return obj_usuario.EditarUsuario(Convert.ToInt32(id), UserName, Password, NombreCompleto, Email, Rol);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar usuario: " + ex.Message);
+            }
+            
         }
 
 

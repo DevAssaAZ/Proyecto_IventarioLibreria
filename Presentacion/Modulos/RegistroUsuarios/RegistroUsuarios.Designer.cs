@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBarra = new System.Windows.Forms.Panel();
@@ -41,6 +41,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBarra.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
@@ -112,21 +115,28 @@
             // 
             // dataUsuarios
             // 
+            this.dataUsuarios.AllowUserToAddRows = false;
+            this.dataUsuarios.AllowUserToDeleteRows = false;
             this.dataUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataUsuarios.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ver,
+            this.Editar,
+            this.Eliminar});
             this.dataUsuarios.Location = new System.Drawing.Point(25, 6);
             this.dataUsuarios.Name = "dataUsuarios";
+            this.dataUsuarios.ReadOnly = true;
             this.dataUsuarios.Size = new System.Drawing.Size(414, 389);
             this.dataUsuarios.TabIndex = 0;
             this.dataUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsuarios_CellContentClick);
@@ -202,6 +212,28 @@
             this.panelContenedor.TabIndex = 13;
             this.panelContenedor.Visible = false;
             // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "VER";
+            this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "EDITAR";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "ELIMINAR";
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,7 +265,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel panelBarra;
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.DataGridView dataUsuarios;
         private System.Windows.Forms.TextBox textBuscar;
         private System.Windows.Forms.Button btnBuscar;
@@ -241,5 +272,9 @@
         public System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewImageColumn Ver;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        public System.Windows.Forms.Panel panelContenedor;
     }
 }

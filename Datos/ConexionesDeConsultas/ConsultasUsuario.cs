@@ -69,5 +69,40 @@ namespace Datos.CrudConexiones
                 throw new Exception("Error al crear usuario: " + ex.Message);
             }
         }
+
+
+        //Editar
+        public bool EditarUsuario(int id, string username, string nombreCompleto, string password, string mail, string rol)
+        {
+            using (var conexion = GetConnection())
+            {
+                conexion.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = conexion;
+                    command.CommandText = "update TB_LOGIN set USUARIO = @user, CONTRASEÑA = @pass, APELLIDOS_NOMBRES = @NombreCompleto, CORREO_ELECTRONICO = @email, ROL = @rol where ID = @id";
+                    command.Parameters.AddWithValue("@user", username);
+                    command.Parameters.AddWithValue("@pass", password);
+                    command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
+                    command.Parameters.AddWithValue("@email", mail);
+                    command.Parameters.AddWithValue("rol", rol);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.CommandType = CommandType.Text;
+                    int resultado = command.ExecuteNonQuery();
+                    return resultado > 0;
+                    
+
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 }

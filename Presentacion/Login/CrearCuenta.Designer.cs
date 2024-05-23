@@ -124,7 +124,7 @@
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(137, 44);
             this.btnRegistro.TabIndex = 12;
-            this.btnRegistro.Text = "REGISTRARSE";
+            this.btnRegistro.Text = "Registrarse";
             this.btnRegistro.UseVisualStyleBackColor = false;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
