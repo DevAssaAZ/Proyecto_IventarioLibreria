@@ -22,7 +22,7 @@ namespace Presentacion.Login
         private void btnEnviar_Click(object sender, EventArgs e)
         {
 
-            var user = new Usuario_N();
+            var user = new MetodosLogin();
             var resultado = user.RecuperarPassword(txtUserRequest.Text);
             lblResultado.Visible = true;
             if (txtUserRequest.Text == "")

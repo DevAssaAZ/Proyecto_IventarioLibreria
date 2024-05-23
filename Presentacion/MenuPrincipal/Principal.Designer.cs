@@ -122,7 +122,7 @@
             this.panelVentas.Controls.Add(this.btnFacturacion);
             this.panelVentas.Controls.Add(this.btnRegistrarVentas);
             this.panelVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVentas.Location = new System.Drawing.Point(0, 489);
+            this.panelVentas.Location = new System.Drawing.Point(0, 501);
             this.panelVentas.Name = "panelVentas";
             this.panelVentas.Size = new System.Drawing.Size(317, 88);
             this.panelVentas.TabIndex = 27;
@@ -185,7 +185,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 449);
+            this.btnVentas.Location = new System.Drawing.Point(0, 461);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -203,7 +203,7 @@
             this.panelClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelClientes.Controls.Add(this.btnRegistrarClientes);
             this.panelClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClientes.Location = new System.Drawing.Point(0, 400);
+            this.panelClientes.Location = new System.Drawing.Point(0, 412);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(317, 49);
             this.panelClientes.TabIndex = 25;
@@ -242,7 +242,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 360);
+            this.btnClientes.Location = new System.Drawing.Point(0, 372);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -263,7 +263,7 @@
             this.panelSubInventario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubInventario.Location = new System.Drawing.Point(0, 280);
             this.panelSubInventario.Name = "panelSubInventario";
-            this.panelSubInventario.Size = new System.Drawing.Size(317, 80);
+            this.panelSubInventario.Size = new System.Drawing.Size(317, 92);
             this.panelSubInventario.TabIndex = 22;
             this.panelSubInventario.Visible = false;
             // 
@@ -282,7 +282,7 @@
             this.btnStock.Name = "btnStock";
             this.btnStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnStock.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStock.Size = new System.Drawing.Size(317, 40);
+            this.btnStock.Size = new System.Drawing.Size(317, 52);
             this.btnStock.TabIndex = 11;
             this.btnStock.Text = "  Stock";
             this.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
