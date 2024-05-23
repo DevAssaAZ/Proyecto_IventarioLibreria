@@ -1,5 +1,6 @@
 ﻿using Negocio.EditarPerfil;
 using Negocio.Usuarios_cn;
+using Presentacion.MenuPrincipal;
 using Presentacion.Modulos.RegistroUsuarios;
 using Soporte.Cache;
 using System;
@@ -140,6 +141,30 @@ namespace Presentacion.Login
             form.panelPrincipal.Size = new Size(873, 539);
             form.panelContenedor.Visible = false;
 
+        }
+
+
+        private void AbrirFormularioEnPanel(object FormHijo)
+        {
+            Principal form = new Principal();
+            if (form.panelContenedor.Controls.Count > 0)
+                form.panelContenedor.Controls.RemoveAt(0);
+            Form formularioHijo = FormHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            form.panelContenedor.Controls.Add(formularioHijo);
+            form.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            RegistroUsuarios form = new RegistroUsuarios();
+            form.panelContenedor.Visible = false;
+            AbrirFormularioEnPanel(form);
+            form.panelPrincipal.Size = new Size(873, 539);
         }
     }
 }

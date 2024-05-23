@@ -71,8 +71,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
                 subMenu.Visible = true;
             }
-            else
-                MessageBox.Show("YA ESTA ABIERTA LA PESTAÑA");
+            
         }
 
 
@@ -103,6 +102,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
             CrearCuenta form = new CrearCuenta();
             form.BackColor = Color.FromArgb(46, 68, 96);
             form.linkInicio.Visible = false;
+            form.btnCancelar.Visible = true;
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
 
@@ -158,6 +158,14 @@ namespace Presentacion.Modulos.RegistroUsuarios
                     form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
                     AbrirFormularioEnPanel(form);
                 }
+            }
+        }
+
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            if(panelContenedor.Visible == false)
+            {
+                panelPrincipal.Size = new Size(873, 539);
             }
         }
     }

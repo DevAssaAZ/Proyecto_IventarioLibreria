@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCrearCuenta.SuspendLayout();
             this.SuspendLayout();
@@ -180,6 +181,7 @@
             this.panelCrearCuenta.Controls.Add(this.pictureBox1);
             this.panelCrearCuenta.Controls.Add(this.txtUsuarioCrear);
             this.panelCrearCuenta.Controls.Add(this.txtContraseñaCrear);
+            this.panelCrearCuenta.Controls.Add(this.btnCancelar);
             this.panelCrearCuenta.Controls.Add(this.btnRegistro);
             this.panelCrearCuenta.Controls.Add(this.cmbRol);
             this.panelCrearCuenta.Location = new System.Drawing.Point(12, 10);
@@ -235,6 +237,23 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre Completo:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.Location = new System.Drawing.Point(88, 432);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(137, 44);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // CrearCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,5 +289,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.LinkLabel linkInicio;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }
