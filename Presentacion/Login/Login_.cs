@@ -98,7 +98,7 @@ namespace Presentacion.Login
             {
                 if (txtPass.Text != "CONTRASEÑA")
                 {
-                    Usuario_N user = new Usuario_N();
+                    MetodosLogin user = new MetodosLogin();
                     var validarLogin = user.LoginUsuario(txtUsuario.Text, txtPass.Text);
                     if(validarLogin == true)
                     {

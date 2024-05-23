@@ -16,7 +16,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
     public partial class RegistroUsuarios : Form
     {
         //Instancia de la clase de N_usuarios de Negocio
-        N_Usuarios obj_usuarios = new N_Usuarios();
+        MetodosUsuario obj_usuarios = new MetodosUsuario();
 
 
 

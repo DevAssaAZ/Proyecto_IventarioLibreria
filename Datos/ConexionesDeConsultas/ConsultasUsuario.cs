@@ -39,5 +39,35 @@ namespace Datos.CrudConexiones
 
 
         }
+
+
+        //Metodo para insertar
+        public bool InsertarUsuario(string rol, string usuario, string contraseña, string nombreCompleto, string email)
+        {
+            string query = "INSERT INTO TB_LOGIN (ROL, USUARIO, CONTRASEÑA, APELLIDOS_NOMBRES, CORREO_ELECTRONICO) VALUES (@Rol, @Usuario, @Password, @NombreCompleto, @Email)";
+            try
+            {
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    {
+                        command.Parameters.AddWithValue("@Rol", rol);
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+                        command.Parameters.AddWithValue("@Password", contraseña);
+                        command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
+                        command.Parameters.AddWithValue("@Email", email);
+
+                        conexion.Open();
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al crear usuario: " + ex.Message);
+            }
+        }
     }
 }

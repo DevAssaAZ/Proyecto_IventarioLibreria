@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Soporte.Cache;
 using Negocio;
 using System.Runtime.InteropServices;
-using Negocio.Login_cn;
+using Negocio.EditarPerfil;
 
 namespace Presentacion.MenuPrincipal.PerfilUsuario
 {
@@ -116,7 +116,7 @@ namespace Presentacion.MenuPrincipal.PerfilUsuario
                 {
                     if (txtActualPass.Text == CacheDeInicioDeSesion.Password)
                     {
-                        var modeloUsuario = new Usuario_N(id: CacheDeInicioDeSesion.IdUser,
+                        var modeloUsuario = new EditarPerfil(id: CacheDeInicioDeSesion.IdUser,
                             userName: txtUsuario.Text,
                             password: txtPass.Text,
                             nombreCompleto: txtNombres.Text,

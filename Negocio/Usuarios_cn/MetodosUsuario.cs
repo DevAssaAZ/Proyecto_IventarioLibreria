@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Datos.CrudConexiones;
+using Negocio.Login_cn;
 
 namespace Negocio.Usuarios_cn
 {
-    public class N_Usuarios
+    public class MetodosUsuario : Usuario_N
     {
         private ConsultasUsuario obj_usuario = new ConsultasUsuario();
 
@@ -20,6 +21,22 @@ namespace Negocio.Usuarios_cn
             tabla = obj_usuario.MostrarUsuarios();
             return tabla;
         }
+
+        
+        //Metodo Insertar Usuarios
+        public bool InsertarUsuario()
+        {
+            ConsultasUsuario consultasUsuario = new ConsultasUsuario();
+            try
+            {
+                return consultasUsuario.InsertarUsuario(Rol, UserName, Password, NombreCompleto, Email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al Insertar usuario: " + ex.Message);
+            }
+        }
+
 
 
 

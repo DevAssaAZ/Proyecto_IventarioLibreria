@@ -10,33 +10,10 @@ using System.Data;
 
 namespace Datos.LoginConexion
 {
-    public class DatosUsuario: ConnectionToSql
+    public class LoginConexion: ConnectionToSql
     {
 
-        //Metodo para editar perfil
-        public void EditarPerfil(int id, string username, string nombreCompleto, string password, string mail)
-        {
-            using (var conexion = GetConnection())
-            {
-                conexion.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = conexion;
-                    command.CommandText = "update TB_LOGIN set USUARIO = @user, CONTRASEÑA = @pass, APELLIDOS_NOMBRES = @NombreCompleto, CORREO_ELECTRONICO = @email where ID = @id";
-                    command.Parameters.AddWithValue("@user",username);
-                    command.Parameters.AddWithValue("@pass", password);
-                    command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
-                    command.Parameters.AddWithValue("@email", mail);
-                    command.Parameters.AddWithValue("@id", id);
-                    command.CommandType = CommandType.Text;
-                    command.ExecuteNonQuery();
-
-                }
-            }
-        }
-
-
-
+        
 
         public bool Login(string usuario, string pass)
         {
@@ -131,36 +108,6 @@ namespace Datos.LoginConexion
 
 
 
-
-
-        
-
-        public bool CrearUsuario(string rol, string usuario, string contraseña, string nombreCompleto, string email)
-        {
-            string query = "INSERT INTO TB_LOGIN (ROL, USUARIO, CONTRASEÑA, APELLIDOS_NOMBRES, CORREO_ELECTRONICO) VALUES (@Rol, @Usuario, @Password, @NombreCompleto, @Email)";
-            try
-            {
-                using (var conexion = GetConnection())
-                {
-                    using (SqlCommand command = new SqlCommand(query, conexion))
-                    {
-                        command.Parameters.AddWithValue("@Rol", rol);
-                        command.Parameters.AddWithValue("@Usuario", usuario);
-                        command.Parameters.AddWithValue("@Password", contraseña);
-                        command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
-                        command.Parameters.AddWithValue("@Email", email);
-
-                        conexion.Open();
-                        int result = command.ExecuteNonQuery();
-                        return result > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al crear usuario: " + ex.Message);
-            }
-        }
     }
 
 }

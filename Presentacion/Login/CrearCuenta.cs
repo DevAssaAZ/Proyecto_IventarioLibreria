@@ -1,4 +1,4 @@
-﻿using Negocio.Login_cn;
+﻿using Negocio.Usuarios_cn;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ namespace Presentacion.Login
 {
     public partial class CrearCuenta : Form
     {
-        private Usuario_N obj_Usuario = new Usuario_N();
+        private MetodosUsuario obj_Usuario = new MetodosUsuario();
 
         public CrearCuenta()
         {
@@ -38,6 +38,7 @@ namespace Presentacion.Login
         {
             try
             {
+                
                 obj_Usuario.Rol = cmbRol.Text;
                 obj_Usuario.NombreCompleto = txtNombreCrear.Text;
                 obj_Usuario.Email = txtCorreoCrear.Text;
@@ -47,7 +48,7 @@ namespace Presentacion.Login
                 // Debug: Mostrar los valores que se están pasando
                 MessageBox.Show($"Rol: {obj_Usuario.Rol}, Nombre Completo: {obj_Usuario.NombreCompleto}, Email: {obj_Usuario.Email}, Password: {obj_Usuario.Password}, Usuario: {obj_Usuario.UserName}");
 
-                if (obj_Usuario.CrearUsuario(obj_Usuario))
+                if (obj_Usuario.InsertarUsuario())
                 {
                     MessageBox.Show("Registrado con éxito");
                     txtUsuarioCrear.Text = "USUARIO";
