@@ -1,7 +1,6 @@
 ﻿using Negocio.EditarPerfil;
 using Negocio.Usuarios_cn;
 using Presentacion.MenuPrincipal;
-using Presentacion.MenuPrincipal.Logo;
 using Presentacion.Modulos.RegistroUsuarios;
 using Soporte.Cache;
 using System;
@@ -20,7 +19,6 @@ namespace Presentacion.Login
     public partial class CrearCuenta : Form
     {
         private MetodosUsuario obj_Usuario = new MetodosUsuario();
-        Principal registro = new Principal();
         private string IdUs = null;
         public CrearCuenta()
         {
@@ -45,30 +43,13 @@ namespace Presentacion.Login
 
         }
 
+        
 
 
 
-        private void AbrirFormularioEnPanel(object FormHijo)
-        {
-            if (registro.panelContenedor.Controls.Count > 0)
-                registro.panelContenedor.Controls.RemoveAt(0);
-            Form formularioHijo = FormHijo as Form;
-            formularioHijo.TopLevel = false;
-            formularioHijo.Dock = DockStyle.Fill;
-            registro.panelContenedor.Controls.Add(formularioHijo);
-            registro.panelContenedor.Tag = formularioHijo;
-            formularioHijo.Show();
-        }
 
 
-        private void MostrarLogo()
-        {
-            AbrirFormularioEnPanel(new MarcaLogo());
-        }
-        private void MostrarLogoAlCerrarFormulario(object sender, FormClosedEventArgs e)
-        {
-            MostrarLogo();
-        }
+
 
 
 
@@ -108,11 +89,13 @@ namespace Presentacion.Login
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
-
-                        this.Close();
                         
-
-
+                        RegistroUsuarios form = new RegistroUsuarios();
+                        //AddOwnedForm(form);
+                        form.MostrarUsuarios();
+                        form.panelContenedor.Visible = false;
+                        form.panelPrincipal.Size = new Size(979, 539);
+                        
 
 
                     }
@@ -145,9 +128,10 @@ namespace Presentacion.Login
                     {
                         MessageBox.Show("Datos actualizados con éxito.");
                         this.Close();
-                        RegistroUsuarios registro = new RegistroUsuarios();
-                        registro.btnVolver.Visible = true;
-                        registro.btnNuevo.Visible = false;
+                        RegistroUsuarios form = new RegistroUsuarios();
+                        form.MostrarUsuarios();
+                        form.panelContenedor.Visible = false;
+                        form.panelPrincipal.Size = new Size(979, 539);
                     }
                     else
                     {
