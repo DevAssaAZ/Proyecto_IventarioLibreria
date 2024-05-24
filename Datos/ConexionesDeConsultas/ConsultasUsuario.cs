@@ -72,7 +72,7 @@ namespace Datos.CrudConexiones
 
 
         //Editar
-        public bool EditarUsuario(int id, string username, string nombreCompleto, string password, string mail, string rol)
+        public bool EditarUsuario(int id, string username, string password, string nombreCompleto, string mail, string rol)
         {
             using (var conexion = GetConnection())
             {
