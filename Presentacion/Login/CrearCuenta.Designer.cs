@@ -73,7 +73,6 @@
             this.txtUsuarioCrear.Name = "txtUsuarioCrear";
             this.txtUsuarioCrear.Size = new System.Drawing.Size(332, 20);
             this.txtUsuarioCrear.TabIndex = 3;
-            this.txtUsuarioCrear.Text = "USUARIO";
             this.txtUsuarioCrear.TextChanged += new System.EventHandler(this.txtUsuarioRecuperar_TextChanged);
             // 
             // txtContraseñaCrear
@@ -86,7 +85,6 @@
             this.txtContraseñaCrear.Name = "txtContraseñaCrear";
             this.txtContraseñaCrear.Size = new System.Drawing.Size(332, 20);
             this.txtContraseñaCrear.TabIndex = 3;
-            this.txtContraseñaCrear.Text = "CONTRASEÑA";
             // 
             // titulo
             // 
@@ -152,7 +150,6 @@
             this.txtNombreCrear.Name = "txtNombreCrear";
             this.txtNombreCrear.Size = new System.Drawing.Size(332, 27);
             this.txtNombreCrear.TabIndex = 15;
-            this.txtNombreCrear.Text = "APELLIDOS Y NOMBRES";
             // 
             // txtCorreoCrear
             // 
@@ -164,7 +161,6 @@
             this.txtCorreoCrear.Name = "txtCorreoCrear";
             this.txtCorreoCrear.Size = new System.Drawing.Size(332, 20);
             this.txtCorreoCrear.TabIndex = 16;
-            this.txtCorreoCrear.Text = "CORREO ELECTRONICO";
             // 
             // panelCrearCuenta
             // 
