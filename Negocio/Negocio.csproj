@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clientes_cn\Cliente_N.cs" />
     <Compile Include="EditarPerfil\EditarPerfil.cs" />
     <Compile Include="Login_cn\MetodosLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
