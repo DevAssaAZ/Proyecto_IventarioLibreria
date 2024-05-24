@@ -18,7 +18,7 @@ namespace Datos.ConexionesDeConsultas
         // Método para mostrar clientes
         public DataTable MostrarClientes()
         {
-            string query = "SELECT Id, Nombre, Apellido, Cedula, Edad, Correo FROM Clientes";
+            string query = "SELECT ID, NOMBRE, APELLIDO, CEDULA, EDAD, CORREO FROM TB_CLIENTE";
             try
             {
                 command.Connection = AbrirConexion();
@@ -37,7 +37,7 @@ namespace Datos.ConexionesDeConsultas
         // Método para insertar cliente
         public bool InsertarCliente(string nombre, string apellido, string cedula, int edad, string correo)
         {
-            string query = "INSERT INTO Clientes (Nombre, Apellido, Cedula, Edad, Correo) VALUES (@Nombre, @Apellido, @Cedula, @Edad, @Correo)";
+            string query = "INSERT INTO TB_CLIENTE (NOMBRE, APELLIDO, CEDULA, EDAD, CORREO) VALUES (@Nombre, @Apellido, @Cedula, @Edad, @Correo)";
             try
             {
                 using (var conexion = GetConnection())
@@ -71,7 +71,7 @@ namespace Datos.ConexionesDeConsultas
                 using (var command = new SqlCommand())
                 {
                     command.Connection = conexion;
-                    command.CommandText = "UPDATE Clientes SET Nombre = @Nombre, Apellido = @Apellido, Cedula = @Cedula, Edad = @Edad, Correo = @Correo WHERE ID = @ID";
+                    command.CommandText = "UPDATE TB_CLIENTE SET NOMBRE = @Nombre, APELLIDO = @Apellido, CEDULA = @Cedula, EDAD = @Edad, CORREO = @Correo WHERE ID = @ID";
                     command.Parameters.AddWithValue("@Nombre", nombre);
                     command.Parameters.AddWithValue("@Apellido", apellido);
                     command.Parameters.AddWithValue("@Cedula", cedula);
@@ -94,7 +94,7 @@ namespace Datos.ConexionesDeConsultas
                 using (var command = new SqlCommand())
                 {
                     command.Connection = conexion;
-                    command.CommandText = "DELETE FROM Clientes WHERE ID = @ID";
+                    command.CommandText = "DELETE FROM TB_CLIENTE WHERE ID = @ID";
                     command.Parameters.AddWithValue("@ID", id);
                     command.CommandType = CommandType.Text;
                     int resultado = command.ExecuteNonQuery();
