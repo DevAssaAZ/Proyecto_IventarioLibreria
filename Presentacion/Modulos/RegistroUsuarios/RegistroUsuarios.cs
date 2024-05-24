@@ -28,9 +28,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
         public RegistroUsuarios()
         {
             InitializeComponent();
-
         }
-
 
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -92,12 +90,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
             dataUsuarios.Columns["Eliminar"].DisplayIndex = 8;
         }
 
-        private void RefrescarTabla()
-        {
-            //
 
-
-        }
 
 
 
@@ -166,8 +159,6 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
                     // Abrir la ventana de edición y pasar los datos
-                    btnVolver.Visible = true;
-                    btnNuevo.Visible = false;
                     panelPrincipal.Size = new Size(482, 539);
                     ShowMenu(panelContenedor);
                     CrearCuenta form = new CrearCuenta(idUsuario, rol, usuario, contraseña, nombreCompleto, email);
@@ -176,36 +167,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
                     form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
                     AbrirFormularioEnPanel(form);
                 }
-               
             }
-            if (dataUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = dataUsuarios.Rows[e.RowIndex];
-                    idUsuario = row.Cells["ID"].Value.ToString();
-                    obj_usuarios.Id = Convert.ToInt32(idUsuario);
-                    if (MessageBox.Show("Esta seguro de Eliminar a este usuario? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-
-                        if (obj_usuarios.EliminarUsuario())
-                        {
-                            MessageBox.Show("Eliminado con éxito");
-                            RefrescarTabla();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al Eliminar el usuario");
-                        }
-
-                    }
-
-                }
-            }
-
-
-
         }
 
         private void panel1_DoubleClick(object sender, EventArgs e)
@@ -219,7 +181,6 @@ namespace Presentacion.Modulos.RegistroUsuarios
             btnVolver.Visible = false;
             panelContenedor.Visible = false;
             panelPrincipal.Size = new Size(1020, 632);
-            RefrescarTabla();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -235,11 +196,6 @@ namespace Presentacion.Modulos.RegistroUsuarios
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            panelPrincipal.Size = new Size(1020, 632);
         }
     }
 }
