@@ -76,7 +76,6 @@ namespace Presentacion.Login
                 try
                 {
 
-
                     obj_Usuario.Rol = cmbRol.Text;
                     obj_Usuario.NombreCompleto = txtNombreCrear.Text;
                     obj_Usuario.Email = txtCorreoCrear.Text;
@@ -89,15 +88,11 @@ namespace Presentacion.Login
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
-                        
-                        RegistroUsuarios form = new RegistroUsuarios();
-                        //AddOwnedForm(form);
-                        form.MostrarUsuarios();
-                        form.panelContenedor.Visible = false;
-                        form.panelPrincipal.Size = new Size(979, 539);
-                        
-
-
+                        txtUsuarioCrear.Text = "USUARIO";
+                        txtContraseñaCrear.Text = "CONTRASEÑA";
+                        txtNombreCrear.Text = "NOMBRE COMPLETO (APELLIDOS Y NOMBRES)";
+                        txtCorreoCrear.Text = "EMAIL";
+                        cmbRol.SelectedIndex = -1;
                     }
                     else
                     {
@@ -128,10 +123,6 @@ namespace Presentacion.Login
                     {
                         MessageBox.Show("Datos actualizados con éxito.");
                         this.Close();
-                        RegistroUsuarios form = new RegistroUsuarios();
-                        form.MostrarUsuarios();
-                        form.panelContenedor.Visible = false;
-                        form.panelPrincipal.Size = new Size(979, 539);
                     }
                     else
                     {
@@ -146,10 +137,34 @@ namespace Presentacion.Login
                 
             }
 
-            
+            RegistroUsuarios form = new RegistroUsuarios();
+            form.panelPrincipal.Size = new Size(873, 539);
+            form.panelContenedor.Visible = false;
 
         }
- 
-        
+
+
+        private void AbrirFormularioEnPanel(object FormHijo)
+        {
+            Principal form = new Principal();
+            if (form.panelContenedor.Controls.Count > 0)
+                form.panelContenedor.Controls.RemoveAt(0);
+            Form formularioHijo = FormHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            form.panelContenedor.Controls.Add(formularioHijo);
+            form.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            RegistroUsuarios form = new RegistroUsuarios();
+            form.panelContenedor.Visible = false;
+            AbrirFormularioEnPanel(form);
+            form.panelPrincipal.Size = new Size(873, 539);
+        }
     }
 }

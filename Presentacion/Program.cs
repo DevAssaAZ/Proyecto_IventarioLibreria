@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion.Login;
 using Presentacion.MenuPrincipal;
+using Presentacion.Modulos.RegistroClientes;
 
 namespace Presentacion
 {
