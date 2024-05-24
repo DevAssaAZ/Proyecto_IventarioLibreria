@@ -263,11 +263,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.LinkLabel linkInicio;
+<<<<<<< HEAD
         public System.Windows.Forms.ComboBox cmbRol;
         public System.Windows.Forms.TextBox txtUsuarioCrear;
         public System.Windows.Forms.TextBox txtContraseñaCrear;
         public System.Windows.Forms.Label titulo;
         public System.Windows.Forms.TextBox txtNombreCrear;
         public System.Windows.Forms.TextBox txtCorreoCrear;
+=======
+>>>>>>> Main
     }
 }
