@@ -98,7 +98,31 @@ namespace Datos.CrudConexiones
 
 
 
+        //Eliminar
+        public bool EliminarUsuario(int idUsuario)
+        {
+            string query = "DELETE TB_LOGIN WHERE ID = "+idUsuario;
+            try
+            {
+                using (var conexion = GetConnection())
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = conexion;
+                        command.CommandText = query;
+                        command.CommandType = CommandType.Text;
+                        conexion.Open();
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al crear usuario: " + ex.Message);
+            }
+        }
 
 
 

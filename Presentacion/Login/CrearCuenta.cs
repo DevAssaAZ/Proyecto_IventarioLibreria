@@ -1,6 +1,7 @@
 ﻿using Negocio.EditarPerfil;
 using Negocio.Usuarios_cn;
 using Presentacion.MenuPrincipal;
+using Presentacion.MenuPrincipal.Logo;
 using Presentacion.Modulos.RegistroUsuarios;
 using Soporte.Cache;
 using System;
@@ -19,6 +20,7 @@ namespace Presentacion.Login
     public partial class CrearCuenta : Form
     {
         private MetodosUsuario obj_Usuario = new MetodosUsuario();
+        Principal registro = new Principal();
         private string IdUs = null;
         public CrearCuenta()
         {
@@ -43,13 +45,30 @@ namespace Presentacion.Login
 
         }
 
-        
 
 
 
+        private void AbrirFormularioEnPanel(object FormHijo)
+        {
+            if (registro.panelContenedor.Controls.Count > 0)
+                registro.panelContenedor.Controls.RemoveAt(0);
+            Form formularioHijo = FormHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            registro.panelContenedor.Controls.Add(formularioHijo);
+            registro.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
 
 
-
+        private void MostrarLogo()
+        {
+            AbrirFormularioEnPanel(new MarcaLogo());
+        }
+        private void MostrarLogoAlCerrarFormulario(object sender, FormClosedEventArgs e)
+        {
+            MostrarLogo();
+        }
 
 
 
@@ -76,6 +95,7 @@ namespace Presentacion.Login
                 try
                 {
 
+
                     obj_Usuario.Rol = cmbRol.Text;
                     obj_Usuario.NombreCompleto = txtNombreCrear.Text;
                     obj_Usuario.Email = txtCorreoCrear.Text;
@@ -88,11 +108,13 @@ namespace Presentacion.Login
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
-                        txtUsuarioCrear.Text = "USUARIO";
-                        txtContraseñaCrear.Text = "CONTRASEÑA";
-                        txtNombreCrear.Text = "NOMBRE COMPLETO (APELLIDOS Y NOMBRES)";
-                        txtCorreoCrear.Text = "EMAIL";
-                        cmbRol.SelectedIndex = -1;
+
+                        this.Close();
+                        
+
+
+
+
                     }
                     else
                     {
@@ -123,6 +145,9 @@ namespace Presentacion.Login
                     {
                         MessageBox.Show("Datos actualizados con éxito.");
                         this.Close();
+                        RegistroUsuarios registro = new RegistroUsuarios();
+                        registro.btnVolver.Visible = true;
+                        registro.btnNuevo.Visible = false;
                     }
                     else
                     {
@@ -137,34 +162,10 @@ namespace Presentacion.Login
                 
             }
 
-            RegistroUsuarios form = new RegistroUsuarios();
-            form.panelPrincipal.Size = new Size(873, 539);
-            form.panelContenedor.Visible = false;
+            
 
         }
-
-
-        private void AbrirFormularioEnPanel(object FormHijo)
-        {
-            Principal form = new Principal();
-            if (form.panelContenedor.Controls.Count > 0)
-                form.panelContenedor.Controls.RemoveAt(0);
-            Form formularioHijo = FormHijo as Form;
-            formularioHijo.TopLevel = false;
-            formularioHijo.Dock = DockStyle.Fill;
-            form.panelContenedor.Controls.Add(formularioHijo);
-            form.panelContenedor.Tag = formularioHijo;
-            formularioHijo.Show();
-        }
-
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            RegistroUsuarios form = new RegistroUsuarios();
-            form.panelContenedor.Visible = false;
-            AbrirFormularioEnPanel(form);
-            form.panelPrincipal.Size = new Size(873, 539);
-        }
+ 
+        
     }
 }

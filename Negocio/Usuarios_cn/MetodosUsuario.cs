@@ -32,7 +32,10 @@ namespace Negocio.Usuarios_cn
 
         }
 
-
+        public MetodosUsuario(int id)
+        {
+            this.Id = id;
+        }
 
 
 
@@ -70,7 +73,7 @@ namespace Negocio.Usuarios_cn
 
             try
             {
-                return obj_usuario.EditarUsuario(Convert.ToInt32(id), UserName, Password, NombreCompleto, Email, Rol);
+                return obj_usuario.EditarUsuario(Convert.ToInt32(Id), UserName, Password, NombreCompleto, Email, Rol);
             }
             catch (Exception ex)
             {
@@ -79,7 +82,20 @@ namespace Negocio.Usuarios_cn
             
         }
 
+        //Metodo Eliminar Usuario
+        public bool EliminarUsuario()
+        {
 
+            try
+            {
+                return obj_usuario.EliminarUsuario(Id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al Eliminar: " + ex.Message);
+            }
+
+        }
 
 
     }
