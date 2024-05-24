@@ -34,22 +34,19 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBarra = new System.Windows.Forms.Panel();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataUsuarios = new System.Windows.Forms.DataGridView();
             this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBarra.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsuarios)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +69,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(837, 9);
+            this.btnCerrar.Location = new System.Drawing.Point(915, 9);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(18, 18);
             this.btnCerrar.TabIndex = 10;
@@ -88,7 +85,7 @@
             this.panelBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarra.Location = new System.Drawing.Point(0, 0);
             this.panelBarra.Name = "panelBarra";
-            this.panelBarra.Size = new System.Drawing.Size(873, 38);
+            this.panelBarra.Size = new System.Drawing.Size(951, 38);
             this.panelBarra.TabIndex = 11;
             // 
             // panelPrincipal
@@ -96,22 +93,16 @@
             this.panelPrincipal.AutoScroll = true;
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.panelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelPrincipal.Controls.Add(this.panel2);
-            this.panelPrincipal.Controls.Add(this.panel1);
+            this.panelPrincipal.Controls.Add(this.btnVolver);
+            this.panelPrincipal.Controls.Add(this.btnBuscar);
+            this.panelPrincipal.Controls.Add(this.dataUsuarios);
+            this.panelPrincipal.Controls.Add(this.textBuscar);
+            this.panelPrincipal.Controls.Add(this.btnNuevo);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 38);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(480, 539);
+            this.panelPrincipal.Size = new System.Drawing.Size(482, 539);
             this.panelPrincipal.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataUsuarios);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 117);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(476, 418);
-            this.panel2.TabIndex = 1;
             // 
             // dataUsuarios
             // 
@@ -134,10 +125,10 @@
             this.Ver,
             this.Editar,
             this.Eliminar});
-            this.dataUsuarios.Location = new System.Drawing.Point(25, 6);
+            this.dataUsuarios.Location = new System.Drawing.Point(13, 136);
             this.dataUsuarios.Name = "dataUsuarios";
             this.dataUsuarios.ReadOnly = true;
-            this.dataUsuarios.Size = new System.Drawing.Size(407, 389);
+            this.dataUsuarios.Size = new System.Drawing.Size(453, 353);
             this.dataUsuarios.TabIndex = 0;
             this.dataUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsuarios_CellContentClick);
             // 
@@ -163,25 +154,13 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBuscar);
-            this.panel1.Controls.Add(this.btnNuevo);
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 117);
-            this.panel1.TabIndex = 0;
-            this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
-            // 
             // textBuscar
             // 
             this.textBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBuscar.Location = new System.Drawing.Point(25, 78);
+            this.textBuscar.Location = new System.Drawing.Point(13, 83);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(308, 20);
+            this.textBuscar.Size = new System.Drawing.Size(363, 20);
             this.textBuscar.TabIndex = 1;
             this.textBuscar.TextChanged += new System.EventHandler(this.textBuscar_TextChanged);
             // 
@@ -197,9 +176,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.LightGray;
-            this.btnNuevo.Location = new System.Drawing.Point(343, 19);
+            this.btnNuevo.Location = new System.Drawing.Point(382, 35);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(89, 31);
+            this.btnNuevo.Size = new System.Drawing.Size(84, 31);
             this.btnNuevo.TabIndex = 24;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -216,30 +195,53 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnBuscar.Location = new System.Drawing.Point(343, 72);
+            this.btnBuscar.Location = new System.Drawing.Point(382, 83);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(89, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(84, 31);
             this.btnBuscar.TabIndex = 23;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(480, 38);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContenedor.Location = new System.Drawing.Point(482, 38);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(393, 539);
+            this.panelContenedor.Size = new System.Drawing.Size(469, 539);
             this.panelContenedor.TabIndex = 13;
             this.panelContenedor.Visible = false;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.LightGray;
+            this.btnVolver.Location = new System.Drawing.Point(382, 19);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(84, 31);
+            this.btnVolver.TabIndex = 24;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Visible = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(873, 577);
+            this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelBarra);
@@ -251,10 +253,8 @@
             this.panelBarra.ResumeLayout(false);
             this.panelBarra.PerformLayout();
             this.panelPrincipal.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUsuarios)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,11 +269,10 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewImageColumn Ver;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         public System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

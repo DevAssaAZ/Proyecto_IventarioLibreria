@@ -12,7 +12,7 @@ using Presentacion.Modulos.RegistroUsuarios;
 using Presentacion.MenuPrincipal.Logo;
 using Soporte.Cache;
 using Presentacion.MenuPrincipal.PerfilUsuario;
-using Presentacion.Modulos.RegistroClientes;
+using System.Windows.Controls;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -149,7 +149,7 @@ namespace Presentacion.MenuPrincipal
                 panelVentas.Visible = false;
 
         }
-        private void ShowMenu(Panel subMenu)
+        private void ShowMenu(System.Windows.Forms.Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -219,9 +219,9 @@ namespace Presentacion.MenuPrincipal
 
         private void btnRegistrarClientes_Click(object sender, EventArgs e)
         {
-            RegistroCliente form = new RegistroCliente();
-            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
-            AbrirFormularioEnPanel(form);
+
+
+
 
 
 
@@ -252,16 +252,19 @@ namespace Presentacion.MenuPrincipal
             HideMenu();
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnRegistroUsuarios_Click(object sender, EventArgs e)
         {
 
             RegistroUsuarios form = new RegistroUsuarios();
-            form.panelPrincipal.Size = new Size(873, 539);
+            AddOwnedForm(form);
+            form.panelContenedor.Visible = false;
+            form.panelPrincipal.Size = new Size(880, 539);
+            form.panelPrincipal.Padding = new Padding(0, 0, 40, 0);
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            this.Controls.Add(form);  // Corrected line
+            this.Tag = form;
+            form.BringToFront();
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
         }
