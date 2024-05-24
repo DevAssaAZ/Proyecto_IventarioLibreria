@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBarra = new System.Windows.Forms.Panel();
@@ -278,25 +279,16 @@
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+=======
+            this.components = new System.ComponentModel.Container();
+>>>>>>> Revert "#"
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 381);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelBarra);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegistroCliente";
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "RegistroCliente";
-            this.Load += new System.EventHandler(this.RegistroCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            this.panelBarra.ResumeLayout(false);
-            this.panelBarra.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInformacion)).EndInit();
-            this.ResumeLayout(false);
-
         }
 
         #endregion
+<<<<<<< HEAD
 
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label1;
@@ -318,5 +310,7 @@
         private System.Windows.Forms.Button btnEliminarCliente;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label7;
+=======
+>>>>>>> Revert "#"
     }
 }
