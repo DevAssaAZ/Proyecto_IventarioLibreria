@@ -28,6 +28,24 @@ namespace Negocio.Usuarios_cn
             this.Rol = rol;
         }
 
+        //Constructores
+        public Usuario_N(string nombreCompleto, string email, string userName, string password, string rol)
+        {
+
+            this.NombreCompleto = nombreCompleto;
+            this.Email = email;
+            this.UserName = userName;
+            this.Password = password;
+            this.Rol = rol;
+        }
+  
+
+        public Usuario_N(int id)
+        {
+            this.Id = id;
+        }
+
+
         public Usuario_N()
         {
             //Constructor vacio

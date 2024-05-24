@@ -87,7 +87,7 @@ namespace Presentacion.Modulos.RegistroClientes
 
         private void CargarDatos()
         {
-            Cliente_N cliente_N = new Cliente_N();
+            MetodosCliente cliente_N = new MetodosCliente();
             DataTable dt = cliente_N.MostrarClientes();
             dgvInformacion.DataSource = dt;
             dgvInformacion.ClearSelection();
@@ -98,14 +98,13 @@ namespace Presentacion.Modulos.RegistroClientes
         {
             try
             {
-                Cliente_N cliente_N = new Cliente_N();
-                cliente_N.InsertarClientes(
-                    txtNombre.Text,
-                    txtApellido.Text,
-                    txtCedula.Text,
-                    int.Parse(txtEdad.Text),
-                    txtCorreo.Text
-                );
+                MetodosCliente cliente_N = new MetodosCliente();
+                cliente_N.Nombre =txtNombre.Text;
+                cliente_N.Apellido = txtApellido.Text;
+                cliente_N.Cedula = txtCedula.Text;
+                cliente_N.Edad = Convert.ToInt32(txtEdad.Text);
+                cliente_N.Correo = txtCorreo.Text;
+                cliente_N.InsertarClientes();
 
                 // Limpia los TextBox después de la inserción
                 txtNombre.Clear();
@@ -129,9 +128,10 @@ namespace Presentacion.Modulos.RegistroClientes
             {
                 if (dgvInformacion.CurrentRow != null)
                 {
-                    int id = Convert.ToInt32(dgvInformacion.CurrentRow.Cells["Id"].Value);
-                    Cliente_N cliente_N = new Cliente_N();
-                    cliente_N.EliminarCliente(id);
+                    MetodosCliente cliente = new MetodosCliente();
+                    cliente.Id = Convert.ToInt32(dgvInformacion.CurrentRow.Cells["Id"].Value);
+                    MetodosCliente cliente_N = new MetodosCliente();
+                    cliente_N.EliminarCliente(cliente.Id);
 
                     // Vuelve a cargar los datos en el DataGridView
                     CargarDatos();
@@ -172,8 +172,8 @@ namespace Presentacion.Modulos.RegistroClientes
                     string correo = txtCorreo.Text;
 
                     // Actualizar el cliente en la base de datos
-                    Cliente_N cliente_N = new Cliente_N();
-                    cliente_N.ActualizarCliente(id, nombre, apellido, cedula, edad, correo);
+                    MetodosCliente cliente_N = new MetodosCliente();
+                    cliente_N.ActualizarCliente();
 
                     // Actualizar los datos en el DataGridView
                     dgvInformacion.CurrentRow.Cells["Nombre"].Value = nombre;

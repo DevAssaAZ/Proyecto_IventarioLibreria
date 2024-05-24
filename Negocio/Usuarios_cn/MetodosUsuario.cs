@@ -17,32 +17,6 @@ namespace Negocio.Usuarios_cn
         private ConsultasUsuario obj_usuario = new ConsultasUsuario();
 
 
-
-        public MetodosUsuario(string nombreCompleto, string email, string userName, string password, string rol)
-        {
-  
-            this.NombreCompleto = nombreCompleto;
-            this.Email = email;
-            this.UserName = userName;
-            this.Password = password;
-            this.Rol = rol;
-        }
-        public MetodosUsuario()
-        {
-
-        }
-
-        public MetodosUsuario(int id)
-        {
-            this.Id = id;
-        }
-
-
-
-
-
-
-
         //Metodo para mostrar en tabla
         public DataTable MostrarUsuarios()
         {
