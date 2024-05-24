@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> ea
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBarra = new System.Windows.Forms.Panel();
@@ -116,23 +111,11 @@
             this.dataUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
             this.dataUsuarios.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-=======
-            this.dataUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.dataUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
->>>>>>> ea
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -142,32 +125,9 @@
             this.Ver,
             this.Editar,
             this.Eliminar});
-<<<<<<< HEAD
             this.dataUsuarios.Location = new System.Drawing.Point(13, 136);
             this.dataUsuarios.Name = "dataUsuarios";
             this.dataUsuarios.ReadOnly = true;
-=======
-            this.dataUsuarios.EnableHeadersVisualStyles = false;
-            this.dataUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.dataUsuarios.Location = new System.Drawing.Point(14, 136);
-            this.dataUsuarios.Name = "dataUsuarios";
-            this.dataUsuarios.ReadOnly = true;
-            this.dataUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataUsuarios.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.dataUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
->>>>>>> ea
             this.dataUsuarios.Size = new System.Drawing.Size(453, 353);
             this.dataUsuarios.TabIndex = 0;
             this.dataUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataUsuarios_CellContentClick);
@@ -178,10 +138,6 @@
             this.Ver.Image = ((System.Drawing.Image)(resources.GetObject("Ver.Image")));
             this.Ver.Name = "Ver";
             this.Ver.ReadOnly = true;
-<<<<<<< HEAD
-=======
-            this.Ver.Width = 32;
->>>>>>> ea
             // 
             // Editar
             // 
@@ -190,10 +146,6 @@
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
             this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-<<<<<<< HEAD
-=======
-            this.Editar.Width = 48;
->>>>>>> ea
             // 
             // Eliminar
             // 
@@ -201,10 +153,6 @@
             this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-<<<<<<< HEAD
-=======
-            this.Eliminar.Width = 62;
->>>>>>> ea
             // 
             // textBuscar
             // 
