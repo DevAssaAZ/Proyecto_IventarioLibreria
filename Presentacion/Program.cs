@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Presentacion.Login;
 using Presentacion.MenuPrincipal;
 using Presentacion.Modulos.RegistroClientes;
+using Presentacion.Modulos.RegistroLibros;
 
 namespace Presentacion
 {
@@ -19,7 +20,9 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_());
+            //Application.Run(new Login_());
+           Application.Run(new RegistroLibro());
+
         }
     }
 }

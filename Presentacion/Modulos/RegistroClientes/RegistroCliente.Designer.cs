@@ -34,6 +34,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnRegistrarCliente = new System.Windows.Forms.Button();
             this.dgvInformacion = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBarra.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(405, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRO DE CLIENTES EN EL SISTEMA";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelBarra
             // 
@@ -93,6 +94,7 @@
             this.panelBarra.Name = "panelBarra";
             this.panelBarra.Size = new System.Drawing.Size(896, 38);
             this.panelBarra.TabIndex = 12;
+            this.panelBarra.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarra_Paint);
             // 
             // btnGuardar
             // 
@@ -138,6 +140,18 @@
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(10, 194);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 19);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Correo:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(109, 287);
@@ -177,6 +191,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(151, 20);
             this.txtCorreo.TabIndex = 9;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtEdad
             // 
@@ -192,6 +207,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(151, 20);
             this.txtCedula.TabIndex = 7;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // txtApellido
             // 
@@ -199,6 +215,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(151, 20);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // txtNombre
             // 
@@ -229,6 +246,7 @@
             this.label5.Size = new System.Drawing.Size(42, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Edad:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -240,6 +258,7 @@
             this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Cedula:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -251,6 +270,7 @@
             this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Apellido:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -263,17 +283,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(10, 194);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 19);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Correo:";
             // 
             // RegistroCliente
             // 

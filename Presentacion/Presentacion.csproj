@@ -104,6 +104,12 @@
     <Compile Include="Modulos\RegistroClientes\RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\RegistroLibros\RegistroLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroLibros\RegistroLibros.Designer.cs">
+      <DependentUpon>RegistroLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroClientes\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroLibros\RegistroLibros.resx">
+      <DependentUpon>RegistroLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
