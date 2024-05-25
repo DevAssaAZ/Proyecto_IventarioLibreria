@@ -220,6 +220,7 @@ namespace Presentacion.MenuPrincipal
         private void btnRegistrarClientes_Click(object sender, EventArgs e)
         {
             RegistroCliente form = new RegistroCliente();
+            form.panelPrincipal.Size = new Size(873, 539);
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
 

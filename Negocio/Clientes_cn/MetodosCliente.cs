@@ -37,7 +37,7 @@ namespace Negocio.Clientes_cn
 
 
         //Metodo para eliminar cliente
-        public bool EliminarCliente(int Id)
+        public bool EliminarCliente()
         {
             return consultasCliente.EliminarCliente(Id);
         }

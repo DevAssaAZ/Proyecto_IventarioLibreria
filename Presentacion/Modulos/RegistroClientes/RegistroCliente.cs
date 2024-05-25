@@ -1,4 +1,7 @@
 ﻿using Negocio.Clientes_cn;
+using Negocio.Usuarios_cn;
+using Presentacion.Login;
+using Presentacion.Modulos.RegistroUsuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,26 +17,17 @@ namespace Presentacion.Modulos.RegistroClientes
 {
     public partial class RegistroCliente : Form
     {
-        DataTable dt = new DataTable();
+        MetodosCliente obj_cliente = new MetodosCliente();
+        private string idCliente = null;
         public RegistroCliente()
         {
             InitializeComponent();
-            dgvInformacion.SelectionChanged += dgvInformacion_SelectionChanged;
 
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            dgvInformacion.Columns.Add("nombre", "Nombre");
-            dgvInformacion.Columns.Add("apellido", "Apellido");
-            dgvInformacion.Columns.Add("cedula", "Cedula");
-            dgvInformacion.Columns.Add("edad", "Edad");
-            dgvInformacion.Columns.Add("correo", "Correo");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -50,16 +44,69 @@ namespace Presentacion.Modulos.RegistroClientes
         {
             try
             {
+
+
+
+
+
+
+
+
+
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica que tanto la fila como la columna sean válidas
                 {
                     DataGridViewRow row = dgvInformacion.Rows[e.RowIndex];
                     if (row != null && row.Cells.Count > 0) // Verifica que la fila y las celdas no estén vacías
                     {
-                        txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Nombre"
-                        txtApellido.Text = row.Cells["Apellido"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Apellido"
-                        txtCedula.Text = row.Cells["Cedula"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Cedula"
-                        txtEdad.Text = row.Cells["Edad"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Edad"
-                        txtCorreo.Text = row.Cells["Correo"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Correo"
+
+
+                        if (dgvInformacion.Columns[e.ColumnIndex].Name == "EDITAR")
+                        {
+                            if (e.RowIndex >= 0)
+                            {
+
+                                txtNombre.Text = row.Cells["NOMBRE"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Nombre"
+                                txtApellido.Text = row.Cells["APELLIDO"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Apellido"
+                                txtCedula.Text = row.Cells["CEDULA"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Cedula"
+                                txtEdad.Text = row.Cells["EDAD"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Edad"
+                                txtCorreo.Text = row.Cells["CORREO"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Correo"
+                                idCliente = row.Cells["ID"].Value.ToString();
+                                btnNuevo.Visible = false;
+                                btnCancelar.Visible = true;
+                                dgvInformacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                                panelContenedor.Visible = true;
+                                panelPrincipal.Size = new Size(437, 463);
+                                btnRegistrarCliente.Text = "Actualizar";
+
+                            }
+
+                        }
+                        if (dgvInformacion.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                        {
+                            if (e.RowIndex >= 0)
+                            {
+                                idCliente = row.Cells["ID"].Value.ToString();
+                                obj_cliente.Id = Convert.ToInt32(idCliente);
+                                if (MessageBox.Show("Esta seguro de Eliminar a este usuario? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+
+                                    if (obj_cliente.EliminarCliente())
+                                    {
+                                        MessageBox.Show("Eliminado con éxito");
+                                        CargarDatos();
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al Eliminar el usuario");
+                                    }
+
+                                }
+
+                            }
+                        }
+
+                       
                     }
                     else
                     {
@@ -79,57 +126,136 @@ namespace Presentacion.Modulos.RegistroClientes
 
         private void RegistroCliente_Load(object sender, EventArgs e)
         {
+            
             CargarDatos();
             LimpiarCampos();
-            dgvInformacion.ClearSelection();
 
         }
 
         private void CargarDatos()
         {
-            MetodosCliente cliente_N = new MetodosCliente();
-            DataTable dt = cliente_N.MostrarClientes();
+            MetodosCliente cliente = new MetodosCliente();
+            DataTable dt = cliente.MostrarClientes();
             dgvInformacion.DataSource = dt;
             dgvInformacion.ClearSelection();
             dgvInformacion.AutoGenerateColumns = false;
+            dgvInformacion.Columns["ID"].DisplayIndex = 0;
+            dgvInformacion.Columns["NOMBRE"].DisplayIndex = 1;
+            dgvInformacion.Columns["APELLIDO"].DisplayIndex = 2;
+            dgvInformacion.Columns["CEDULA"].DisplayIndex = 3;
+            dgvInformacion.Columns["EDAD"].DisplayIndex = 4;
+            dgvInformacion.Columns["CORREO"].DisplayIndex = 5;
+            dgvInformacion.Columns["Ver"].DisplayIndex = 6;
+            dgvInformacion.Columns["Editar"].DisplayIndex = 7;
+            dgvInformacion.Columns["Eliminar"].DisplayIndex = 8;
         }
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
         {
-            try
+            MetodosCliente cliente_N = new MetodosCliente();
+
+            if (btnRegistrarCliente.Text == "Registrar")
             {
-                MetodosCliente cliente_N = new MetodosCliente();
-                cliente_N.Nombre =txtNombre.Text;
+                try
+                {
+
+                    cliente_N.Nombre = txtNombre.Text;
+                    cliente_N.Apellido = txtApellido.Text;
+                    cliente_N.Cedula = txtCedula.Text;
+                    cliente_N.Edad = Convert.ToInt32(txtEdad.Text);
+                    cliente_N.Correo = txtCorreo.Text;
+                    
+
+                   
+
+                    if (cliente_N.InsertarClientes())
+                    {
+                        MessageBox.Show("Registrado con éxito");
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                        // Limpia los TextBox después de la inserción
+                        txtNombre.Clear();
+                        txtApellido.Clear();
+                        txtCedula.Clear();
+                        txtEdad.Clear();
+                        txtCorreo.Clear();
+                        btnNuevo.Visible = true;
+                        btnCancelar.Visible = false;
+                        panelContenedor.Visible = false;
+                        panelPrincipal.Size = new Size(1020, 632);
+                        dgvInformacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar el usuario");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al comprobar usuario: " + ex.Message);
+                }
+            }
+            if (btnRegistrarCliente.Text == "Actualizar")
+            {
+                cliente_N.Id = Convert.ToInt32(idCliente);
+                cliente_N.Nombre = txtNombre.Text;
                 cliente_N.Apellido = txtApellido.Text;
                 cliente_N.Cedula = txtCedula.Text;
                 cliente_N.Edad = Convert.ToInt32(txtEdad.Text);
                 cliente_N.Correo = txtCorreo.Text;
-                cliente_N.InsertarClientes();
 
-                // Limpia los TextBox después de la inserción
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtCedula.Clear();
-                txtEdad.Clear();
-                txtCorreo.Clear();
 
-                // Vuelve a cargar los datos en el DataGridView
-                CargarDatos();
+                try
+                {
+                    // Lógica para actualizar los datos en la base de datos
+                    bool resultado = cliente_N.EditarClientes() ;
+                    if (resultado)
+                    {
+                        MessageBox.Show("Datos actualizados con éxito.");
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                        // Limpia los TextBox después de la inserción
+                        txtNombre.Clear();
+                        txtApellido.Clear();
+                        txtCedula.Clear();
+                        txtEdad.Clear();
+                        txtCorreo.Clear();
+                        btnNuevo.Visible = true;
+                        btnCancelar.Visible = false;
+                        panelContenedor.Visible = false;
+                        panelPrincipal.Size = new Size(1020, 632);
+                        dgvInformacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar los datos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                btnRegistrarCliente.Text = "Registrar";
+
+            }
+
+
+
+
+
+
+            try
+            {
+                
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al registrar cliente: " + ex.Message);
             }
-        }
-
-        private void btnEliminarCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -139,7 +265,12 @@ namespace Presentacion.Modulos.RegistroClientes
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            btnNuevo.Visible =false;
+            btnCancelar.Visible = true;
+            dgvInformacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            panelContenedor.Visible = true;
             LimpiarCampos();
+            panelPrincipal.Size = new Size(437, 463);
         }
 
         private void LimpiarCampos()
@@ -152,61 +283,14 @@ namespace Presentacion.Modulos.RegistroClientes
             dgvInformacion.ClearSelection();
         }
 
-        private void dgvInformacion_SelectionChanged(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (dgvInformacion.CurrentRow != null)
-            {
-                txtNombre.Text = dgvInformacion.CurrentRow.Cells["Nombre"].Value?.ToString() ?? string.Empty;
-                txtApellido.Text = dgvInformacion.CurrentRow.Cells["Apellido"].Value?.ToString() ?? string.Empty;
-                txtCedula.Text = dgvInformacion.CurrentRow.Cells["Cedula"].Value?.ToString() ?? string.Empty;
-                txtEdad.Text = dgvInformacion.CurrentRow.Cells["Edad"].Value?.ToString() ?? string.Empty;
-                txtCorreo.Text = dgvInformacion.CurrentRow.Cells["Correo"].Value?.ToString() ?? string.Empty;
-            }
-        }
-
-        private void panelBarra_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            btnNuevo.Visible = true;
+            btnCancelar.Visible = false;
+            panelContenedor.Visible = false;
+            panelPrincipal.Size = new Size(1020, 632);
+            dgvInformacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CargarDatos();
         }
     }
 }

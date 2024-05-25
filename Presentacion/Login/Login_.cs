@@ -11,12 +11,21 @@ using System.Runtime.InteropServices;
 using Negocio;
 using Negocio.Login_cn;
 using Presentacion.MenuPrincipal;
+using Presentacion.Modulos.RegistroUsuarios;
 
 namespace Presentacion.Login
 {
     public partial class Login_ : Form
     {
-        
+        private RegistroUsuarios _mainForm;
+
+        public Login_(RegistroUsuarios mainForm)
+        {
+            InitializeComponent();
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
+        }
+
+
         public Login_()
         {
             InitializeComponent();
@@ -177,7 +186,7 @@ namespace Presentacion.Login
         private void linkCrearCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            var crearcuenta = new CrearCuenta();
+            var crearcuenta = new CrearCuenta(_mainForm);
             crearcuenta.ShowDialog();
             
 
