@@ -19,21 +19,24 @@ namespace Presentacion.Login
 {
     public partial class CrearCuenta : Form
     {
+        private RegistroUsuarios _mainForm;
         private MetodosUsuario obj_Usuario = new MetodosUsuario();
         Principal registro = new Principal();
         private string IdUs = null;
-        public CrearCuenta()
+
+        public CrearCuenta(RegistroUsuarios mainForm)
         {
             InitializeComponent();
             btnRegistro.Text = "Registrar";
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
         }
 
-        public CrearCuenta(string id, string rol, string usuario, string contraseña, string nombreCompleto, string email)
+        public CrearCuenta(RegistroUsuarios mainForm, string id, string rol, string usuario, string contraseña, string nombreCompleto, string email)
         {
             InitializeComponent();
-
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
             // Llenar los campos con los datos pasados
-            
+
             IdUs = id;
             cmbRol.Text = rol;
             txtUsuarioCrear.Text = usuario;
@@ -78,7 +81,7 @@ namespace Presentacion.Login
         private void linkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            var volverinicio = new Login_();
+            var volverinicio = new Login_(_mainForm);
             volverinicio.ShowDialog();
             
 
@@ -91,10 +94,17 @@ namespace Presentacion.Login
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+            if (_mainForm == null)
+            {
+                MessageBox.Show("La referencia a _mainForm es nula.");
+                return;
+            }
+
+
+            RegistroUsuarios registroUsuarios = new RegistroUsuarios();
             if (btnRegistro.Text == "Registrar") {
                 try
                 {
-
 
                     obj_Usuario.Rol = cmbRol.Text;
                     obj_Usuario.NombreCompleto = txtNombreCrear.Text;
@@ -104,16 +114,13 @@ namespace Presentacion.Login
 
                     // Debug: Mostrar los valores que se están pasando
                     MessageBox.Show($"Rol: {obj_Usuario.Rol}, Nombre Completo: {obj_Usuario.NombreCompleto}, Email: {obj_Usuario.Email}, Password: {obj_Usuario.Password}, Usuario: {obj_Usuario.UserName}");
-
+                    
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
-
+                        _mainForm.MostrarUsuarios();
                         this.Close();
-                        
-
-
-
+                        _mainForm.RedimensionarPanel();
 
                     }
                     else
@@ -144,10 +151,11 @@ namespace Presentacion.Login
                     if (resultado)
                     {
                         MessageBox.Show("Datos actualizados con éxito.");
+                        registroUsuarios.btnVolver.Visible = true;
+                        registroUsuarios.btnNuevo.Visible = false;
+                        _mainForm.MostrarUsuarios();
                         this.Close();
-                        RegistroUsuarios registro = new RegistroUsuarios();
-                        registro.btnVolver.Visible = true;
-                        registro.btnNuevo.Visible = false;
+
                     }
                     else
                     {
@@ -164,6 +172,18 @@ namespace Presentacion.Login
 
             
 
+        }
+
+        private void CrearCuenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CrearCuenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainForm.btnVolver.Visible = false;
+            _mainForm.btnNuevo.Visible = true;
+            _mainForm.RedimensionarPanel();
         }
     }
 }

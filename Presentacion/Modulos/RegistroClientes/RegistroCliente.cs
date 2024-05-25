@@ -226,5 +226,8 @@ namespace Presentacion.Modulos.RegistroClientes
                 txtCorreo.Text = dgvInformacion.CurrentRow.Cells["Correo"].Value?.ToString() ?? string.Empty;
             }
         }
+
+
+
     }
 }

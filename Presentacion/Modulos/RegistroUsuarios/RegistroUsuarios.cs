@@ -80,7 +80,12 @@ namespace Presentacion.Modulos.RegistroUsuarios
         //Mostrar usuarios
         public void MostrarUsuarios()
         {
-            dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
+            MetodosUsuario usuario = new MetodosUsuario();
+            DataTable dt = usuario.MostrarUsuarios();
+            dataUsuarios.DataSource = dt;
+            dataUsuarios.ClearSelection();
+            dataUsuarios.AutoGenerateColumns = false;
+            //dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
             dataUsuarios.Columns["ID"].DisplayIndex = 0;
             dataUsuarios.Columns["USUARIO"].DisplayIndex = 1;
             dataUsuarios.Columns["CONTRASEÑA"].DisplayIndex = 2;
@@ -106,10 +111,9 @@ namespace Presentacion.Modulos.RegistroUsuarios
         {
             btnVolver.Visible = true;
             btnNuevo.Visible = false;
-            
             panelPrincipal.Size = new Size(482, 539);
             ShowMenu(panelContenedor);
-            CrearCuenta form = new CrearCuenta();
+            CrearCuenta form = new CrearCuenta(this);
             form.BackColor = Color.FromArgb(46, 68, 96);
             form.linkInicio.Visible = false;
             AddOwnedForm(form);
@@ -118,13 +122,22 @@ namespace Presentacion.Modulos.RegistroUsuarios
             this.Controls.Add(form);  // Corrected line
             this.Tag = form;
             form.BringToFront();
-            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            form.FormClosed += CrearCuenta_FormClosed;
             AbrirFormularioEnPanel(form);
+
+
+
+
 
         }
 
 
-
+        private void CrearCuenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btnVolver.Visible = false;
+            btnNuevo.Visible = true;
+            panelPrincipal.Size = new Size(482, 539);
+        }
 
 
 
@@ -170,7 +183,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
                     btnNuevo.Visible = false;
                     panelPrincipal.Size = new Size(482, 539);
                     ShowMenu(panelContenedor);
-                    CrearCuenta form = new CrearCuenta(idUsuario, rol, usuario, contraseña, nombreCompleto, email);
+                    CrearCuenta form = new CrearCuenta(this,idUsuario, rol, usuario, contraseña, nombreCompleto, email);
                     form.BackColor = Color.FromArgb(46, 68, 96);
                     form.linkInicio.Visible = false;
                     form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
@@ -191,7 +204,7 @@ namespace Presentacion.Modulos.RegistroUsuarios
                         if (obj_usuarios.EliminarUsuario())
                         {
                             MessageBox.Show("Eliminado con éxito");
-                            RefrescarTabla();
+                            MostrarUsuarios();
 
                         }
                         else
@@ -219,7 +232,13 @@ namespace Presentacion.Modulos.RegistroUsuarios
             btnVolver.Visible = false;
             panelContenedor.Visible = false;
             panelPrincipal.Size = new Size(1020, 632);
-            RefrescarTabla();
+            MostrarUsuarios();
+
+        }
+
+        public void RedimensionarPanel()
+        {
+            panelPrincipal.Size = new Size(1020, 632);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

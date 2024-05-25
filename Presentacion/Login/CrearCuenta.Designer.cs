@@ -243,6 +243,8 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearCuenta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearCuenta_FormClosed);
+            this.Load += new System.EventHandler(this.CrearCuenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCrearCuenta.ResumeLayout(false);
             this.panelCrearCuenta.PerformLayout();
