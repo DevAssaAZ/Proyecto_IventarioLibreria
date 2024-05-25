@@ -13,6 +13,7 @@ using Presentacion.MenuPrincipal.Logo;
 using Soporte.Cache;
 using Presentacion.MenuPrincipal.PerfilUsuario;
 using Presentacion.Modulos.RegistroClientes;
+using Presentacion.Modulos.RegistroLibros;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -198,7 +199,9 @@ namespace Presentacion.MenuPrincipal
         private void btnLibros_Click(object sender, EventArgs e)
         {
 
-
+            RegistroLibro form = new RegistroLibro();
+            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            AbrirFormularioEnPanel(form);
 
 
             HideMenu();
