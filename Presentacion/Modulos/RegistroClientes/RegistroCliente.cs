@@ -124,75 +124,12 @@ namespace Presentacion.Modulos.RegistroClientes
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvInformacion.CurrentRow != null)
-                {
-                    MetodosCliente cliente = new MetodosCliente();
-                    cliente.Id = Convert.ToInt32(dgvInformacion.CurrentRow.Cells["Id"].Value);
-                    MetodosCliente cliente_N = new MetodosCliente();
-                    cliente_N.EliminarCliente(cliente.Id);
 
-                    // Vuelve a cargar los datos en el DataGridView
-                    CargarDatos();
-
-                    // Limpia los TextBox después de la eliminación
-                    txtNombre.Clear();
-                    txtApellido.Clear();
-                    txtCedula.Clear();
-                    txtEdad.Clear();
-                    txtCorreo.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor seleccione un cliente para eliminar.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar cliente: " + ex.Message);
-            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Verificar si se ha seleccionado una fila en el DataGridView
-                if (dgvInformacion.CurrentRow != null)
-                {
-                    // Obtener el ID del cliente seleccionado
-                    int id = Convert.ToInt32(dgvInformacion.CurrentRow.Cells["Id"].Value);
 
-                    // Obtener los datos de los TextBox
-                    string nombre = txtNombre.Text;
-                    string apellido = txtApellido.Text;
-                    string cedula = txtCedula.Text;
-                    int edad = int.Parse(txtEdad.Text);
-                    string correo = txtCorreo.Text;
-
-                    // Actualizar el cliente en la base de datos
-                    MetodosCliente cliente_N = new MetodosCliente();
-                    cliente_N.ActualizarCliente();
-
-                    // Actualizar los datos en el DataGridView
-                    dgvInformacion.CurrentRow.Cells["Nombre"].Value = nombre;
-                    dgvInformacion.CurrentRow.Cells["Apellido"].Value = apellido;
-                    dgvInformacion.CurrentRow.Cells["Cedula"].Value = cedula;
-                    dgvInformacion.CurrentRow.Cells["Edad"].Value = edad;
-                    dgvInformacion.CurrentRow.Cells["Correo"].Value = correo;
-
-                    MessageBox.Show("Cambios guardados correctamente.");
-                }
-                else
-                {
-                    MessageBox.Show("Por favor seleccione una fila para guardar los cambios.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
-            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -31,9 +31,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBarra = new System.Windows.Forms.Panel();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminarCliente = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnRegistrarCliente = new System.Windows.Forms.Button();
@@ -48,9 +46,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBarra.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,8 +84,6 @@
             // 
             this.panelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.panelBarra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelBarra.Controls.Add(this.btnGuardar);
-            this.panelBarra.Controls.Add(this.btnEliminarCliente);
             this.panelBarra.Controls.Add(this.btnCerrar);
             this.panelBarra.Controls.Add(this.label1);
             this.panelBarra.Dock = System.Windows.Forms.DockStyle.Top;
@@ -96,49 +93,29 @@
             this.panelBarra.TabIndex = 12;
             this.panelBarra.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarra_Paint);
             // 
-            // btnGuardar
+            // panelPrincipal
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(495, 7);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(128, 23);
-            this.btnGuardar.TabIndex = 12;
-            this.btnGuardar.Text = "Guardar cambios";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminarCliente
-            // 
-            this.btnEliminarCliente.Location = new System.Drawing.Point(686, 8);
-            this.btnEliminarCliente.Name = "btnEliminarCliente";
-            this.btnEliminarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarCliente.TabIndex = 12;
-            this.btnEliminarCliente.Text = "Eliminar";
-            this.btnEliminarCliente.UseVisualStyleBackColor = true;
-            this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnNuevo);
-            this.panel1.Controls.Add(this.btnRegistrarCliente);
-            this.panel1.Controls.Add(this.dgvInformacion);
-            this.panel1.Controls.Add(this.txtCorreo);
-            this.panel1.Controls.Add(this.txtEdad);
-            this.panel1.Controls.Add(this.txtCedula);
-            this.panel1.Controls.Add(this.txtApellido);
-            this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 36);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 346);
-            this.panel1.TabIndex = 13;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.panelPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPrincipal.Controls.Add(this.label7);
+            this.panelPrincipal.Controls.Add(this.btnNuevo);
+            this.panelPrincipal.Controls.Add(this.btnRegistrarCliente);
+            this.panelPrincipal.Controls.Add(this.dgvInformacion);
+            this.panelPrincipal.Controls.Add(this.txtCorreo);
+            this.panelPrincipal.Controls.Add(this.txtEdad);
+            this.panelPrincipal.Controls.Add(this.txtCedula);
+            this.panelPrincipal.Controls.Add(this.txtApellido);
+            this.panelPrincipal.Controls.Add(this.txtNombre);
+            this.panelPrincipal.Controls.Add(this.label6);
+            this.panelPrincipal.Controls.Add(this.label5);
+            this.panelPrincipal.Controls.Add(this.label4);
+            this.panelPrincipal.Controls.Add(this.label3);
+            this.panelPrincipal.Controls.Add(this.label2);
+            this.panelPrincipal.Location = new System.Drawing.Point(309, 36);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(645, 346);
+            this.panelPrincipal.TabIndex = 13;
+            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label7
             // 
@@ -284,12 +261,20 @@
             this.label2.Text = "Nombre:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Location = new System.Drawing.Point(140, 140);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(200, 100);
+            this.panelContenedor.TabIndex = 14;
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 381);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelBarra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroCliente";
@@ -298,8 +283,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBarra.ResumeLayout(false);
             this.panelBarra.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelPrincipal.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacion)).EndInit();
             this.ResumeLayout(false);
 
@@ -310,7 +295,7 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelBarra;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -323,9 +308,8 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.DataGridView dgvInformacion;
         private System.Windows.Forms.Button btnRegistrarCliente;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnEliminarCliente;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }
