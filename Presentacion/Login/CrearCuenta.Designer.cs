@@ -50,6 +50,8 @@
             // cmbRol
             // 
             this.cmbRol.BackColor = System.Drawing.Color.White;
+            this.cmbRol.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbRol.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.cmbRol.ForeColor = System.Drawing.Color.Black;
@@ -61,7 +63,6 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(192, 29);
             this.cmbRol.TabIndex = 0;
-            this.cmbRol.Text = "ROL";
             // 
             // txtUsuarioCrear
             // 
