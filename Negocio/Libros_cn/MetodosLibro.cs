@@ -32,9 +32,9 @@ namespace Negocio.Libros_cn
         }
 
         // Método para eliminar libro
-        public bool EliminarLibro(int id)
+        public bool EliminarLibro()
         {
-            return consultasLibro.EliminarLibro(id);
+            return consultasLibro.EliminarLibro(Id);
         }
 
         // Método para actualizar libro

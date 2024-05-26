@@ -186,10 +186,20 @@ namespace Presentacion.Login
         private void linkCrearCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
+            this.Hide();
+
+            // Asegúrate de que _mainForm esté inicializado.
+            if (_mainForm == null)
+            {
+                _mainForm = new RegistroUsuarios();
+            }
+
             var crearcuenta = new CrearCuenta(_mainForm);
             crearcuenta.ShowDialog();
-            
-
         }
+        
+
+
     }
+    
 }

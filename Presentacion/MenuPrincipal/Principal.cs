@@ -200,6 +200,7 @@ namespace Presentacion.MenuPrincipal
         {
 
             RegistroLibro form = new RegistroLibro();
+            form.panelPrincipal.Size = new Size(873, 539);
             form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
             AbrirFormularioEnPanel(form);
 
