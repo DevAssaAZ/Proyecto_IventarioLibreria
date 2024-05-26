@@ -18,7 +18,7 @@ namespace Datos.ConexionesDeConsultas
         // Método para mostrar clientes
         public DataTable MostrarClientes()
         {
-            string query = "SELECT ID, NOMBRE, APELLIDO, CEDULA, EDAD, CORREO FROM TB_CLIENTE";
+            string query = "SELECT ID, NOMBRE, APELLIDO, CEDULA, EDAD, CORREO FROM Clientes";
             try
             {
                 command.Connection = AbrirConexion();
@@ -100,6 +100,27 @@ namespace Datos.ConexionesDeConsultas
                     int resultado = command.ExecuteNonQuery();
                     return resultado > 0;
                 }
+            }
+        }
+
+        public string ObtenerCedulaPorId(int id)
+        {
+            string query = "SELECT Cedula FROM Clientes WHERE ID = @ID";
+            try
+            {
+                using (SqlConnection connection = AbrirConexion())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+                        string cedula = (string)command.ExecuteScalar();
+                        return cedula;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al obtener la cédula del cliente: " + ex.Message);
             }
         }
     }

@@ -116,6 +116,12 @@
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\RegistroVentas\RegistroVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroVentas\RegistroVentas.Designer.cs">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login\Bienvenida.resx">
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroVentas\RegistroVentas.resx">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -19,6 +19,18 @@ namespace Negocio.Libros_cn
             return consultasLibro.MostrarLibros();
         }
 
+        // Método para obtener libro por ID
+        public DataTable ObtenerLibroPorId(int id)
+        {
+            return consultasLibro.ObtenerLibroPorId(id);
+        }
+
+        // Método para disminuir la cantidad de libros
+        public bool DisminuirCantidadLibro(int id, int cantidad)
+        {
+            return consultasLibro.DisminuirCantidadLibro(id, cantidad);
+        }
+
         // Método para insertar libro
         public bool InsertarLibros()
         {
@@ -49,5 +61,7 @@ namespace Negocio.Libros_cn
                 throw new Exception("Error al actualizar libro: " + ex.Message);
             }
         }
+
+
     }
 }

@@ -21,6 +21,10 @@ namespace Negocio.Clientes_cn
             return consultasCliente.MostrarClientes();
         }
 
+        public string ObtenerCedulaPorId(int id)
+        {
+            return consultasCliente.ObtenerCedulaPorId(id);
+        }
 
         //Metodo para insertar Cliente
         public bool InsertarClientes()
@@ -54,5 +58,6 @@ namespace Negocio.Clientes_cn
                 throw new Exception("Error al actualizar cliente: " + ex.Message);
             }
         }
+
     }
 }

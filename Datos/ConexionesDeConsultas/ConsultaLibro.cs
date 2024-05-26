@@ -114,5 +114,52 @@ namespace Datos.ConexionesDeConsultas
                 throw new Exception("Error al eliminar libro: " + ex.Message);
             }
         }
+
+        public DataTable ObtenerLibroPorId(int id)
+        {
+            string query = "SELECT ID, TITULO, AUTOR, ANIO, CANTIDAD, PRECIO FROM TB_LIBROS WHERE ID = @ID";
+            try
+            {
+                using (SqlConnection connection = AbrirConexion())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(reader);
+                            return dt;
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al obtener datos del libro: " + ex.Message);
+            }
+        }
+
+        public bool DisminuirCantidadLibro(int id, int cantidad)
+        {
+            string query = "UPDATE TB_LIBROS SET CANTIDAD = CANTIDAD - @Cantidad WHERE ID = @ID AND CANTIDAD >= @Cantidad";
+            try
+            {
+                using (SqlConnection connection = AbrirConexion())
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+                        command.Parameters.AddWithValue("@Cantidad", cantidad);
+                        int result = command.ExecuteNonQuery();
+                        return result > 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al actualizar la cantidad del libro: " + ex.Message);
+            }
+        }
     }
 }
