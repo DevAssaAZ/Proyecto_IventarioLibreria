@@ -119,7 +119,6 @@ namespace Presentacion.Login
                     {
                         MessageBox.Show("Registrado con éxito");
                         _mainForm.MostrarUsuarios();
-                        this.Close();
                         _mainForm.RedimensionarPanel();
 
                     }

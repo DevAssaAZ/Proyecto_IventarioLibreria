@@ -1,4 +1,5 @@
-﻿using Negocio.Libros_cn;
+﻿using Negocio.Clientes_cn;
+using Negocio.Libros_cn;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace Presentacion.Modulos.RegistroLibros
 {
     public partial class RegistroLibro : Form
     {
+        MetodosLibros obj_libro = new MetodosLibros();
+        private string idLibro = null;
+
         public RegistroLibro()
         {
             InitializeComponent();
-            dgvLibro.SelectionChanged += dgvLibro_SelectionChanged;
         }
 
 
@@ -27,29 +30,105 @@ namespace Presentacion.Modulos.RegistroLibros
             dgvLibro.DataSource = dt;
             dgvLibro.ClearSelection();
             dgvLibro.AutoGenerateColumns = false;
+            dgvLibro.Columns["ID"].DisplayIndex = 0;
+            dgvLibro.Columns["TITULO"].DisplayIndex = 1;
+            dgvLibro.Columns["AUTOR"].DisplayIndex = 2;
+            dgvLibro.Columns["ANIO"].DisplayIndex = 3;
+            dgvLibro.Columns["CANTIDAD"].DisplayIndex = 4;
+            dgvLibro.Columns["PRECIO"].DisplayIndex = 5;
+            dgvLibro.Columns["Ver"].DisplayIndex = 6;
+            dgvLibro.Columns["Editar"].DisplayIndex = 7;
+            dgvLibro.Columns["Eliminar"].DisplayIndex = 8;
         }
 
         private void btnRegistrarLibro_Click(object sender, EventArgs e)
         {
-            try
+
+            MetodosLibros libro_N = new MetodosLibros();
+
+            if (btnRegistrarLibro.Text == "Registrar")
             {
-                MetodosLibros libro_N = new MetodosLibros();
-                libro_N.Titulo = txtTitulo.Text;
-                libro_N.Autor = txtAutor.Text;
-                libro_N.Anio = Convert.ToInt32(txtAnio.Text);
-                libro_N.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                libro_N.Precio = Convert.ToDecimal(txtPrecio.Text);
-                libro_N.InsertarLibros();
+                try
+                {
 
-                // Limpia los TextBox después de la inserción
-                LimpiarCampos();
+                    
+                    libro_N.Titulo = txtTitulo.Text;
+                    libro_N.Autor = txtAutor.Text;
+                    libro_N.Anio = Convert.ToInt32(txtAnio.Text);
+                    libro_N.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                    libro_N.Precio = Convert.ToDecimal(txtPrecio.Text);
 
-                // Vuelve a cargar los datos en el DataGridView
-                CargarDatos();
+
+
+
+                    if (libro_N.InsertarLibros())
+                    {
+                        MessageBox.Show("Registrado con éxito");
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                        // Limpia los TextBox después de la inserción
+                        LimpiarCampos();
+                        btNuevo.Visible = true;
+                        btnCancelar.Visible = false;
+                        panelContenedor.Visible = false;
+                        panelPrincipal.Size = new Size(1020, 632);
+                        dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar el libro");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al comprobar Libro: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            if (btnRegistrarLibro.Text == "Actualizar")
             {
-                MessageBox.Show("Error al registrar libro: " + ex.Message);
+                
+
+
+                try
+
+                {
+                    libro_N.Id = Convert.ToInt32(idLibro);
+                    libro_N.Titulo = txtTitulo.Text;
+                    libro_N.Autor = txtAutor.Text;
+                    libro_N.Anio = Convert.ToInt32(txtAnio.Text);
+                    libro_N.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                    libro_N.Precio = Convert.ToDecimal(txtPrecio.Text);
+
+
+                    // Lógica para actualizar los datos en la base de datos
+                    bool resultado = libro_N.EditarLibros();
+                    if (resultado)
+                    {
+                        MessageBox.Show("Datos actualizados con éxito.");
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                        // Limpia los TextBox después de la inserción
+                        LimpiarCampos();
+                        btNuevo.Visible = true;
+                        btnCancelar.Visible = false;
+                        panelContenedor.Visible = false;
+                        panelPrincipal.Size = new Size(1020, 632);
+                        dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Error al actualizar el libro.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                btnRegistrarLibro.Text = "Registrar";
+
             }
 
         }
@@ -60,37 +139,105 @@ namespace Presentacion.Modulos.RegistroLibros
             txtAutor.Clear();
             txtAnio.Clear();
             txtCantidad.Clear();
-            txtPrecio.Clear();
-            dgvLibro.ClearSelection();
+            txtPrecio.Clear();;
         }
 
-        private void dgvLibro_SelectionChanged(object sender, EventArgs e)
+
+       
+
+        private void RegistroLibro_Load_1(object sender, EventArgs e)
         {
-            if (dgvLibro.CurrentRow != null)
-            {
-                txtTitulo.Text = dgvLibro.CurrentRow.Cells["Titulo"].Value?.ToString() ?? string.Empty;
-                txtAutor.Text = dgvLibro.CurrentRow.Cells["Autor"].Value?.ToString() ?? string.Empty;
-                txtAnio.Text = dgvLibro.CurrentRow.Cells["Anio"].Value?.ToString() ?? string.Empty;
-                txtCantidad.Text = dgvLibro.CurrentRow.Cells["Cantidad"].Value?.ToString() ?? string.Empty;
-                txtPrecio.Text = dgvLibro.CurrentRow.Cells["Precio"].Value?.ToString() ?? string.Empty;
-            }
+            CargarDatos();
+            LimpiarCampos();
+        }
+
+        private void btNuevo_Click(object sender, EventArgs e)
+        {
+            btNuevo.Visible = false;
+            btnCancelar.Visible = true;
+            dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            panelContenedor.Visible = true;
+            LimpiarCampos();
+            panelPrincipal.Size = new Size(517, 478);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 
-        private void dgvLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvLibro_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+
+
+
+
+
+
+
+
+
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica que tanto la fila como la columna sean válidas
                 {
                     DataGridViewRow row = dgvLibro.Rows[e.RowIndex];
                     if (row != null && row.Cells.Count > 0) // Verifica que la fila y las celdas no estén vacías
                     {
-                        txtTitulo.Text = row.Cells["Titulo"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Titulo"
-                        txtAutor.Text = row.Cells["Autor"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Autor"
-                        txtAnio.Text = row.Cells["Anio"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Anio"
-                        txtCantidad.Text = row.Cells["Cantidad"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Cantidad"
-                        txtPrecio.Text = row.Cells["Precio"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Precio"
+
+
+                        if (dgvLibro.Columns[e.ColumnIndex].Name == "EDITAR")
+                        {
+                            if (e.RowIndex >= 0)
+                            {
+
+                                txtTitulo.Text = row.Cells["TITULO"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Titulo"
+                                txtAutor.Text = row.Cells["AUTOR"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Autor"
+                                txtAnio.Text = row.Cells["ANIO"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Anio"
+                                txtCantidad.Text = row.Cells["CANTIDAD"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Cantidad"
+                                txtPrecio.Text = row.Cells["PRECIO"].Value?.ToString() ?? string.Empty; // Accede al valor de la celda "Precio"
+                                idLibro = row.Cells["ID"].Value.ToString();
+                                btNuevo.Visible = false;
+                                btnCancelar.Visible = true;
+                                dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                                panelContenedor.Visible = true;
+                                panelPrincipal.Size = new Size(437, 463);
+                                btnRegistrarLibro.Text = "Actualizar";
+
+                            }
+
+                        }
+                        if (dgvLibro.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                        {
+                            if (e.RowIndex >= 0)
+                            {
+                                idLibro = row.Cells["ID"].Value.ToString();
+                                obj_libro.Id = Convert.ToInt32(idLibro);
+                                if (MessageBox.Show("Esta seguro de Eliminar Este Libro? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+
+                                    if (obj_libro.EliminarLibro())
+                                    {
+                                        MessageBox.Show("Libro eliminado con éxito");
+                                        CargarDatos();
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al Eliminar el Libro");
+                                    }
+
+                                }
+
+                            }
+                        }
+
+
                     }
                     else
                     {
@@ -106,110 +253,16 @@ namespace Presentacion.Modulos.RegistroLibros
             {
                 MessageBox.Show("Error al seleccionar la fila: " + ex.Message);
             }
-
         }
 
-        private void RegistroLibro_Load_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
+            btNuevo.Visible = true;
+            btnCancelar.Visible = false;
+            panelContenedor.Visible = false;
+            panelPrincipal.Size = new Size(1020, 632);
+            dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CargarDatos();
-            LimpiarCampos();
-            dgvLibro.ClearSelection();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvLibro.CurrentRow != null)
-                {
-                    MetodosLibros libro_N = new MetodosLibros();
-                    int id = Convert.ToInt32(dgvLibro.CurrentRow.Cells["ID"].Value);
-                    libro_N.EliminarLibro(id);
-
-                    // Vuelve a cargar los datos en el DataGridView
-                    CargarDatos();
-
-                    // Limpia los TextBox después de la eliminación
-                    LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor seleccione un libro para eliminar.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar libro: " + ex.Message);
-            }
-
-        }
-
-        private void btnGuarda_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Verificar si se ha seleccionado una fila en el DataGridView
-                if (dgvLibro.CurrentRow != null)
-                {
-                    // Obtener el ID del libro seleccionado
-                    int id = Convert.ToInt32(dgvLibro.CurrentRow.Cells["ID"].Value);
-
-                    // Obtener los datos de los TextBox
-                    MetodosLibros libro_N = new MetodosLibros
-                    {
-                        Id = id,
-                        Titulo = txtTitulo.Text,
-                        Autor = txtAutor.Text,
-                        Anio = Convert.ToInt32(txtAnio.Text),
-                        Cantidad = Convert.ToInt32(txtCantidad.Text),
-                        Precio = Convert.ToDecimal(txtPrecio.Text)
-                    };
-
-                    // Actualizar el libro en la base de datos
-                    libro_N.ActualizarLibro();
-
-                    // Actualizar los datos en el DataGridView
-                    dgvLibro.CurrentRow.Cells["Titulo"].Value = libro_N.Titulo;
-                    dgvLibro.CurrentRow.Cells["Autor"].Value = libro_N.Autor;
-                    dgvLibro.CurrentRow.Cells["Anio"].Value = libro_N.Anio;
-                    dgvLibro.CurrentRow.Cells["Cantidad"].Value = libro_N.Cantidad;
-                    dgvLibro.CurrentRow.Cells["Precio"].Value = libro_N.Precio;
-
-                    MessageBox.Show("Cambios guardados correctamente.");
-                }
-                else
-                {
-                    MessageBox.Show("Por favor seleccione una fila para guardar los cambios.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
-            }
-
-        }
-
-        private void btNuevo_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            if (dgvLibro.Columns.Count == 0)
-            {
-                dgvLibro.Columns.Add("ID", "ID");
-                dgvLibro.Columns.Add("Titulo", "Título");
-                dgvLibro.Columns.Add("Autor", "Autor");
-                dgvLibro.Columns.Add("Anio", "Año");
-                dgvLibro.Columns.Add("Cantidad", "Cantidad");
-                dgvLibro.Columns.Add("Precio", "Precio");
-            }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -199,16 +199,17 @@ namespace Presentacion.Modulos.RegistroClientes
             }
             if (btnRegistrarCliente.Text == "Actualizar")
             {
-                cliente_N.Id = Convert.ToInt32(idCliente);
-                cliente_N.Nombre = txtNombre.Text;
-                cliente_N.Apellido = txtApellido.Text;
-                cliente_N.Cedula = txtCedula.Text;
-                cliente_N.Edad = Convert.ToInt32(txtEdad.Text);
-                cliente_N.Correo = txtCorreo.Text;
-
-
+               
                 try
                 {
+                    cliente_N.Id = Convert.ToInt32(idCliente);
+                    cliente_N.Nombre = txtNombre.Text;
+                    cliente_N.Apellido = txtApellido.Text;
+                    cliente_N.Cedula = txtCedula.Text;
+                    cliente_N.Edad = Convert.ToInt32(txtEdad.Text);
+                    cliente_N.Correo = txtCorreo.Text;
+
+
                     // Lógica para actualizar los datos en la base de datos
                     bool resultado = cliente_N.EditarClientes() ;
                     if (resultado)
@@ -242,20 +243,6 @@ namespace Presentacion.Modulos.RegistroClientes
 
             }
 
-
-
-
-
-
-            try
-            {
-                
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al registrar cliente: " + ex.Message);
-            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

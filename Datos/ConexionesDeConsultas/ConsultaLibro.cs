@@ -18,7 +18,7 @@ namespace Datos.ConexionesDeConsultas
         // Método para mostrar libros
         public DataTable MostrarLibros()
         {
-            string query = "SELECT ID, TITULO, AUTOR, ANIO, CANTIDAD, PRECIO FROM TB_LIBROS";
+            string query = "SELECT * FROM TB_LIBROS";
             try
             {
                 command.Connection = AbrirConexion();
