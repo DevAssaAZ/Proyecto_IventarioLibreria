@@ -178,12 +178,6 @@ namespace Presentacion.Modulos.RegistroLibros
 
 
 
-
-
-
-
-
-
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica que tanto la fila como la columna sean válidas
                 {
                     DataGridViewRow row = dgvLibro.Rows[e.RowIndex];

@@ -110,6 +110,12 @@
     <Compile Include="Modulos\RegistroLibros\RegistroLibros.Designer.cs">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\RegistroLibros\Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroLibros\Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroLibros\RegistroLibros.resx">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroLibros\Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
