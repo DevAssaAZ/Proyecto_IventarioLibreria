@@ -98,6 +98,18 @@
     <Compile Include="MenuPrincipal\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\RegistroClientes\RegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroClientes\RegistroCliente.Designer.cs">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RegistroLibros\RegistroLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroLibros\RegistroLibros.Designer.cs">
+      <DependentUpon>RegistroLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroClientes\RegistroCliente.resx">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroLibros\RegistroLibros.resx">
+      <DependentUpon>RegistroLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
@@ -195,8 +213,6 @@
     <Content Include="Imagenes\Perfil\User.png" />
     <Content Include="Imagenes\Perfil\User2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modulos\RegistroClientes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

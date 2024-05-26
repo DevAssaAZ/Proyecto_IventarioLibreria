@@ -1,6 +1,7 @@
 ﻿using Negocio.EditarPerfil;
 using Negocio.Usuarios_cn;
 using Presentacion.MenuPrincipal;
+using Presentacion.MenuPrincipal.Logo;
 using Presentacion.Modulos.RegistroUsuarios;
 using Soporte.Cache;
 using System;
@@ -18,20 +19,24 @@ namespace Presentacion.Login
 {
     public partial class CrearCuenta : Form
     {
+        private RegistroUsuarios _mainForm;
         private MetodosUsuario obj_Usuario = new MetodosUsuario();
+        Principal registro = new Principal();
         private string IdUs = null;
-        public CrearCuenta()
+
+        public CrearCuenta(RegistroUsuarios mainForm)
         {
             InitializeComponent();
             btnRegistro.Text = "Registrar";
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
         }
 
-        public CrearCuenta(string id, string rol, string usuario, string contraseña, string nombreCompleto, string email)
+        public CrearCuenta(RegistroUsuarios mainForm, string id, string rol, string usuario, string contraseña, string nombreCompleto, string email)
         {
             InitializeComponent();
-
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
             // Llenar los campos con los datos pasados
-            
+
             IdUs = id;
             cmbRol.Text = rol;
             txtUsuarioCrear.Text = usuario;
@@ -43,13 +48,30 @@ namespace Presentacion.Login
 
         }
 
-        
 
 
 
+        private void AbrirFormularioEnPanel(object FormHijo)
+        {
+            if (registro.panelContenedor.Controls.Count > 0)
+                registro.panelContenedor.Controls.RemoveAt(0);
+            Form formularioHijo = FormHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            registro.panelContenedor.Controls.Add(formularioHijo);
+            registro.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
 
 
-
+        private void MostrarLogo()
+        {
+            AbrirFormularioEnPanel(new MarcaLogo());
+        }
+        private void MostrarLogoAlCerrarFormulario(object sender, FormClosedEventArgs e)
+        {
+            MostrarLogo();
+        }
 
 
 
@@ -59,7 +81,7 @@ namespace Presentacion.Login
         private void linkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            var volverinicio = new Login_();
+            var volverinicio = new Login_(_mainForm);
             volverinicio.ShowDialog();
             
 
@@ -72,10 +94,17 @@ namespace Presentacion.Login
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+            if (_mainForm == null)
+            {
+                MessageBox.Show("La referencia a _mainForm es nula.");
+                return;
+            }
+
+
+            RegistroUsuarios registroUsuarios = new RegistroUsuarios();
             if (btnRegistro.Text == "Registrar") {
                 try
                 {
-
 
                     obj_Usuario.Rol = cmbRol.Text;
                     obj_Usuario.NombreCompleto = txtNombreCrear.Text;
@@ -85,18 +114,12 @@ namespace Presentacion.Login
 
                     // Debug: Mostrar los valores que se están pasando
                     MessageBox.Show($"Rol: {obj_Usuario.Rol}, Nombre Completo: {obj_Usuario.NombreCompleto}, Email: {obj_Usuario.Email}, Password: {obj_Usuario.Password}, Usuario: {obj_Usuario.UserName}");
-
+                    
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
-                        
-                        RegistroUsuarios form = new RegistroUsuarios();
-                        //AddOwnedForm(form);
-                        form.MostrarUsuarios();
-                        form.panelContenedor.Visible = false;
-                        form.panelPrincipal.Size = new Size(979, 539);
-                        
-
+                        _mainForm.MostrarUsuarios();
+                        _mainForm.RedimensionarPanel();
 
                     }
                     else
@@ -127,11 +150,11 @@ namespace Presentacion.Login
                     if (resultado)
                     {
                         MessageBox.Show("Datos actualizados con éxito.");
+                        registroUsuarios.btnVolver.Visible = true;
+                        registroUsuarios.btnNuevo.Visible = false;
+                        _mainForm.MostrarUsuarios();
                         this.Close();
-                        RegistroUsuarios form = new RegistroUsuarios();
-                        form.MostrarUsuarios();
-                        form.panelContenedor.Visible = false;
-                        form.panelPrincipal.Size = new Size(979, 539);
+
                     }
                     else
                     {
@@ -148,6 +171,18 @@ namespace Presentacion.Login
 
             
 
+        }
+
+        private void CrearCuenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CrearCuenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainForm.btnVolver.Visible = false;
+            _mainForm.btnNuevo.Visible = true;
+            _mainForm.RedimensionarPanel();
         }
     }
 }

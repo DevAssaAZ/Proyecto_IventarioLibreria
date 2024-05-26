@@ -28,7 +28,9 @@ namespace Presentacion.Modulos.RegistroUsuarios
         public RegistroUsuarios()
         {
             InitializeComponent();
+
         }
+
 
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -78,7 +80,12 @@ namespace Presentacion.Modulos.RegistroUsuarios
         //Mostrar usuarios
         public void MostrarUsuarios()
         {
-            dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
+            MetodosUsuario usuario = new MetodosUsuario();
+            DataTable dt = usuario.MostrarUsuarios();
+            dataUsuarios.DataSource = dt;
+            dataUsuarios.ClearSelection();
+            dataUsuarios.AutoGenerateColumns = false;
+            //dataUsuarios.DataSource = obj_usuarios.MostrarUsuarios();
             dataUsuarios.Columns["ID"].DisplayIndex = 0;
             dataUsuarios.Columns["USUARIO"].DisplayIndex = 1;
             dataUsuarios.Columns["CONTRASEÑA"].DisplayIndex = 2;
@@ -90,7 +97,12 @@ namespace Presentacion.Modulos.RegistroUsuarios
             dataUsuarios.Columns["Eliminar"].DisplayIndex = 8;
         }
 
+        private void RefrescarTabla()
+        {
+            //
 
+
+        }
 
 
 
@@ -99,10 +111,9 @@ namespace Presentacion.Modulos.RegistroUsuarios
         {
             btnVolver.Visible = true;
             btnNuevo.Visible = false;
-            
             panelPrincipal.Size = new Size(482, 539);
             ShowMenu(panelContenedor);
-            CrearCuenta form = new CrearCuenta();
+            CrearCuenta form = new CrearCuenta(this);
             form.BackColor = Color.FromArgb(46, 68, 96);
             form.linkInicio.Visible = false;
             AddOwnedForm(form);
@@ -111,13 +122,22 @@ namespace Presentacion.Modulos.RegistroUsuarios
             this.Controls.Add(form);  // Corrected line
             this.Tag = form;
             form.BringToFront();
-            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            form.FormClosed += CrearCuenta_FormClosed;
             AbrirFormularioEnPanel(form);
+
+
+
+
 
         }
 
 
-
+        private void CrearCuenta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btnVolver.Visible = false;
+            btnNuevo.Visible = true;
+            panelPrincipal.Size = new Size(482, 539);
+        }
 
 
 
@@ -159,15 +179,46 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
 
                     // Abrir la ventana de edición y pasar los datos
+                    btnVolver.Visible = true;
+                    btnNuevo.Visible = false;
                     panelPrincipal.Size = new Size(482, 539);
                     ShowMenu(panelContenedor);
-                    CrearCuenta form = new CrearCuenta(idUsuario, rol, usuario, contraseña, nombreCompleto, email);
+                    CrearCuenta form = new CrearCuenta(this,idUsuario, rol, usuario, contraseña, nombreCompleto, email);
                     form.BackColor = Color.FromArgb(46, 68, 96);
                     form.linkInicio.Visible = false;
                     form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
                     AbrirFormularioEnPanel(form);
                 }
+               
             }
+            if (dataUsuarios.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dataUsuarios.Rows[e.RowIndex];
+                    idUsuario = row.Cells["ID"].Value.ToString();
+                    obj_usuarios.Id = Convert.ToInt32(idUsuario);
+                    if (MessageBox.Show("Esta seguro de Eliminar a este usuario? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                        if (obj_usuarios.EliminarUsuario())
+                        {
+                            MessageBox.Show("Eliminado con éxito");
+                            MostrarUsuarios();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Eliminar el usuario");
+                        }
+
+                    }
+
+                }
+            }
+
+
+
         }
 
         private void panel1_DoubleClick(object sender, EventArgs e)
@@ -180,6 +231,13 @@ namespace Presentacion.Modulos.RegistroUsuarios
             btnNuevo.Visible = true;
             btnVolver.Visible = false;
             panelContenedor.Visible = false;
+            panelPrincipal.Size = new Size(1020, 632);
+            MostrarUsuarios();
+
+        }
+
+        public void RedimensionarPanel()
+        {
             panelPrincipal.Size = new Size(1020, 632);
         }
 
@@ -196,6 +254,11 @@ namespace Presentacion.Modulos.RegistroUsuarios
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            panelPrincipal.Size = new Size(1020, 632);
         }
     }
 }

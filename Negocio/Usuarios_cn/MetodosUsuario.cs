@@ -17,29 +17,6 @@ namespace Negocio.Usuarios_cn
         private ConsultasUsuario obj_usuario = new ConsultasUsuario();
 
 
-
-        public MetodosUsuario(string nombreCompleto, string email, string userName, string password, string rol)
-        {
-  
-            this.NombreCompleto = nombreCompleto;
-            this.Email = email;
-            this.UserName = userName;
-            this.Password = password;
-            this.Rol = rol;
-        }
-        public MetodosUsuario()
-        {
-
-        }
-
-
-
-
-
-
-
-
-
         //Metodo para mostrar en tabla
         public DataTable MostrarUsuarios()
         {
@@ -70,7 +47,7 @@ namespace Negocio.Usuarios_cn
 
             try
             {
-                return obj_usuario.EditarUsuario(Convert.ToInt32(id), UserName, Password, NombreCompleto, Email, Rol);
+                return obj_usuario.EditarUsuario(Convert.ToInt32(Id), UserName, Password, NombreCompleto, Email, Rol);
             }
             catch (Exception ex)
             {
@@ -79,7 +56,20 @@ namespace Negocio.Usuarios_cn
             
         }
 
+        //Metodo Eliminar Usuario
+        public bool EliminarUsuario()
+        {
 
+            try
+            {
+                return obj_usuario.EliminarUsuario(Id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al Eliminar: " + ex.Message);
+            }
+
+        }
 
 
     }
