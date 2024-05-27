@@ -365,6 +365,7 @@
             // 
             // btnFormularioaFacturacion
             // 
+            this.btnFormularioaFacturacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFormularioaFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnFormularioaFacturacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFormularioaFacturacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
