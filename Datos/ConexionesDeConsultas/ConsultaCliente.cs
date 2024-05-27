@@ -11,6 +11,9 @@ namespace Datos.ConexionesDeConsultas
 {
     public class ConsultasCliente : ConnectionToSql
     {
+        //storedProcedure
+
+
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand command = new SqlCommand();
