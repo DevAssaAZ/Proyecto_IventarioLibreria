@@ -211,10 +211,10 @@ namespace Presentacion.MenuPrincipal
         private void btnStock_Click(object sender, EventArgs e)
         {
 
-
-
-
-
+            Stock form = new Stock();
+            form.panelPrincipal.Size = new Size(873, 539);
+            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            AbrirFormularioEnPanel(form);
 
 
 

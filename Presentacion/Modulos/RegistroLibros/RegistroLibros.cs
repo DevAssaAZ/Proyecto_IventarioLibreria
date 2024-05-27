@@ -178,12 +178,6 @@ namespace Presentacion.Modulos.RegistroLibros
 
 
 
-
-
-
-
-
-
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica que tanto la fila como la columna sean válidas
                 {
                     DataGridViewRow row = dgvLibro.Rows[e.RowIndex];
@@ -263,6 +257,21 @@ namespace Presentacion.Modulos.RegistroLibros
             panelPrincipal.Size = new Size(1020, 632);
             dgvLibro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CargarDatos();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTitulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
