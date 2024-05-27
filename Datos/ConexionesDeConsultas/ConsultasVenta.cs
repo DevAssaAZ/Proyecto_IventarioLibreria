@@ -106,7 +106,7 @@ namespace Datos.ConexionesDeConsultas
         //Metodo para eliminar ventas
         public bool EliminarVenta(int venta_id)
         {
-            string storedProcedure = "EXEC EliminarVenta @venta_id";
+            string storedProcedure = "EliminarVenta";
             try
             {
                 using (var conexion = GetConnection())

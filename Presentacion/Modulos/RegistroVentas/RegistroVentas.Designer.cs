@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarra = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbUsuario = new System.Windows.Forms.ComboBox();
-            this.cmbCliente = new System.Windows.Forms.ComboBox();
-            this.cmbLibros = new System.Windows.Forms.ComboBox();
+            this.cbClientes = new System.Windows.Forms.ComboBox();
+            this.cblibros = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnFormularioaFacturacion = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
+            this.textUsuario = new System.Windows.Forms.TextBox();
             this.panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,16 +121,16 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(19, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 22);
+            this.label5.Size = new System.Drawing.Size(105, 22);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Usuario:";
+            this.label5.Text = "Realizada:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(15, 198);
+            this.label4.Location = new System.Drawing.Point(19, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 2;
@@ -141,7 +141,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(15, 156);
+            this.label2.Location = new System.Drawing.Point(19, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 0;
@@ -163,7 +163,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(17, 324);
+            this.label7.Location = new System.Drawing.Point(19, 324);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 22);
             this.label7.TabIndex = 14;
@@ -190,49 +190,51 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Precio:";
             // 
-            // cmbUsuario
+            // cbClientes
             // 
-            this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(143, 115);
-            this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(164, 21);
-            this.cmbUsuario.TabIndex = 18;
+            this.cbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClientes.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbClientes.FormattingEnabled = true;
+            this.cbClientes.Location = new System.Drawing.Point(143, 160);
+            this.cbClientes.Name = "cbClientes";
+            this.cbClientes.Size = new System.Drawing.Size(231, 29);
+            this.cbClientes.TabIndex = 19;
+            this.cbClientes.SelectedIndexChanged += new System.EventHandler(this.cbClientes_SelectedIndexChanged);
             // 
-            // cmbCliente
+            // cblibros
             // 
-            this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(143, 160);
-            this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(164, 21);
-            this.cmbCliente.TabIndex = 19;
-            // 
-            // cmbLibros
-            // 
-            this.cmbLibros.FormattingEnabled = true;
-            this.cmbLibros.Location = new System.Drawing.Point(143, 244);
-            this.cmbLibros.Name = "cmbLibros";
-            this.cmbLibros.Size = new System.Drawing.Size(164, 21);
-            this.cmbLibros.TabIndex = 24;
+            this.cblibros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cblibros.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cblibros.FormattingEnabled = true;
+            this.cblibros.Location = new System.Drawing.Point(143, 244);
+            this.cblibros.Name = "cblibros";
+            this.cblibros.Size = new System.Drawing.Size(231, 29);
+            this.cblibros.TabIndex = 24;
+            this.cblibros.SelectedIndexChanged += new System.EventHandler(this.cblibros_SelectedIndexChanged);
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtPrecio.Location = new System.Drawing.Point(143, 286);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(164, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(231, 27);
             this.txtPrecio.TabIndex = 26;
             // 
             // txtCantidadDisponible
             // 
+            this.txtCantidadDisponible.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtCantidadDisponible.Location = new System.Drawing.Point(142, 328);
             this.txtCantidadDisponible.Name = "txtCantidadDisponible";
-            this.txtCantidadDisponible.Size = new System.Drawing.Size(165, 20);
+            this.txtCantidadDisponible.Size = new System.Drawing.Size(231, 27);
             this.txtCantidadDisponible.TabIndex = 27;
             // 
             // txtCedula
             // 
+            this.txtCedula.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtCedula.Location = new System.Drawing.Point(143, 202);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(164, 20);
+            this.txtCedula.ReadOnly = true;
+            this.txtCedula.Size = new System.Drawing.Size(231, 27);
             this.txtCedula.TabIndex = 28;
             // 
             // panelContenedor
@@ -240,12 +242,12 @@
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelContenedor.Controls.Add(this.btnRegistrarVenta);
+            this.panelContenedor.Controls.Add(this.textUsuario);
             this.panelContenedor.Controls.Add(this.txtCedula);
             this.panelContenedor.Controls.Add(this.txtCantidadDisponible);
             this.panelContenedor.Controls.Add(this.txtPrecio);
-            this.panelContenedor.Controls.Add(this.cmbLibros);
-            this.panelContenedor.Controls.Add(this.cmbCliente);
-            this.panelContenedor.Controls.Add(this.cmbUsuario);
+            this.panelContenedor.Controls.Add(this.cblibros);
+            this.panelContenedor.Controls.Add(this.cbClientes);
             this.panelContenedor.Controls.Add(this.label6);
             this.panelContenedor.Controls.Add(this.pictureBox1);
             this.panelContenedor.Controls.Add(this.label7);
@@ -254,6 +256,7 @@
             this.panelContenedor.Controls.Add(this.label4);
             this.panelContenedor.Controls.Add(this.label5);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContenedor.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.panelContenedor.Location = new System.Drawing.Point(0, 37);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(440, 494);
@@ -290,14 +293,14 @@
             this.dgvVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvVenta.ColumnHeadersHeight = 30;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -310,19 +313,19 @@
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvVenta.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVenta.Size = new System.Drawing.Size(428, 370);
             this.dgvVenta.TabIndex = 38;
@@ -390,10 +393,20 @@
             this.panelData.Controls.Add(this.btnFormularioaFacturacion);
             this.panelData.Controls.Add(this.dgvVenta);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelData.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.panelData.Location = new System.Drawing.Point(440, 37);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(457, 494);
             this.panelData.TabIndex = 19;
+            // 
+            // textUsuario
+            // 
+            this.textUsuario.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textUsuario.Location = new System.Drawing.Point(142, 118);
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.ReadOnly = true;
+            this.textUsuario.Size = new System.Drawing.Size(231, 27);
+            this.textUsuario.TabIndex = 28;
             // 
             // RegistroVentas
             // 
@@ -433,9 +446,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbUsuario;
-        private System.Windows.Forms.ComboBox cmbCliente;
-        private System.Windows.Forms.ComboBox cmbLibros;
+        private System.Windows.Forms.ComboBox cbClientes;
+        private System.Windows.Forms.ComboBox cblibros;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtCantidadDisponible;
         private System.Windows.Forms.TextBox txtCedula;
@@ -448,5 +460,6 @@
         private System.Windows.Forms.DataGridViewImageColumn EDITAR;
         private System.Windows.Forms.DataGridViewImageColumn ELIMINAR;
         private System.Windows.Forms.Panel panelData;
+        private System.Windows.Forms.TextBox textUsuario;
     }
 }
