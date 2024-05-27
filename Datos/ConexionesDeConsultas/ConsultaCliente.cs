@@ -18,7 +18,7 @@ namespace Datos.ConexionesDeConsultas
         // Método para mostrar clientes
         public DataTable MostrarClientes()
         {
-            string query = "SELECT ID, NOMBRE, APELLIDO, CEDULA, EDAD, CORREO FROM Clientes";
+            string query = "SELECT * FROM TB_CLIENTE";
             try
             {
                 command.Connection = AbrirConexion();
