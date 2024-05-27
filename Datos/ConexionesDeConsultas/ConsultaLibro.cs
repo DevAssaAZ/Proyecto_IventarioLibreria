@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace Datos.ConexionesDeConsultas
 {
+
+
     public class ConsultasLibro : ConnectionToSql
     {
+
+        //storedProcedure
+
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand command = new SqlCommand();
