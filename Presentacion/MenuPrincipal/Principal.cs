@@ -14,6 +14,7 @@ using Soporte.Cache;
 using Presentacion.MenuPrincipal.PerfilUsuario;
 using Presentacion.Modulos.RegistroClientes;
 using Presentacion.Modulos.RegistroLibros;
+using Presentacion.Modulos.RegistroVentas;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -238,7 +239,9 @@ namespace Presentacion.MenuPrincipal
         {
 
 
-
+            RegistroVentas form = new RegistroVentas();
+            form.FormClosed += new FormClosedEventHandler(MostrarLogoAlCerrarFormulario);
+            AbrirFormularioEnPanel(form);
 
 
 

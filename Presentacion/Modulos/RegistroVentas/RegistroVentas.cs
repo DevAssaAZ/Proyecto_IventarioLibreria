@@ -39,27 +39,9 @@ namespace Presentacion.Modulos.RegistroVentas
             
         }
 
-        private void cmbLibros_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void LlenarCamposCedula(int cedulaId)
         {
             
-        }
-
-        private void cmbUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -76,42 +58,6 @@ namespace Presentacion.Modulos.RegistroVentas
             
         }
 
-        
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtCantidadDisponible_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         private void fechaVenta_ValueChanged(object sender, EventArgs e)
         {
