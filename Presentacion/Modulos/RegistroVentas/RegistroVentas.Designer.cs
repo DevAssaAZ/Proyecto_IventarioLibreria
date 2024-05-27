@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroVentas));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarra = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,13 +50,14 @@
             this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnFormularioaFacturacion = new System.Windows.Forms.Button();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnRegistrarVenta = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnFormularioaFacturacion = new System.Windows.Forms.Button();
+            this.VER = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,6 +180,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(168, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -246,12 +251,10 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelContenedor.Controls.Add(this.btnNuevo);
-            this.panelContenedor.Controls.Add(this.btnModificar);
+            this.panelContenedor.Controls.Add(this.dgvVenta);
             this.panelContenedor.Controls.Add(this.label8);
             this.panelContenedor.Controls.Add(this.btnRegistrarVenta);
             this.panelContenedor.Controls.Add(this.pictureBox2);
-            this.panelContenedor.Controls.Add(this.dgvVenta);
             this.panelContenedor.Controls.Add(this.btnFormularioaFacturacion);
             this.panelContenedor.Controls.Add(this.txtCedula);
             this.panelContenedor.Controls.Add(this.txtCantidadDisponible);
@@ -273,6 +276,99 @@
             this.panelContenedor.TabIndex = 18;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
+            // dgvVenta
+            // 
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToDeleteRows = false;
+            this.dgvVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVenta.ColumnHeadersHeight = 30;
+            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VER,
+            this.EDITAR,
+            this.ELIMINAR});
+            this.dgvVenta.EnableHeadersVisualStyles = false;
+            this.dgvVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvVenta.Location = new System.Drawing.Point(458, 60);
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvVenta.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVenta.Size = new System.Drawing.Size(579, 286);
+            this.dgvVenta.TabIndex = 38;
+            this.dgvVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellContentClick_1);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(459, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(399, 25);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "INFORMACION PREVIA A FACTURACION";
+            // 
+            // btnRegistrarVenta
+            // 
+            this.btnRegistrarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRegistrarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnRegistrarVenta.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRegistrarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnRegistrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarVenta.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(323, 328);
+            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(113, 26);
+            this.btnRegistrarVenta.TabIndex = 32;
+            this.btnRegistrarVenta.Text = "Registrar Venta";
+            this.btnRegistrarVenta.UseVisualStyleBackColor = false;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(442, -6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 417);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnFormularioaFacturacion
             // 
             this.btnFormularioaFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -291,98 +387,26 @@
             this.btnFormularioaFacturacion.Text = "Siguiente";
             this.btnFormularioaFacturacion.UseVisualStyleBackColor = false;
             // 
-            // dgvVenta
+            // VER
             // 
-            this.dgvVenta.AllowUserToAddRows = false;
-            this.dgvVenta.AllowUserToDeleteRows = false;
-            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Location = new System.Drawing.Point(457, 49);
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.ReadOnly = true;
-            this.dgvVenta.Size = new System.Drawing.Size(582, 310);
-            this.dgvVenta.TabIndex = 30;
-            this.dgvVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellContentClick);
+            this.VER.HeaderText = "VER";
+            this.VER.Image = ((System.Drawing.Image)(resources.GetObject("VER.Image")));
+            this.VER.Name = "VER";
+            this.VER.ReadOnly = true;
             // 
-            // pictureBox2
+            // EDITAR
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(442, -6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 417);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
+            this.EDITAR.HeaderText = "EDITAR";
+            this.EDITAR.Image = ((System.Drawing.Image)(resources.GetObject("EDITAR.Image")));
+            this.EDITAR.Name = "EDITAR";
+            this.EDITAR.ReadOnly = true;
             // 
-            // btnRegistrarVenta
+            // ELIMINAR
             // 
-            this.btnRegistrarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnRegistrarVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnRegistrarVenta.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRegistrarVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnRegistrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarVenta.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(323, 373);
-            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(113, 26);
-            this.btnRegistrarVenta.TabIndex = 32;
-            this.btnRegistrarVenta.Text = "Registrar Venta";
-            this.btnRegistrarVenta.UseVisualStyleBackColor = false;
-            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click_1);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(459, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(399, 25);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "INFORMACION PREVIA A FACTURACION";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnModificar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnModificar.Location = new System.Drawing.Point(468, 373);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 26);
-            this.btnModificar.TabIndex = 36;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnNuevo.ForeColor = System.Drawing.Color.LightGray;
-            this.btnNuevo.Location = new System.Drawing.Point(338, 333);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 26);
-            this.btnNuevo.TabIndex = 37;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.Image = ((System.Drawing.Image)(resources.GetObject("ELIMINAR.Image")));
+            this.ELIMINAR.Name = "ELIMINAR";
+            this.ELIMINAR.ReadOnly = true;
             // 
             // RegistroVentas
             // 
@@ -428,11 +452,12 @@
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnFormularioaFacturacion;
-        private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnNuevo;
+        public System.Windows.Forms.DataGridView dgvVenta;
+        private System.Windows.Forms.DataGridViewImageColumn VER;
+        private System.Windows.Forms.DataGridViewImageColumn EDITAR;
+        private System.Windows.Forms.DataGridViewImageColumn ELIMINAR;
     }
 }

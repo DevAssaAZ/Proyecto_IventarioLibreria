@@ -92,7 +92,7 @@ namespace Datos.ConexionesDeConsultas
         {
             string query = @"
             SELECT 
-                v.Id AS VentaId, 
+                v.Id AS Id, 
                 u.Usuario AS Usuario, 
                 c.Nombre AS Cliente, 
                 c.Cedula, 
@@ -128,5 +128,62 @@ namespace Datos.ConexionesDeConsultas
                 throw new Exception("Error al mostrar ventas: " + ex.Message);
             }
         }
+
+        public bool EliminarVenta(int id)
+        {
+            string query = "DELETE FROM TB_VENTAS WHERE ID = @ID"; // Ajusta el nombre de la tabla y el campo según sea necesario
+            try
+            {
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+
+                        conexion.Open();
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar venta: " + ex.Message);
+            }
+        }
+
+        public bool ActualizarVenta(int ventaId, int libroId, int usuarioId, int clienteId, int cantidad, decimal precioTotal)
+        {
+            string query = @"
+            UPDATE TB_VENTAS 
+            SET UsuarioId = @UsuarioId, ClienteId = @ClienteId, LibroId = @LibroId, Cantidad = @Cantidad, PrecioTotal = @PrecioTotal
+            WHERE ID = @ID";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection("tu_cadena_de_conexion"))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", ventaId);
+                        command.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                        command.Parameters.AddWithValue("@ClienteId", clienteId);
+                        command.Parameters.AddWithValue("@LibroId", libroId);
+                        command.Parameters.AddWithValue("@Cantidad", cantidad);
+                        command.Parameters.AddWithValue("@PrecioTotal", precioTotal);
+
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar la venta: " + ex.Message);
+            }
+        }
+
     }
 }

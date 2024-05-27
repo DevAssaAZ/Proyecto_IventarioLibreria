@@ -24,6 +24,8 @@ namespace Presentacion.Modulos.RegistroVentas
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand command = new SqlCommand();
+        private string VentaId = null;
+        private MetodosVenta obj_venta = new MetodosVenta();
 
         public RegistroVentas()
         {
@@ -39,7 +41,6 @@ namespace Presentacion.Modulos.RegistroVentas
         {
             dgvVenta.AutoGenerateColumns = false;
 
-            // Configurar las columnas manualmente
             dgvVenta.Columns.Clear();
 
             dgvVenta.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Usuario", DataPropertyName = "Usuario" });
@@ -49,7 +50,10 @@ namespace Presentacion.Modulos.RegistroVentas
             dgvVenta.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Precio", DataPropertyName = "Precio" });
             dgvVenta.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Cantidad", DataPropertyName = "Cantidad" });
 
-            // Asegurar la recarga de datos y la configuración de columnas
+            // Agregar columnas de edición y eliminación
+            dgvVenta.Columns.Add(new DataGridViewButtonColumn() { Name = "EDITAR", Text = "Editar", UseColumnTextForButtonValue = true });
+            dgvVenta.Columns.Add(new DataGridViewButtonColumn() { Name = "ELIMINAR", Text = "Eliminar", UseColumnTextForButtonValue = true });
+
             CargarDatos();
         }
 
@@ -132,7 +136,7 @@ namespace Presentacion.Modulos.RegistroVentas
                 int usuarioId = Convert.ToInt32(cmbUsuario.SelectedValue);
                 int clienteId = Convert.ToInt32(cmbCliente.SelectedValue);
                 int cantidad = Convert.ToInt32(txtCantidadDisponible.Text);
-                decimal precioTotal = Convert.ToDecimal(txtPrecio.Text) * cantidad;
+                decimal precioTotal = Convert.ToDecimal(txtPrecio.Text);
 
                 bool resultado = venta_N.RegistrarVenta(libroId, usuarioId, clienteId, cantidad, precioTotal);
 
@@ -204,39 +208,6 @@ namespace Presentacion.Modulos.RegistroVentas
 
         private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    DataGridViewRow row = dgvVenta.Rows[e.RowIndex];
-                    if (row != null && row.Cells.Count > 0)
-                    {
-                        // Obtener los valores de las celdas
-                        object usuarioValue = row.Cells["Usuario"].Value;
-                        object clienteValue = row.Cells["Cliente"].Value;
-                        object libroValue = row.Cells["Libro"].Value;
-
-                        // Imprimir los valores en la consola para depurar
-                        Console.WriteLine("Usuario: " + usuarioValue);
-                        Console.WriteLine("Cliente: " + clienteValue);
-                        Console.WriteLine("Libro: " + libroValue);
-
-                        // Resto del código para convertir los valores a números...
-                    }
-                    else
-                    {
-                        MessageBox.Show("La fila seleccionada está vacía.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("La fila o la columna seleccionada no son válidas.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al seleccionar la fila: " + ex.Message);
-            }
         }
 
 
@@ -245,32 +216,67 @@ namespace Presentacion.Modulos.RegistroVentas
             try
             {
                 MetodosVenta venta_N = new MetodosVenta();
-                int libroId = Convert.ToInt32(cmbLibros.SelectedValue);
-                int usuarioId = Convert.ToInt32(cmbUsuario.SelectedValue);
-                int clienteId = Convert.ToInt32(cmbCliente.SelectedValue);
-                int cantidad = Convert.ToInt32(txtCantidadDisponible.Text);
-                decimal precioTotal = Convert.ToDecimal(txtPrecio.Text) * cantidad;
 
-                bool resultado = venta_N.RegistrarVenta(libroId, usuarioId, clienteId, cantidad, precioTotal);
-
-                if (resultado)
+                if (btnRegistrarVenta.Text == "Registrar Venta")
                 {
-                    MessageBox.Show("Venta registrada exitosamente.");
+                    int libroId = Convert.ToInt32(cmbLibros.SelectedValue);
+                    int usuarioId = Convert.ToInt32(cmbUsuario.SelectedValue);
+                    int clienteId = Convert.ToInt32(cmbCliente.SelectedValue);
+                    int cantidad = Convert.ToInt32(txtCantidadDisponible.Text);
+                    decimal precioTotal = Convert.ToDecimal(txtPrecio.Text) * cantidad;
 
-                    // Limpia los TextBox y ComboBox después de la inserción
-                    LimpiarCampos();
+                    // Lógica para registrar la venta
+                    bool resultado = venta_N.RegistrarVenta(libroId, usuarioId, clienteId, cantidad, precioTotal);
 
-                    // Vuelve a cargar los datos en el DataGridView
-                    CargarDatos();
+                    if (resultado)
+                    {
+                        MessageBox.Show("Venta registrada exitosamente.");
+
+                        // Limpia los TextBox y ComboBox después de la inserción
+                        LimpiarCampos();
+
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar la venta.");
+                    }
                 }
-                else
+                else if (btnRegistrarVenta.Text == "Actualizar")
                 {
-                    MessageBox.Show("Error al registrar la venta.");
+                    // Lógica para actualizar la venta
+                    int ventaId = Convert.ToInt32(VentaId);
+                    int libroId = Convert.ToInt32(cmbLibros.SelectedValue);
+                    int usuarioId = Convert.ToInt32(cmbUsuario.SelectedValue);
+                    int clienteId = Convert.ToInt32(cmbCliente.SelectedValue);
+                    int cantidad = Convert.ToInt32(txtCantidadDisponible.Text);
+                    decimal precioTotal = Convert.ToDecimal(txtPrecio.Text) * cantidad;
+
+                    bool resultado = venta_N.ActualizarVenta(ventaId, libroId, usuarioId, clienteId, cantidad, precioTotal);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Venta actualizada exitosamente.");
+
+                        // Limpia los TextBox y ComboBox después de la actualización
+                        LimpiarCampos();
+
+                        // Vuelve a cargar los datos en el DataGridView
+                        CargarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar la venta.");
+                    }
+
+                    // Cambia el texto del botón de nuevo a "Registrar"
+                    btnRegistrarVenta.Text = "Registrar Venta";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar venta: " + ex.Message);
+                MessageBox.Show("Error al procesar la venta: " + ex.Message);
             }
         }
 
@@ -347,56 +353,7 @@ namespace Presentacion.Modulos.RegistroVentas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Verificar si se ha seleccionado una fila en el DataGridView
-                if (dgvVenta.CurrentRow != null)
-                {
-                    // Obtener el ID de la venta seleccionada
-                    int ventaId = Convert.ToInt32(dgvVenta.CurrentRow.Cells["VentaId"].Value);
 
-                    // Obtener los datos de los controles del formulario
-                    int usuarioId = Convert.ToInt32(cmbUsuario.SelectedValue);
-                    int clienteId = Convert.ToInt32(cmbCliente.SelectedValue);
-                    int libroId = Convert.ToInt32(cmbLibros.SelectedValue);
-                    int cantidad = Convert.ToInt32(txtCantidadDisponible.Text);
-                    decimal precioTotal = Convert.ToDecimal(txtPrecio.Text);
-
-                    // Crear instancia de MetodosVenta y actualizar la venta
-                    MetodosVenta venta_N = new MetodosVenta();
-                    bool resultado = venta_N.ActualizarVenta(ventaId, libroId, usuarioId, clienteId, cantidad, precioTotal);
-
-                    if (resultado)
-                    {
-                        MessageBox.Show("Venta actualizada exitosamente.");
-
-                        // Actualizar los datos en el DataGridView
-                        dgvVenta.CurrentRow.Cells["Usuario"].Value = usuarioId;
-                        dgvVenta.CurrentRow.Cells["Cliente"].Value = clienteId;
-                        dgvVenta.CurrentRow.Cells["Libro"].Value = libroId;
-                        dgvVenta.CurrentRow.Cells["Cantidad"].Value = cantidad;
-                        dgvVenta.CurrentRow.Cells["Precio"].Value = precioTotal;
-
-                        // Limpiar los controles del formulario después de la actualización
-                        LimpiarCampos();
-
-                        // Recargar datos del DataGridView si es necesario
-                        CargarDatos();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al actualizar la venta.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor seleccione una venta para guardar los cambios.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar los cambios: " + ex.Message);
-            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -414,6 +371,64 @@ namespace Presentacion.Modulos.RegistroVentas
             catch (Exception ex)
             {
                 MessageBox.Show("Error al resetear los campos: " + ex.Message);
+            }
+        }
+
+        private void dgvVenta_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    DataGridViewRow row = dgvVenta.Rows[e.RowIndex];
+                    if (row != null && row.Cells.Count > 0)
+                    {
+                        if (dgvVenta.Columns[e.ColumnIndex].Name == "EDITAR")
+                        {
+                            cmbLibros.Text = row.Cells["Libro"].Value?.ToString() ?? string.Empty;
+                            txtCantidadDisponible.Text = row.Cells["Cantidad"].Value?.ToString() ?? string.Empty;
+                            txtPrecio.Text = row.Cells["Precio"].Value?.ToString() ?? string.Empty;
+
+                            string ventaId = row.Cells[0].Value?.ToString();
+                            VentaId = ventaId;
+
+                            dgvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                            panelContenedor.Visible = true;
+                            btnRegistrarVenta.Text = "Actualizar";
+                        }
+                        if (dgvVenta.Columns[e.ColumnIndex].Name == "ELIMINAR")
+                        {
+                            if (e.RowIndex >= 0)
+                            {
+                                VentaId = row.Cells[0].Value.ToString();
+                                obj_venta.Id = Convert.ToInt32(VentaId);
+                                if (!string.IsNullOrEmpty(VentaId))
+                                {
+                                    if (MessageBox.Show("¿Está seguro de eliminar esta venta?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                    {
+                                        if (_metodosVenta.EliminarVenta(Convert.ToInt32(VentaId)))
+                                        {
+                                            MessageBox.Show("Venta eliminada correctamente.");
+                                            CargarDatos();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error al eliminar la venta.");
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El ID de la venta no es válido.");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al manejar la acción: " + ex.Message);
             }
         }
     }

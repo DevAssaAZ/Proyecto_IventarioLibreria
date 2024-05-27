@@ -37,36 +37,21 @@ namespace Negocio.Ventas_cn
 
         public bool ActualizarVenta(int ventaId, int libroId, int usuarioId, int clienteId, int cantidad, decimal precioTotal)
         {
-            string query = @"
-            UPDATE TB_VENTAS 
-            SET UsuarioId = @UsuarioId, ClienteId = @ClienteId, LibroId = @LibroId, Cantidad = @Cantidad, PrecioTotal = @PrecioTotal
-            WHERE Id = @VentaId";
-
             try
             {
-                using (SqlConnection connection = new SqlConnection("tu_cadena_de_conexion"))
-                {
-                    connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@VentaId", ventaId);
-                        command.Parameters.AddWithValue("@UsuarioId", usuarioId);
-                        command.Parameters.AddWithValue("@ClienteId", clienteId);
-                        command.Parameters.AddWithValue("@LibroId", libroId);
-                        command.Parameters.AddWithValue("@Cantidad", cantidad);
-                        command.Parameters.AddWithValue("@PrecioTotal", precioTotal);
-
-                        int resultado = command.ExecuteNonQuery();
-                        return resultado > 0;
-                    }
-                }
+                return consultasVenta.ActualizarVenta(ventaId, libroId, usuarioId, clienteId, cantidad, precioTotal);
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al actualizar la venta: " + ex.Message);
+                throw new Exception("Error al actualizar venta: " + ex.Message);
             }
         }
+
+        public bool EliminarVenta(int id)
+        {
+            return consultasVenta.EliminarVenta(Id);
+        }
+
 
     }
 }
