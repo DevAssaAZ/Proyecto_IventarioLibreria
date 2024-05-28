@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Clientes_cn;
 using Negocio.Libros_cn;
+using Negocio.Stock_cn.StockEntrada;
 using Negocio.Usuarios_cn;
 using Negocio.Ventas_cn;
 using Soporte.Cache;
@@ -67,7 +69,38 @@ namespace Presentacion.Modulos.RegistroVentas
 
         private void btnRegistrarVenta_Click_1(object sender, EventArgs e)
         {
-            
+            try
+            {
+                
+                MetodosVenta ventas = new MetodosVenta();
+                CalculosVentas calculos = new CalculosVentas();
+                ventas.UsuarioId = CacheDeInicioDeSesion.IdUser;
+                ventas.ClienteId = idCliente;
+                ventas.LibroId = idLibro;
+                ventas.Cantidad = Convert.ToInt32(txtCantidad.Text); 
+                
+                ventas.PrecioTotal = calculos.CalculoVentas(Convert.ToDecimal(txtPrecio.Text), ventas.Cantidad = Convert.ToInt32(txtCantidad.Text));
+                
+
+
+                if (ventas.RegistrarVenta())
+                {
+                    MessageBox.Show("Venta Registrada");
+                    // Vuelve a cargar los datos en el DataGridView
+                    CargarDatos();
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar la venta");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al comprobar la venta: " + ex.Message);
+            }
         }
 
 

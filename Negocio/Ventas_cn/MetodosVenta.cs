@@ -23,7 +23,7 @@ namespace Negocio.Ventas_cn
         // Método para registrar una venta
         public bool RegistrarVenta()
         {
-            return consultasVenta.InsertarVenta(LibroId, UsuarioId, ClienteId, Cantidad, PrecioTotal);
+            return consultasVenta.InsertarVenta(UsuarioId, ClienteId, LibroId,Cantidad, PrecioTotal);
         }
 
         public bool EditarVenta()
@@ -42,7 +42,6 @@ namespace Negocio.Ventas_cn
         {
             return consultasVenta.EliminarVenta(Id);
         }
-
 
     }
 }

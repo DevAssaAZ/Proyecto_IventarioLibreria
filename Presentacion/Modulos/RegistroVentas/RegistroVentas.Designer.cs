@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarra = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,10 +46,11 @@
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.cblibros = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtCantidadDisponible = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
+            this.textUsuario = new System.Windows.Forms.TextBox();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.VER = new System.Windows.Forms.DataGridViewImageColumn();
             this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
@@ -57,7 +58,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnFormularioaFacturacion = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
-            this.textUsuario = new System.Windows.Forms.TextBox();
             this.panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,13 +220,13 @@
             this.txtPrecio.Size = new System.Drawing.Size(231, 27);
             this.txtPrecio.TabIndex = 26;
             // 
-            // txtCantidadDisponible
+            // txtCantidad
             // 
-            this.txtCantidadDisponible.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtCantidadDisponible.Location = new System.Drawing.Point(142, 328);
-            this.txtCantidadDisponible.Name = "txtCantidadDisponible";
-            this.txtCantidadDisponible.Size = new System.Drawing.Size(231, 27);
-            this.txtCantidadDisponible.TabIndex = 27;
+            this.txtCantidad.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtCantidad.Location = new System.Drawing.Point(142, 328);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(231, 27);
+            this.txtCantidad.TabIndex = 27;
             // 
             // txtCedula
             // 
@@ -244,7 +244,7 @@
             this.panelContenedor.Controls.Add(this.btnRegistrarVenta);
             this.panelContenedor.Controls.Add(this.textUsuario);
             this.panelContenedor.Controls.Add(this.txtCedula);
-            this.panelContenedor.Controls.Add(this.txtCantidadDisponible);
+            this.panelContenedor.Controls.Add(this.txtCantidad);
             this.panelContenedor.Controls.Add(this.txtPrecio);
             this.panelContenedor.Controls.Add(this.cblibros);
             this.panelContenedor.Controls.Add(this.cbClientes);
@@ -281,6 +281,15 @@
             this.btnRegistrarVenta.UseVisualStyleBackColor = false;
             this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click_1);
             // 
+            // textUsuario
+            // 
+            this.textUsuario.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textUsuario.Location = new System.Drawing.Point(142, 118);
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.ReadOnly = true;
+            this.textUsuario.Size = new System.Drawing.Size(231, 27);
+            this.textUsuario.TabIndex = 28;
+            // 
             // dgvVenta
             // 
             this.dgvVenta.AllowUserToAddRows = false;
@@ -293,14 +302,14 @@
             this.dgvVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVenta.ColumnHeadersHeight = 30;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -313,19 +322,19 @@
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVenta.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvVenta.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVenta.Size = new System.Drawing.Size(428, 370);
             this.dgvVenta.TabIndex = 38;
@@ -399,15 +408,6 @@
             this.panelData.Size = new System.Drawing.Size(457, 494);
             this.panelData.TabIndex = 19;
             // 
-            // textUsuario
-            // 
-            this.textUsuario.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.textUsuario.Location = new System.Drawing.Point(142, 118);
-            this.textUsuario.Name = "textUsuario";
-            this.textUsuario.ReadOnly = true;
-            this.textUsuario.Size = new System.Drawing.Size(231, 27);
-            this.textUsuario.TabIndex = 28;
-            // 
             // RegistroVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,7 +449,7 @@
         private System.Windows.Forms.ComboBox cbClientes;
         private System.Windows.Forms.ComboBox cblibros;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtCantidadDisponible;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnFormularioaFacturacion;
