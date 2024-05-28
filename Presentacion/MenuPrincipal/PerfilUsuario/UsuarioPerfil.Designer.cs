@@ -42,22 +42,22 @@
             this.lbRol = new System.Windows.Forms.Label();
             this.lkEditarPerfil = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtConfirmarPass = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtActualPass = new System.Windows.Forms.TextBox();
-            this.lkpass = new System.Windows.Forms.LinkLabel();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lkpass = new System.Windows.Forms.LinkLabel();
+            this.txtActualPass = new System.Windows.Forms.TextBox();
+            this.txtConfirmarPass = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -225,144 +225,23 @@
             this.panel1.TabIndex = 21;
             this.panel1.Visible = false;
             // 
-            // label6
+            // btnCancelar
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(30, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 23);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Editar Mis Datos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(30, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 19);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Usuario:";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(34, 88);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(311, 21);
-            this.txtUsuario.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(30, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(292, 19);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Nombre Completo (Apellidos y Nombres):";
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.Location = new System.Drawing.Point(34, 139);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(311, 21);
-            this.txtNombres.TabIndex = 21;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(30, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 19);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Email:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(34, 186);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(311, 21);
-            this.txtEmail.TabIndex = 21;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(30, 213);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 19);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Nueva contraseña:";
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(34, 238);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(311, 21);
-            this.txtPass.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(30, 261);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(163, 19);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Confirmar contraseña:";
-            // 
-            // txtConfirmarPass
-            // 
-            this.txtConfirmarPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarPass.Location = new System.Drawing.Point(34, 286);
-            this.txtConfirmarPass.Name = "txtConfirmarPass";
-            this.txtConfirmarPass.Size = new System.Drawing.Size(311, 21);
-            this.txtConfirmarPass.TabIndex = 21;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(30, 309);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 19);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Contraseña actual:";
-            // 
-            // txtActualPass
-            // 
-            this.txtActualPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActualPass.Location = new System.Drawing.Point(34, 334);
-            this.txtActualPass.Name = "txtActualPass";
-            this.txtActualPass.Size = new System.Drawing.Size(311, 21);
-            this.txtActualPass.TabIndex = 21;
-            // 
-            // lkpass
-            // 
-            this.lkpass.AutoSize = true;
-            this.lkpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lkpass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.lkpass.Location = new System.Drawing.Point(175, 217);
-            this.lkpass.Name = "lkpass";
-            this.lkpass.Size = new System.Drawing.Size(37, 13);
-            this.lkpass.TabIndex = 22;
-            this.lkpass.TabStop = true;
-            this.lkpass.Text = "Editar ";
-            this.lkpass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkpass_LinkClicked);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.Location = new System.Drawing.Point(34, 382);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(147, 40);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -382,23 +261,146 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelar
+            // lkpass
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.Location = new System.Drawing.Point(34, 382);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(147, 40);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.lkpass.AutoSize = true;
+            this.lkpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lkpass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.lkpass.Location = new System.Drawing.Point(175, 217);
+            this.lkpass.Name = "lkpass";
+            this.lkpass.Size = new System.Drawing.Size(37, 13);
+            this.lkpass.TabIndex = 22;
+            this.lkpass.TabStop = true;
+            this.lkpass.Text = "Editar ";
+            this.lkpass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkpass_LinkClicked);
+            // 
+            // txtActualPass
+            // 
+            this.txtActualPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActualPass.Location = new System.Drawing.Point(34, 334);
+            this.txtActualPass.Name = "txtActualPass";
+            this.txtActualPass.Size = new System.Drawing.Size(311, 21);
+            this.txtActualPass.TabIndex = 21;
+            // 
+            // txtConfirmarPass
+            // 
+            this.txtConfirmarPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarPass.Location = new System.Drawing.Point(34, 286);
+            this.txtConfirmarPass.Name = "txtConfirmarPass";
+            this.txtConfirmarPass.Size = new System.Drawing.Size(311, 21);
+            this.txtConfirmarPass.TabIndex = 21;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(34, 238);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(311, 21);
+            this.txtPass.TabIndex = 21;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(30, 309);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 19);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Contraseña actual:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(30, 261);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(163, 19);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Confirmar contraseña:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(30, 213);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(142, 19);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Nueva contraseña:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(34, 186);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(311, 21);
+            this.txtEmail.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(30, 161);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 19);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Email:";
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.Location = new System.Drawing.Point(34, 139);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.ReadOnly = true;
+            this.txtNombres.Size = new System.Drawing.Size(311, 21);
+            this.txtNombres.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(30, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(292, 19);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Nombre Completo (Apellidos y Nombres):";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(34, 88);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(311, 21);
+            this.txtUsuario.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(30, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 19);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Usuario:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(30, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 23);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Editar Mis Datos";
             // 
             // UsuarioPerfil
             // 
