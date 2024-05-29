@@ -13,7 +13,7 @@ namespace Presentacion.Metodos.Stock.Entrada
     public static class AccionesDelDataViewGriedStockEntrada
     {
         //Metodo para realizar acciones en la tabla de stock de entrada (Ver, Eliminar, Actualizar)
-        public static void AccionesTablaEntradaStock(DataGridViewCellEventArgs e, DataGridView dgvEntradaStock, TextBox txtNombreLibro, TextBox txtCantidad, TextBox txtProvedor, RichTextBox rtComentarios, TextBox txtIdStock, Button btnNuevaEntrada, Button btnCancelar, Button btnRegistrarStockEntrada, ref string nombrelibro, DataGridView dgvLibrosStock, Panel panelContenedor, Panel panelPrincipal)
+        public static void AccionesTablaEntradaStock(DataGridViewCellEventArgs e, DataGridView dgvEntradaStock, TextBox txtNombreLibro, TextBox txtCantidad, TextBox txtProvedor, RichTextBox rtComentarios, TextBox txtIdStock, Button btnNuevaEntrada, Button btnCancelar, Button btnRegistrarStockEntrada, ref string nombrelibro, DataGridView dgvLibrosStock, Panel panelContenedor, Panel panelPrincipal, ComboBox cbLibros)
         {
             MetodosStockEntrada obj_entrada = new MetodosStockEntrada();
 
@@ -40,6 +40,7 @@ namespace Presentacion.Metodos.Stock.Entrada
                                 panelPrincipal.Size = new Size(437, 463);
                                 btnRegistrarStockEntrada.Text = "Actualizar";
                                 btnRegistrarStockEntrada.Enabled = false;
+                                cbLibros.Visible = false;
                             }
                         }
                         else if (dgvEntradaStock.Columns[e.ColumnIndex].Name == "Eliminar")

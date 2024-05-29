@@ -163,7 +163,9 @@
     <Compile Include="Metodos\Stock\DatosDelStock\DatosLoaderStock.cs" />
     <Compile Include="Metodos\Stock\Entrada\AccionesDelDataViewGriedStockEntrada.cs" />
     <Compile Include="Metodos\Stock\Entrada\CancelarOperacionRegistroStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\ComboboxLibrosLleno.cs" />
     <Compile Include="Metodos\Stock\Entrada\DatosLoaderStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\EventoSeleccionComboBox.cs" />
     <Compile Include="Metodos\Stock\Entrada\LimpiarCamposRegistroStockEntrada.cs" />
     <Compile Include="Metodos\Stock\Entrada\NuevaEntradaStock.cs" />
     <Compile Include="Metodos\Stock\Entrada\RegistrarActualizarStockEntrada.cs" />
