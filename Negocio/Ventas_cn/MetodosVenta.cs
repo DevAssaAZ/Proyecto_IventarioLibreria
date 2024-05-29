@@ -1,4 +1,5 @@
-﻿using Datos.ConexionesDeConsultas;
+﻿
+using Datos.ConexionesDeConsultas;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,33 +14,23 @@ namespace Negocio.Ventas_cn
     {
         ConsultasVenta consultasVenta = new ConsultasVenta();
 
-        // Método para mostrar usuarios
-        public DataTable MostrarUsuarios()
-        {
-            return consultasVenta.MostrarUsuariosConsulta();
-        }
-
-        // Método para mostrar clientes
-        public DataTable MostrarClientes()
-        {
-            return consultasVenta.MostrarClientes();
-        }
-
-        // Método para registrar una venta
-        public bool RegistrarVenta(int libroId, int usuarioId, int clienteId, int cantidad, decimal precioTotal)
-        {
-            return consultasVenta.RegistrarVenta(libroId, usuarioId, clienteId, cantidad, precioTotal);
-        }
+        // Método para mostrar Ventas
         public DataTable MostrarVentas()
         {
             return consultasVenta.MostrarVentas();
         }
 
-        public bool ActualizarVenta(int ventaId, int libroId, int usuarioId, int clienteId, int cantidad, decimal precioTotal)
+        // Método para registrar una venta
+        public bool RegistrarVenta()
+        {
+            return consultasVenta.InsertarVenta(UsuarioId, ClienteId, LibroId,Cantidad, PrecioTotal);
+        }
+
+        public bool EditarVenta()
         {
             try
             {
-                return consultasVenta.ActualizarVenta(ventaId, libroId, usuarioId, clienteId, cantidad, precioTotal);
+                return consultasVenta.EditarVenta(Id, LibroId, UsuarioId, ClienteId, Cantidad, PrecioTotal);
             }
             catch (Exception ex)
             {
@@ -47,11 +38,10 @@ namespace Negocio.Ventas_cn
             }
         }
 
-        public bool EliminarVenta(int id)
+        public bool EliminarVenta()
         {
             return consultasVenta.EliminarVenta(Id);
         }
-
 
     }
 }

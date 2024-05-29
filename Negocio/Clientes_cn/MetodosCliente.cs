@@ -21,10 +21,7 @@ namespace Negocio.Clientes_cn
             return consultasCliente.MostrarClientes();
         }
 
-        public string ObtenerCedulaPorId(int id)
-        {
-            return consultasCliente.ObtenerCedulaPorId(id);
-        }
+       
 
         //Metodo para insertar Cliente
         public bool InsertarClientes()
@@ -46,18 +43,7 @@ namespace Negocio.Clientes_cn
             return consultasCliente.EliminarCliente(Id);
         }
 
-        // Este método actualiza un cliente en la base de datos
-        public bool ActualizarCliente()
-        {
-            try
-            {
-                return consultasCliente.EditarCliente(Id, Nombre, Apellido, Cedula, Edad, Correo);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al actualizar cliente: " + ex.Message);
-            }
-        }
+        
 
     }
 }

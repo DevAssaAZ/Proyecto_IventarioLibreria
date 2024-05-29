@@ -98,6 +98,19 @@
     <Compile Include="MenuPrincipal\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos\AbrirYCerrarFormularios\AbrirFormulariosEnPanel.cs" />
+    <Compile Include="Metodos\AbrirYCerrarFormularios\CerrarFormularios.cs" />
+    <Compile Include="Metodos\AbrirYCerrarFormularios\MostrarLogo\MostrarLogo.cs" />
+    <Compile Include="Metodos\AbrirYCerrarFormularios\MostrarLogo\MostrarLogoAlCerrarForm.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AccionesDelFormulario\Exit.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AccionesDelFormulario\MaximizarVentana.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AccionesDelFormulario\MinimizarVentana.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AccionesDelFormulario\RestaurarVentana.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AccionesDelFormulario\SesionCerrada.cs" />
+    <Compile Include="Metodos\MenuPrincipal\AplicarRoles\RolesPermisos.cs" />
+    <Compile Include="Metodos\MenuPrincipal\MenusDesplegables\MenuHider.cs" />
+    <Compile Include="Metodos\MenuPrincipal\MenusDesplegables\MenuShow.cs" />
+    <Compile Include="Metodos\MenuPrincipal\Perfil\DatosUsuarioLoad.cs" />
     <Compile Include="Modulos\RegistroClientes\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +123,23 @@
     <Compile Include="Modulos\RegistroLibros\RegistroLibros.Designer.cs">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\RegistroLibros\Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroLibros\Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RegistroVentas\Facturacion\Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RegistroVentas\Facturacion\Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\RegistroVentas\RegistroVentas.cs">
       <SubType>Form</SubType>
@@ -151,8 +176,14 @@
     <EmbeddedResource Include="Modulos\RegistroLibros\RegistroLibros.resx">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroLibros\Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RegistroVentas\Facturacion\Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RegistroVentas\RegistroVentas.resx">
       <DependentUpon>RegistroVentas.cs</DependentUpon>

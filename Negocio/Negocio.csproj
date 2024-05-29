@@ -48,8 +48,11 @@
     <Compile Include="Libros_cn\MetodosLibro.cs" />
     <Compile Include="Login_cn\MetodosLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stock_cn\StockEntrada\MetodosStockEntrada.cs" />
+    <Compile Include="Stock_cn\StockEntrada\StockEntrada.cs" />
     <Compile Include="Usuarios_cn\MetodosUsuario.cs" />
     <Compile Include="Usuarios_cn\Usuario_N.cs" />
+    <Compile Include="Ventas_cn\CalculosVentas.cs" />
     <Compile Include="Ventas_cn\MetodosVenta.cs" />
     <Compile Include="Ventas_cn\Ventas_N.cs" />
   </ItemGroup>

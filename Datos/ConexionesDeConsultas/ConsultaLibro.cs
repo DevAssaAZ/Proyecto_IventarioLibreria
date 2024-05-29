@@ -9,24 +9,31 @@ using System.Threading.Tasks;
 
 namespace Datos.ConexionesDeConsultas
 {
+
+
+
     public class ConsultasLibro : ConnectionToSql
     {
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand command = new SqlCommand();
+
+
 
         // Método para mostrar libros
         public DataTable MostrarLibros()
         {
-            string query = "SELECT * FROM TB_LIBROS";
             try
             {
-                command.Connection = AbrirConexion();
-                command.CommandText = query;
-                leer = command.ExecuteReader();
-                tabla.Load(leer);
-                CerrarConexion();
-                return tabla;
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand("MostrarLibros", conexion))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        conexion.Open();
+                        SqlDataReader leer = command.ExecuteReader();
+                        DataTable tabla = new DataTable();
+                        tabla.Load(leer);
+                        return tabla;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -37,18 +44,18 @@ namespace Datos.ConexionesDeConsultas
         // Método para insertar libro
         public bool InsertarLibro(string titulo, string autor, int anio, int cantidad, decimal precio)
         {
-            string query = "INSERT INTO TB_LIBROS (TITULO, AUTOR, ANIO, CANTIDAD, PRECIO) VALUES (@Titulo, @Autor, @Anio, @Cantidad, @Precio)";
             try
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    using (SqlCommand command = new SqlCommand("InsertarLibro", conexion))
                     {
-                        command.Parameters.AddWithValue("@Titulo", titulo);
-                        command.Parameters.AddWithValue("@Autor", autor);
-                        command.Parameters.AddWithValue("@Anio", anio);
-                        command.Parameters.AddWithValue("@Cantidad", cantidad);
-                        command.Parameters.AddWithValue("@Precio", precio);
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@titulo", titulo);
+                        command.Parameters.AddWithValue("@autor", autor);
+                        command.Parameters.AddWithValue("@anio", anio);
+                        command.Parameters.AddWithValue("@cantidad", cantidad);
+                        command.Parameters.AddWithValue("@precio", precio);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();
@@ -65,19 +72,19 @@ namespace Datos.ConexionesDeConsultas
         // Método para editar libro
         public bool EditarLibro(int id, string titulo, string autor, int anio, int cantidad, decimal precio)
         {
-            string query = "UPDATE TB_LIBROS SET TITULO = @Titulo, AUTOR = @Autor, ANIO = @Anio, CANTIDAD = @Cantidad, PRECIO = @Precio WHERE ID = @ID";
             try
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    using (SqlCommand command = new SqlCommand("EditarLibro", conexion))
                     {
-                        command.Parameters.AddWithValue("@Titulo", titulo);
-                        command.Parameters.AddWithValue("@Autor", autor);
-                        command.Parameters.AddWithValue("@Anio", anio);
-                        command.Parameters.AddWithValue("@Cantidad", cantidad);
-                        command.Parameters.AddWithValue("@Precio", precio);
-                        command.Parameters.AddWithValue("@ID", id);
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@titulo", titulo);
+                        command.Parameters.AddWithValue("@autor", autor);
+                        command.Parameters.AddWithValue("@anio", anio);
+                        command.Parameters.AddWithValue("@cantidad", cantidad);
+                        command.Parameters.AddWithValue("@precio", precio);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();
@@ -94,14 +101,14 @@ namespace Datos.ConexionesDeConsultas
         // Método para eliminar libro
         public bool EliminarLibro(int id)
         {
-            string query = "DELETE FROM TB_LIBROS WHERE ID = @ID";
             try
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    using (SqlCommand command = new SqlCommand("EliminarLibro", conexion))
                     {
-                        command.Parameters.AddWithValue("@ID", id);
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@id", id);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();
@@ -115,51 +122,8 @@ namespace Datos.ConexionesDeConsultas
             }
         }
 
-        public DataTable ObtenerLibroPorId(int id)
-        {
-            string query = "SELECT ID, TITULO, AUTOR, ANIO, CANTIDAD, PRECIO FROM TB_LIBROS WHERE ID = @ID";
-            try
-            {
-                using (SqlConnection connection = AbrirConexion())
-                {
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@ID", id);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-                            return dt;
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception("Error al obtener datos del libro: " + ex.Message);
-            }
-        }
 
-        public bool DisminuirCantidadLibro(int id, int cantidad)
-        {
-            string query = "UPDATE TB_LIBROS SET CANTIDAD = CANTIDAD - @Cantidad WHERE ID = @ID AND CANTIDAD >= @Cantidad";
-            try
-            {
-                using (SqlConnection connection = AbrirConexion())
-                {
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@ID", id);
-                        command.Parameters.AddWithValue("@Cantidad", cantidad);
-                        int result = command.ExecuteNonQuery();
-                        return result > 0;
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception("Error al actualizar la cantidad del libro: " + ex.Message);
-            }
-        }
+
+
     }
 }
