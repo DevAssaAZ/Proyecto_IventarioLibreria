@@ -111,6 +111,12 @@
     <Compile Include="Metodos\MenuPrincipal\MenusDesplegables\MenuHider.cs" />
     <Compile Include="Metodos\MenuPrincipal\MenusDesplegables\MenuShow.cs" />
     <Compile Include="Metodos\MenuPrincipal\Perfil\DatosUsuarioLoad.cs" />
+    <Compile Include="Metodos\RegistroClientes\AccionesDelDataGridViewClientes.cs" />
+    <Compile Include="Metodos\RegistroClientes\CancelarOperacionRegistroCliente.cs" />
+    <Compile Include="Metodos\RegistroClientes\DatosLoaderClientes.cs" />
+    <Compile Include="Metodos\RegistroClientes\LimpiarCamposdeRegistro.cs" />
+    <Compile Include="Metodos\RegistroClientes\NuevoRegistroCliente.cs" />
+    <Compile Include="Metodos\RegistroClientes\RegistrarActualizarClientes.cs" />
     <Compile Include="Modulos\RegistroClientes\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
