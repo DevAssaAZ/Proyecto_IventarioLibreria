@@ -56,46 +56,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login\Bienvenida.cs">
+    <Compile Include="Interfaces\Login\Bienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Bienvenida.Designer.cs">
+    <Compile Include="Interfaces\Login\Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\CrearCuenta.cs">
+    <Compile Include="Interfaces\Login\CrearCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\CrearCuenta.Designer.cs">
+    <Compile Include="Interfaces\Login\CrearCuenta.Designer.cs">
       <DependentUpon>CrearCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Login_.cs">
+    <Compile Include="Interfaces\Login\Login_.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Login_.Designer.cs">
+    <Compile Include="Interfaces\Login\Login_.Designer.cs">
       <DependentUpon>Login_.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\RecuperarPassword.cs">
+    <Compile Include="Interfaces\Login\RecuperarPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\RecuperarPassword.Designer.cs">
+    <Compile Include="Interfaces\Login\RecuperarPassword.Designer.cs">
       <DependentUpon>RecuperarPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal\Logo\MarcaLogo.cs">
+    <Compile Include="Interfaces\MenuPrincipal\Logo\MarcaLogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal\Logo\MarcaLogo.Designer.cs">
+    <Compile Include="Interfaces\MenuPrincipal\Logo\MarcaLogo.Designer.cs">
       <DependentUpon>MarcaLogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal\PerfilUsuario\UsuarioPerfil.cs">
+    <Compile Include="Interfaces\MenuPrincipal\PerfilUsuario\UsuarioPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal\PerfilUsuario\UsuarioPerfil.Designer.cs">
+    <Compile Include="Interfaces\MenuPrincipal\PerfilUsuario\UsuarioPerfil.Designer.cs">
       <DependentUpon>UsuarioPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal\Principal.cs">
+    <Compile Include="Interfaces\MenuPrincipal\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal\Principal.Designer.cs">
+    <Compile Include="Interfaces\MenuPrincipal\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos\AbrirYCerrarFormularios\AbrirFormulariosEnPanel.cs" />
@@ -123,81 +123,81 @@
     <Compile Include="Metodos\RegistroLibros\LimpiarCamposRegistroLibros.cs" />
     <Compile Include="Metodos\RegistroLibros\NuevoRegistroLibro.cs" />
     <Compile Include="Metodos\RegistroLibros\RegistrarActualizarLibros.cs" />
-    <Compile Include="Modulos\RegistroClientes\RegistroCliente.cs">
+    <Compile Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroClientes\RegistroCliente.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroLibros\RegistroLibros.cs">
+    <Compile Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroLibros\RegistroLibros.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.Designer.cs">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroLibros\Stock.cs">
+    <Compile Include="Interfaces\Modulos\RegistroLibros\Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroLibros\Stock.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroLibros\Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.cs">
+    <Compile Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroUsuarios\RegistroUsuarios.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroVentas\Facturacion\Facturacion.cs">
+    <Compile Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroVentas\Facturacion\Facturacion.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\RegistroVentas\RegistroVentas.cs">
+    <Compile Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\RegistroVentas\RegistroVentas.Designer.cs">
+    <Compile Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.Designer.cs">
       <DependentUpon>RegistroVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login\Bienvenida.resx">
+    <EmbeddedResource Include="Interfaces\Login\Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\CrearCuenta.resx">
+    <EmbeddedResource Include="Interfaces\Login\CrearCuenta.resx">
       <DependentUpon>CrearCuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\Login_.resx">
+    <EmbeddedResource Include="Interfaces\Login\Login_.resx">
       <DependentUpon>Login_.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\RecuperarPassword.resx">
+    <EmbeddedResource Include="Interfaces\Login\RecuperarPassword.resx">
       <DependentUpon>RecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal\Logo\MarcaLogo.resx">
+    <EmbeddedResource Include="Interfaces\MenuPrincipal\Logo\MarcaLogo.resx">
       <DependentUpon>MarcaLogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal\PerfilUsuario\UsuarioPerfil.resx">
+    <EmbeddedResource Include="Interfaces\MenuPrincipal\PerfilUsuario\UsuarioPerfil.resx">
       <DependentUpon>UsuarioPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal\Principal.resx">
+    <EmbeddedResource Include="Interfaces\MenuPrincipal\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroClientes\RegistroCliente.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroLibros\RegistroLibros.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.resx">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroLibros\Stock.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroLibros\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroUsuarios\RegistroUsuarios.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroVentas\Facturacion\Facturacion.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\RegistroVentas\RegistroVentas.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.resx">
       <DependentUpon>RegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -235,35 +235,35 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Imagenes\Errores\Error.png" />
-    <Content Include="Imagenes\Errores\Errores.png" />
-    <Content Include="Imagenes\Errores\Errorr.png" />
-    <Content Include="Imagenes\ImgCRUD\Editar.png" />
-    <Content Include="Imagenes\ImgCRUD\Eliminar.png" />
-    <Content Include="Imagenes\ImgCRUD\Ver.png" />
-    <Content Include="Imagenes\ImgCRUD\Ver2.png" />
-    <Content Include="Imagenes\ImgModulos\ImgClientes\Clientes.png" />
-    <Content Include="Imagenes\ImgModulos\ImgClientes\RegistrarCliente.png" />
-    <Content Include="Imagenes\ImgModulos\ImgInventario\Inventario.png" />
-    <Content Include="Imagenes\ImgModulos\ImgInventario\Libros.png" />
-    <Content Include="Imagenes\ImgModulos\ImgInventario\Stock.png" />
-    <Content Include="Imagenes\ImgModulos\ImgRegistroUsuarios\RegistrarUsuario.png" />
-    <Content Include="Imagenes\ImgModulos\ImgVentas\AgregarVenta.png" />
-    <Content Include="Imagenes\ImgModulos\ImgVentas\Facturaciones.png" />
-    <Content Include="Imagenes\ImgModulos\ImgVentas\Ventas.png" />
-    <Content Include="Imagenes\LogoLibreria\LibreriaImagen.png" />
-    <Content Include="Imagenes\LogoLibreria\LibroLogo.png" />
-    <Content Include="Imagenes\LogoLibreria\LogoLogin.png" />
-    <Content Include="Imagenes\Navegacion\CerrarSesion.png" />
-    <Content Include="Imagenes\Navegacion\CerrarSesion2.0.png" />
-    <Content Include="Imagenes\Navegacion\Exit.png" />
-    <Content Include="Imagenes\Navegacion\Maximizar.png" />
-    <Content Include="Imagenes\Navegacion\Menu.png" />
-    <Content Include="Imagenes\Navegacion\Minimizar.png" />
-    <Content Include="Imagenes\Navegacion\Restaurar.png" />
-    <Content Include="Imagenes\Otros\Aviso.png" />
-    <Content Include="Imagenes\Perfil\User.png" />
-    <Content Include="Imagenes\Perfil\User2.png" />
+    <Content Include="Interfaces\Imagenes\Errores\Error.png" />
+    <Content Include="Interfaces\Imagenes\Errores\Errores.png" />
+    <Content Include="Interfaces\Imagenes\Errores\Errorr.png" />
+    <Content Include="Interfaces\Imagenes\ImgCRUD\Editar.png" />
+    <Content Include="Interfaces\Imagenes\ImgCRUD\Eliminar.png" />
+    <Content Include="Interfaces\Imagenes\ImgCRUD\Ver.png" />
+    <Content Include="Interfaces\Imagenes\ImgCRUD\Ver2.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgClientes\Clientes.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgClientes\RegistrarCliente.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Inventario.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Libros.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Stock.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgRegistroUsuarios\RegistrarUsuario.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgVentas\AgregarVenta.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgVentas\Facturaciones.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgVentas\Ventas.png" />
+    <Content Include="Interfaces\Imagenes\LogoLibreria\LibreriaImagen.png" />
+    <Content Include="Interfaces\Imagenes\LogoLibreria\LibroLogo.png" />
+    <Content Include="Interfaces\Imagenes\LogoLibreria\LogoLogin.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\CerrarSesion.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\CerrarSesion2.0.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\Exit.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\Maximizar.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\Menu.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\Minimizar.png" />
+    <Content Include="Interfaces\Imagenes\Navegacion\Restaurar.png" />
+    <Content Include="Interfaces\Imagenes\Otros\Aviso.png" />
+    <Content Include="Interfaces\Imagenes\Perfil\User.png" />
+    <Content Include="Interfaces\Imagenes\Perfil\User2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
