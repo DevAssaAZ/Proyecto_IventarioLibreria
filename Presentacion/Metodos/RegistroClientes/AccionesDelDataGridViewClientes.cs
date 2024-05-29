@@ -46,17 +46,17 @@ namespace Presentacion.Metodos.RegistroClientes
                             {
                                 idCliente = row.Cells["ID"].Value.ToString();
                                 obj_cliente.Id = Convert.ToInt32(idCliente);
-                                if (MessageBox.Show("Esta seguro de Eliminar a este usuario? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                if (MessageBox.Show("Esta seguro de Eliminar a este Cliente? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
                                     if (obj_cliente.EliminarCliente())
                                     {
-                                        MessageBox.Show("Eliminado con éxito");
+                                        MessageBox.Show("Cliente Eliminado Exitosamente");
                                         // Llamada al método para cargar datos de cliente en el formulario
                                         DatosLoaderClientes.CargarDatosClientes(dgvInformacion);
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Error al Eliminar el usuario");
+                                        MessageBox.Show("Error al Eliminar el cliente");
                                     }
                                 }
                             }

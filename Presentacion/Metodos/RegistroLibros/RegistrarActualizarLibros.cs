@@ -28,7 +28,7 @@ namespace Presentacion.Metodos.RegistroLibros
 
                     if (libro_N.InsertarLibros())
                     {
-                        MessageBox.Show("Registrado con éxito");
+                        MessageBox.Show("Libro Registrado Exitosamente");
                         // Cargar datos al cargar el formulario
                         DatosLoaderLibros.CargarDatosLibros(dgvLibro);
                         // Llamada del método para limpiar los campos de los registros
