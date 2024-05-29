@@ -244,22 +244,21 @@ namespace Presentacion.Modulos.RegistroVentas
                 MetodosCliente cliente_N = new MetodosCliente();
                 DataTable tablaClientes = cliente_N.MostrarClientes();
 
-                //// Configurar el ComboBox
-                //cbClientes.DisplayMember = "APELLIDO"+" "+"NOMBRE";  // Columna que se mostrará en el ComboBox
-                //cbClientes.ValueMember = "ID";  // Columna que representará el valor de cada ítem (asumiendo que tienes una columna 'ID')
-                //cbClientes.DataSource = tablaClientes;
-
 
                 // Crear una nueva tabla con una columna concatenada
                 DataTable tablaClientesConcat = new DataTable();
                 tablaClientesConcat.Columns.Add("ID", typeof(int));
                 tablaClientesConcat.Columns.Add("NombreCompleto", typeof(string));
+                tablaClientesConcat.Columns.Add("CEDULA", typeof(string)); // Agregar la columna "CEDULA"
 
                 foreach (DataRow row in tablaClientes.Rows)
                 {
                     string nombreCompleto = row["APELLIDO"].ToString() + " " + row["NOMBRE"].ToString();
-                    cedulaCliente = row["CEDULA"].ToString();
-                    tablaClientesConcat.Rows.Add(row["ID"], nombreCompleto);
+                    string cedulaCliente = row["CEDULA"].ToString(); // Obtener la cédula del cliente
+                    
+
+                    // Agregar la fila a la tablaClientesConcat
+                    tablaClientesConcat.Rows.Add(row["ID"], nombreCompleto, cedulaCliente);
                 }
 
                 cbClientes.DisplayMember = "NombreCompleto";
@@ -289,7 +288,11 @@ namespace Presentacion.Modulos.RegistroVentas
                 // Obtener el DataRowView del elemento seleccionado
                 DataRowView selectedRow = (DataRowView)comboBox.SelectedItem;
 
-                txtCedula.Text = cedulaCliente;
+                // Obtener la cédula del cliente seleccionado
+                string cedulaClienteSeleccionado = selectedRow.Row["CEDULA"].ToString();
+
+                // Mostrar la cédula en el cuadro de texto txtCedula
+                txtCedula.Text = cedulaClienteSeleccionado;
 
                 // Obtener la ID del libro 
                 idCliente = Convert.ToInt32(selectedRow["ID"]);
