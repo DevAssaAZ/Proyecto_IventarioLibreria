@@ -24,8 +24,6 @@ namespace Presentacion.Modulos.RegistroVentas
         private string idUsuario;
         private int idLibro;
         private int idCliente;
-        private string cedulaCliente;
-        private string precioLibro;
         private string idVenta;
         public RegistroVentas()
         {

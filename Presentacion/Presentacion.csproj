@@ -123,40 +123,40 @@
     <Compile Include="Metodos\RegistroLibros\LimpiarCamposRegistroLibros.cs" />
     <Compile Include="Metodos\RegistroLibros\NuevoRegistroLibro.cs" />
     <Compile Include="Metodos\RegistroLibros\RegistrarActualizarLibros.cs" />
-    <Compile Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.cs">
+    <Compile Include="Interfaces\Modulos\Clientes\RegistroClientes\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.Designer.cs">
+    <Compile Include="Interfaces\Modulos\Clientes\RegistroClientes\RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.cs">
+    <Compile Include="Interfaces\Modulos\AdministrarInventario\RegistroLibros\RegistroLibros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.Designer.cs">
+    <Compile Include="Interfaces\Modulos\AdministrarInventario\RegistroLibros\RegistroLibros.Designer.cs">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroLibros\Stock.cs">
+    <Compile Include="Interfaces\Modulos\AdministrarInventario\Stock\Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroLibros\Stock.Designer.cs">
+    <Compile Include="Interfaces\Modulos\AdministrarInventario\Stock\Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.cs">
+    <Compile Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.Designer.cs">
+    <Compile Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.cs">
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.Designer.cs">
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.cs">
+    <Compile Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.Designer.cs">
+    <Compile Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.Designer.cs">
       <DependentUpon>RegistroVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -182,22 +182,22 @@
     <EmbeddedResource Include="Interfaces\MenuPrincipal\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroClientes\RegistroCliente.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\Clientes\RegistroClientes\RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroLibros\RegistroLibros.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\AdministrarInventario\RegistroLibros\RegistroLibros.resx">
       <DependentUpon>RegistroLibros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroLibros\Stock.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\AdministrarInventario\Stock\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroUsuarios\RegistroUsuarios.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroVentas\Facturacion\Facturacion.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\RegistroVentas\RegistroVentas.resx">
+    <EmbeddedResource Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.resx">
       <DependentUpon>RegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
