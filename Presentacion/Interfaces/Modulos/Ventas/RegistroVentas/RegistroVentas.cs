@@ -15,6 +15,7 @@ using Negocio.Stock_cn.StockEntrada;
 using Negocio.Usuarios_cn;
 using Negocio.Ventas_cn;
 using Soporte.Cache;
+using Presentacion.Metodos.AbrirYCerrarFormularios;
 
 namespace Presentacion.Modulos.RegistroVentas
 {
@@ -105,7 +106,8 @@ namespace Presentacion.Modulos.RegistroVentas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
         }
 
 

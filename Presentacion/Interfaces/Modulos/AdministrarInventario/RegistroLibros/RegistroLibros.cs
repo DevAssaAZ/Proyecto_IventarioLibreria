@@ -1,5 +1,6 @@
 ﻿using Negocio.Clientes_cn;
 using Negocio.Libros_cn;
+using Presentacion.Metodos.AbrirYCerrarFormularios;
 using Presentacion.Metodos.RegistroLibros;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,8 @@ namespace Presentacion.Modulos.RegistroLibros
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
         }
 
         private void dgvLibro_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

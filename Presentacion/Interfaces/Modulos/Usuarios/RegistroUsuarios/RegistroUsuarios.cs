@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Usuarios_cn;
+using Presentacion.Metodos.AbrirYCerrarFormularios;
 
 namespace Presentacion.Modulos.RegistroUsuarios
 {
@@ -35,7 +36,8 @@ namespace Presentacion.Modulos.RegistroUsuarios
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
         }
 
 

@@ -159,6 +159,14 @@
     <Compile Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.Designer.cs">
       <DependentUpon>RegistroVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos\Stock\DatosDelStock\CondicionesParaCantidad.cs" />
+    <Compile Include="Metodos\Stock\DatosDelStock\DatosLoaderStock.cs" />
+    <Compile Include="Metodos\Stock\Entrada\AccionesDelDataViewGriedStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\CancelarOperacionRegistroStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\DatosLoaderStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\LimpiarCamposRegistroStockEntrada.cs" />
+    <Compile Include="Metodos\Stock\Entrada\NuevaEntradaStock.cs" />
+    <Compile Include="Metodos\Stock\Entrada\RegistrarActualizarStockEntrada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaces\Login\Bienvenida.resx">
@@ -265,6 +273,8 @@
     <Content Include="Interfaces\Imagenes\Perfil\User.png" />
     <Content Include="Interfaces\Imagenes\Perfil\User2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Metodos\Stock\Salida\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

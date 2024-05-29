@@ -1,6 +1,10 @@
 ﻿using Negocio.Libros_cn;
 using Negocio.Login_cn;
 using Negocio.Stock_cn.StockEntrada;
+using Presentacion.Metodos.AbrirYCerrarFormularios;
+using Presentacion.Metodos.Stock.DatosDelStock;
+using Presentacion.Metodos.Stock.DatosDeTablas;
+using Presentacion.Metodos.Stock.Entrada;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +20,7 @@ namespace Presentacion.Modulos.RegistroLibros
 {
     public partial class Stock : Form
     {
-        MetodosStockEntrada obj_entrada = new MetodosStockEntrada();
+        
         private int idLibro;
         private string nombrelibro;
         private string idStock;
@@ -26,100 +30,47 @@ namespace Presentacion.Modulos.RegistroLibros
         }
 
 
-        private void CargarDatos()
-        {
-            MetodosLibros libro_N = new MetodosLibros();
-            DataTable dt = libro_N.MostrarLibros();
-            dgvLibrosStock.DataSource = dt;
-            dgvLibrosStock.ClearSelection();
-            dgvLibrosStock.AutoGenerateColumns = false;
-
-            dgvLibrosStock.Columns["CANTIDAD"].HeaderText = "STOCK";
-            dgvLibrosStock.Columns["ANIO"].HeaderText = "AÑO";
-
-            dgvLibrosStock.Columns["ID"].DisplayIndex = 0;
-            dgvLibrosStock.Columns["TITULO"].DisplayIndex = 1;
-            dgvLibrosStock.Columns["AUTOR"].DisplayIndex = 2;
-            dgvLibrosStock.Columns["ANIO"].DisplayIndex = 3;
-            dgvLibrosStock.Columns["PRECIO"].DisplayIndex = 4;
-            dgvLibrosStock.Columns["CANTIDAD"].DisplayIndex = 5;
-        }
-
-
-        private void CargarDatosStockEntrada()
-        {
-            MetodosStockEntrada entrada = new MetodosStockEntrada();
-            DataTable dt = entrada.MostrarStockEntrada();
-            dgvEntradaStock.DataSource = dt;
-            dgvEntradaStock.ClearSelection();
-            dgvEntradaStock.AutoGenerateColumns = false;
-            dgvEntradaStock.Columns["ID"].DisplayIndex = 0;
-            dgvEntradaStock.Columns["ID_LIBRO"].DisplayIndex = 1;
-            dgvEntradaStock.Columns["CANTIDAD"].DisplayIndex = 2;
-            dgvEntradaStock.Columns["FECHA"].DisplayIndex = 3;
-            dgvEntradaStock.Columns["PROVEEDOR"].DisplayIndex = 4;
-            dgvEntradaStock.Columns["COMENTARIOS"].DisplayIndex = 5;
-            dgvEntradaStock.Columns["Editar"].DisplayIndex = 6;
-            dgvEntradaStock.Columns["Eliminar"].DisplayIndex = 7;
-        }
-
         private void Stock_Load(object sender, EventArgs e)
         {
-            CargarDatos();
-            CargarDatosStockEntrada();
+            //Llamada del metodo para ver stock
+            DatosLoaderStock.CargarDatosStock(dgvLibrosStock);
+            //Llamada del metodo para ver stock de entrada
+            DatosLoaderStockEntrada.CargarDatosStockEntrada(dgvEntradaStock);
+            //Llamada al metodo para limpiar los campos de registro de stock de entrada
+            LimpiarCamposRegistroStockEntrada.LimpiarCampos(txtCantidad, rtComentarios);
             LlenarComboBox();
         }
+        
 
+        //Evento para manejar el formatiar celdas (en este caso cambiar el color)
         private void dgvLibrosStock_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.dgvLibrosStock.Columns[e.ColumnIndex].Name == "CANTIDAD")
-            {
-                if (Convert.ToInt32(e.Value) <= 100000)
-                {
-                    e.CellStyle.BackColor = Color.LimeGreen;
-
-
-                    if (Convert.ToInt32(e.Value) <= 10)
-                    {
-                        e.CellStyle.BackColor = Color.Red;
-                    }
-
-                }
-
-
-
-
-
-            }
+            //Llamada del metodo para las condiciones de las cantidades
+            CondicionesParaCantidad.FormatearCeldaCantidad(e, dgvLibrosStock);
         }
+
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
         }
+
+
 
         private void btnNuevaEntrada_Click(object sender, EventArgs e)
         {
-            btnNuevaEntrada.Visible = false;
-            btnCancelar.Visible = true;
-            cbLibros.Visible = true;
-            dgvLibrosStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvEntradaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvSalidaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            panelContenedor.Visible = true;
-            panelPrincipal.Size = new Size(499, 483);
+            //Llamada del metodo para ingresar un nuevo stock de entrada
+            NuevaEntradaStock.NuevaEntrada(btnNuevaEntrada, btnCancelar, cbLibros, dgvLibrosStock, dgvEntradaStock, dgvSalidaStock, panelContenedor, panelPrincipal, txtCantidad, rtComentarios);
         }
+
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            btnNuevaEntrada.Visible = true;
-            btnCancelar.Visible = false;
-            panelContenedor.Visible = false;
-            panelPrincipal.Size = new Size(1020, 632);
-            dgvLibrosStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEntradaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvSalidaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            CargarDatos();
+            //Llamada del metodo para cancelar un registro
+            CancelarOperacionRegistroStockEntrada.CancelarEntrada(btnNuevaEntrada, btnCancelar, panelContenedor, panelPrincipal, dgvLibrosStock, dgvEntradaStock, dgvSalidaStock, txtCantidad, rtComentarios);
         }
 
 
@@ -168,129 +119,19 @@ namespace Presentacion.Modulos.RegistroLibros
             }
         }
 
+
+
+
         private void btnRegistrarStockEntrada_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MetodosStockEntrada entrada = new MetodosStockEntrada();
-                entrada.IdLibro = idLibro;
-                entrada.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                // Obtener la fecha seleccionada del DateTimePicker
-                DateTime fechaSeleccionada = dtFecha.Value;
-                // Convertir la fecha a una cadena con el formato deseado "año-mes-día"
-                string fechaFormateada = fechaSeleccionada.ToString("yyyy-MM-dd");
-                entrada.Fecha = Convert.ToDateTime(fechaFormateada);
-                entrada.Proveedor = txtProvedor.Text;
-                entrada.Comentarios = rtComentarios.Text;
-
-
-                if (entrada.InsertarStockEntrada())
-                {
-                    MessageBox.Show("Stock Actualizado");
-                    // Vuelve a cargar los datos en el DataGridView
-                    CargarDatos();
-                    CargarDatosStockEntrada();
-                    // Limpia los TextBox después de la inserción
-                    btnNuevaEntrada.Visible = true;
-                    btnCancelar.Visible = false;
-                    panelContenedor.Visible = false;
-                    panelPrincipal.Size = new Size(1020, 632);
-                    dgvEntradaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvLibrosStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvSalidaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-                }
-                else
-                {
-                    MessageBox.Show("Error al registrar el Stock");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al comprobar Stock: " + ex.Message);
-            }
+            //Llamada del metodo para registrar y actualizar stock de entrada
+            RegistrarActualizarStockEntrada.RegistrarActualizarStock( ref idLibro, txtCantidad, dtFecha, txtProvedor, rtComentarios, dgvLibrosStock, dgvEntradaStock, btnNuevaEntrada, btnCancelar, panelContenedor, panelPrincipal, dgvSalidaStock);
         }
 
         private void dgvEntradaStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            try
-            {
-
-                
-
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Verifica que tanto la fila como la columna sean válidas
-                {
-                    DataGridViewRow row = dgvEntradaStock.Rows[e.RowIndex];
-                    if (row != null && row.Cells.Count > 0) // Verifica que la fila y las celdas no estén vacías
-                    {
-
-
-                        if (dgvEntradaStock.Columns[e.ColumnIndex].Name == "Editar")
-                        {
-                            if (e.RowIndex >= 0)
-                            {
-
-                                txtNombreLibro.Text = nombrelibro;
-                                txtCantidad.Text = row.Cells["CANTIDAD"].Value?.ToString() ?? string.Empty; 
-                                //dtFecha = row.Cells["ANIO"].Value?.ToString() ?? string.Empty; 
-                                txtProvedor.Text = row.Cells["PROVEEDOR"].Value?.ToString() ?? string.Empty;
-                                rtComentarios.Text = row.Cells["COMENTARIOS"].Value?.ToString() ?? string.Empty; 
-                                txtIdStock.Text = row.Cells["ID"].Value.ToString();
-                                btnNuevaEntrada.Visible = false;
-                                btnCancelar.Visible = true;
-                                dgvEntradaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                                panelContenedor.Visible = true;
-                                panelPrincipal.Size = new Size(437, 463);
-                                btnRegistrarStockEntrada.Text = "Actualizar";
-                                btnRegistrarStockEntrada.Enabled = false;
-
-                            }
-
-                        }
-                        if (dgvEntradaStock.Columns[e.ColumnIndex].Name == "Eliminar")
-                        {
-                            if (e.RowIndex >= 0)
-                            {
-                                idStock = row.Cells["ID"].Value.ToString();
-                                obj_entrada.Id = Convert.ToInt32(idStock);
-                                if (MessageBox.Show("Esta seguro de Eliminar Este Stock? ", "Alerta!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                {
-
-                                    if (obj_entrada.EliminarStockEntrada())
-                                    {
-                                        MessageBox.Show("Stock eliminado con éxito");
-                                        CargarDatos();
-                                        CargarDatosStockEntrada();
-
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Error al Eliminar el Stock");
-                                    }
-
-                                }
-
-                            }
-                        }
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("La fila seleccionada está vacía.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("La fila o la columna seleccionada no son válidas.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al seleccionar la fila: " + ex.Message);
-            }
+            //Llamada del metodo para realizar acciones en la tabla de stock entrada
+            AccionesDelDataViewGriedStockEntrada.AccionesTablaEntradaStock(e, dgvEntradaStock, txtNombreLibro, txtCantidad, txtProvedor, rtComentarios, txtIdStock, btnNuevaEntrada, btnCancelar, btnRegistrarStockEntrada, ref nombrelibro, dgvLibrosStock, panelContenedor, panelPrincipal);
         }
     }
 }

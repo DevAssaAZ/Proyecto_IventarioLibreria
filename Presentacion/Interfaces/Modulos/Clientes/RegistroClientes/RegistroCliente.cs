@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion.Metodos.RegistroClientes;
+using Presentacion.Metodos.AbrirYCerrarFormularios;
 
 
 namespace Presentacion.Modulos.RegistroClientes
@@ -49,7 +50,8 @@ namespace Presentacion.Modulos.RegistroClientes
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
