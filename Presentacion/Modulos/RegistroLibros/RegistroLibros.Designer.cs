@@ -152,7 +152,6 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(151, 27);
             this.txtTitulo.TabIndex = 5;
-            this.txtTitulo.TextChanged += new System.EventHandler(this.txtTitulo_TextChanged);
             // 
             // label5
             // 
@@ -186,7 +185,6 @@
             this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Autor:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panelPrincipal
             // 
@@ -336,7 +334,6 @@
             this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "Titulo:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCerrar
             // 

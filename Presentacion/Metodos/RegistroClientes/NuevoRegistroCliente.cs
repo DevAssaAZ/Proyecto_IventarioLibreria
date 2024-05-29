@@ -19,7 +19,7 @@ namespace Presentacion.Metodos.RegistroClientes
             panelContenedor.Visible = true;
 
             // Llamada del Método para limpiar campos
-            LimpiarCamposdeRegistro.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
+            LimpiarCamposdeRegistroClientes.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
 
             panelPrincipal.Size = new Size(437, 463);
         }

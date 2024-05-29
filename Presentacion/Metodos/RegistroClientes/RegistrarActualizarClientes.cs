@@ -32,7 +32,7 @@ namespace Presentacion.Metodos.RegistroClientes
                         // Llamada al método para cargar datos de cliente en el formulario
                         DatosLoaderClientes.CargarDatosClientes(dgvInformacion);
                         // Llamada del método para limpiar campos
-                        LimpiarCamposdeRegistro.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
+                        LimpiarCamposdeRegistroClientes.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
                         btnNuevo.Visible = true;
                         btnCancelar.Visible = false;
                         panelContenedor.Visible = false;
@@ -68,7 +68,7 @@ namespace Presentacion.Metodos.RegistroClientes
                         // Llamada al método para cargar datos de cliente en el formulario
                         DatosLoaderClientes.CargarDatosClientes(dgvInformacion);
                         // Llamada del método para limpiar campos
-                        LimpiarCamposdeRegistro.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
+                        LimpiarCamposdeRegistroClientes.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
                         btnNuevo.Visible = true;
                         btnCancelar.Visible = false;
                         panelContenedor.Visible = false;

@@ -36,7 +36,7 @@ namespace Presentacion.Modulos.RegistroClientes
             // Llamada al metodo para cargar datos de cliente enel formulario
             DatosLoaderClientes.CargarDatosClientes(dgvInformacion);
             //Llamada del Metodo para limpiar campos
-            LimpiarCamposdeRegistro.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
+            LimpiarCamposdeRegistroClientes.LimpiarCampos(txtNombre, txtApellido, txtCedula, txtEdad, txtCorreo, dgvInformacion);
 
         }
 

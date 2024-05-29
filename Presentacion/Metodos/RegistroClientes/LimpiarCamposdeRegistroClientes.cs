@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Metodos.RegistroClientes
 {
-    public static class LimpiarCamposdeRegistro
+    public static class LimpiarCamposdeRegistroClientes
     {
         //Metodo para limpiar los campos de la pantalla de registros
         public static void LimpiarCampos(TextBox txtNombre, TextBox txtApellido, TextBox txtCedula, TextBox txtEdad, TextBox txtCorreo, DataGridView dgvInformacion)

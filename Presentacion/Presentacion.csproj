@@ -114,9 +114,15 @@
     <Compile Include="Metodos\RegistroClientes\AccionesDelDataGridViewClientes.cs" />
     <Compile Include="Metodos\RegistroClientes\CancelarOperacionRegistroCliente.cs" />
     <Compile Include="Metodos\RegistroClientes\DatosLoaderClientes.cs" />
-    <Compile Include="Metodos\RegistroClientes\LimpiarCamposdeRegistro.cs" />
+    <Compile Include="Metodos\RegistroClientes\LimpiarCamposdeRegistroClientes.cs" />
     <Compile Include="Metodos\RegistroClientes\NuevoRegistroCliente.cs" />
     <Compile Include="Metodos\RegistroClientes\RegistrarActualizarClientes.cs" />
+    <Compile Include="Metodos\RegistroLibros\AccionesDelDataViewGriedLibros.cs" />
+    <Compile Include="Metodos\RegistroLibros\CancelarOperacionRegistroLibro.cs" />
+    <Compile Include="Metodos\RegistroLibros\DatosLoaderLibros.cs" />
+    <Compile Include="Metodos\RegistroLibros\LimpiarCamposRegistroLibros.cs" />
+    <Compile Include="Metodos\RegistroLibros\NuevoRegistroLibro.cs" />
+    <Compile Include="Metodos\RegistroLibros\RegistrarActualizarLibros.cs" />
     <Compile Include="Modulos\RegistroClientes\RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>

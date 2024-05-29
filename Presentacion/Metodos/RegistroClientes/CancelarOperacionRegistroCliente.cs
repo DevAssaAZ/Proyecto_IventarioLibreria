@@ -10,7 +10,7 @@ namespace Presentacion.Metodos.RegistroClientes
 {
     public static class CancelarOperacionRegistroCliente
     {
-        //Metodo para el boton cancelar
+        //Metodo para el boton cancelar de clientes
         public static void Cancelar(Button btnNuevo, Button btnCancelar, Panel panelContenedor, Panel panelPrincipal, DataGridView dgvInformacion)
         {
             if (MessageBox.Show("Deseas cancelar el registro de Cliente?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
