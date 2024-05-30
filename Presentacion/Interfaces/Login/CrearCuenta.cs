@@ -102,7 +102,6 @@ namespace Presentacion.Login
 
 
             RegistroUsuarios registroUsuarios = new RegistroUsuarios();
-            ValidacionesUsuarios validar = new ValidacionesUsuarios();
             if (btnRegistro.Text == "Registrar") {
                 try
                 {
