@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionesDeConsultas\ConsultaCliente.cs" />
-    <Compile Include="ConexionesDeConsultas\ConsultaLibro.cs" />
-    <Compile Include="ConexionesDeConsultas\ConsultaStockEntrada.cs" />
-    <Compile Include="ConexionesDeConsultas\ConsultasVenta.cs" />
+    <Compile Include="ConexionesDeConsultas\Clientes\ConsultaCliente.cs" />
+    <Compile Include="ConexionesDeConsultas\Libros\ConsultaLibro.cs" />
+    <Compile Include="ConexionesDeConsultas\Stock\ConsultaStockEntrada.cs" />
+    <Compile Include="ConexionesDeConsultas\Ventas\ConsultasVenta.cs" />
     <Compile Include="ConexionPerfilEdit\PerfilEdit.cs" />
     <Compile Include="ConexionSQL\ConnectionToSql.cs" />
-    <Compile Include="ConexionesDeConsultas\ConsultasUsuario.cs" />
+    <Compile Include="ConexionesDeConsultas\Usuarios\ConsultasUsuario.cs" />
     <Compile Include="EmailServices\EmailTest.cs" />
     <Compile Include="EmailServices\ServidorDeCorreosMaestro.cs" />
     <Compile Include="EmailServices\SystemSoportMail.cs" />
