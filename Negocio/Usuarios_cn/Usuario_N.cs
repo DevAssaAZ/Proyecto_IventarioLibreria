@@ -45,6 +45,11 @@ namespace Negocio.Usuarios_cn
             this.Id = id;
         }
 
+        public Usuario_N(string userName)
+        {
+            this.UserName = userName;
+        }
+
 
         public Usuario_N()
         {

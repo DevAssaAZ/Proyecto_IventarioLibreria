@@ -102,6 +102,7 @@ namespace Presentacion.Login
 
 
             RegistroUsuarios registroUsuarios = new RegistroUsuarios();
+            ValidacionesUsuarios validar = new ValidacionesUsuarios();
             if (btnRegistro.Text == "Registrar") {
                 try
                 {
@@ -114,7 +115,10 @@ namespace Presentacion.Login
 
                     // Debug: Mostrar los valores que se están pasando
                     MessageBox.Show($"Rol: {obj_Usuario.Rol}, Nombre Completo: {obj_Usuario.NombreCompleto}, Email: {obj_Usuario.Email}, Password: {obj_Usuario.Password}, Usuario: {obj_Usuario.UserName}");
+
                     
+
+
                     if (obj_Usuario.InsertarUsuario())
                     {
                         MessageBox.Show("Registrado con éxito");
