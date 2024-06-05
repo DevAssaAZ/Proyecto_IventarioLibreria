@@ -23,7 +23,15 @@ namespace Datos.ConexionSQL
         }
         protected SqlConnection GetConnection()
         {
-            return new SqlConnection(conexionString);
+            try
+            {
+                return new SqlConnection(conexionString);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Conexion a Sql Server Incorrecta: " + ex.Message);
+            }
+            
         }
 
 
