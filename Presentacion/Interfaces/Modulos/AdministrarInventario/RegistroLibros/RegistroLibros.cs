@@ -63,5 +63,9 @@ namespace Presentacion.Modulos.RegistroLibros
             CancelarOperacionRegistroLibro.Cancelar(btNuevo, btnCancelar, panelContenedor, panelPrincipal, dgvLibro);
         }
 
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

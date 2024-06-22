@@ -14,7 +14,7 @@ namespace Datos.ConexionesDeConsulta.Reserva
         // Método para mostrar reservas
         public DataTable MostrarReservas()
         {
-            string storedProcedure = "MostrarReservas";
+            string storedProcedure = "SP_MOSTRAR_RESERVAS";
             try
             {
                 using (var conexion = GetConnection())
@@ -41,19 +41,22 @@ namespace Datos.ConexionesDeConsulta.Reserva
         }
 
         // Método para insertar reserva
-        public bool InsertarReserva(int usuarioId, int libroId, DateTime fechaReserva, string estado)
+        public bool InsertarReserva(int usuarioId, int clienteId, int libroId, int cantidad, decimal precioTotal, DateTime fechaReserva, string estado)
         {
             try
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand("InsertarReserva", conexion))
+                    using (SqlCommand command = new SqlCommand("SP_INSERTAR_RESERVA", conexion))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@usuarioId", usuarioId);
-                        command.Parameters.AddWithValue("@libroId", libroId);
-                        command.Parameters.AddWithValue("@fechaReserva", fechaReserva);
-                        command.Parameters.AddWithValue("@estado", estado);
+                        command.Parameters.AddWithValue("@USUARIO_ID", usuarioId);
+                        command.Parameters.AddWithValue("@CLIENTE_ID", clienteId);
+                        command.Parameters.AddWithValue("@LIBRO_ID", libroId);
+                        command.Parameters.AddWithValue("@CANTIDAD", cantidad);
+                        command.Parameters.AddWithValue("@PRECIOTOTAL", precioTotal);
+                        command.Parameters.AddWithValue("@FECHA_RESERVA", fechaReserva);
+                        command.Parameters.AddWithValue("@ESTADO", estado);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();
@@ -68,20 +71,23 @@ namespace Datos.ConexionesDeConsulta.Reserva
         }
 
         // Método para editar reserva
-        public bool EditarReserva(int id, int usuarioId, int libroId, DateTime fechaReserva, string estado)
+        public bool EditarReserva(int id, int usuarioId, int clienteId, int libroId, int cantidad, decimal precioTotal, DateTime fechaReserva, string estado)
         {
             try
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand("EditarReserva", conexion))
+                    using (SqlCommand command = new SqlCommand("SP_EDITAR_RESERVA", conexion))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@id", id);
-                        command.Parameters.AddWithValue("@usuarioId", usuarioId);
-                        command.Parameters.AddWithValue("@libroId", libroId);
-                        command.Parameters.AddWithValue("@fechaReserva", fechaReserva);
-                        command.Parameters.AddWithValue("@estado", estado);
+                        command.Parameters.AddWithValue("@ID", id);
+                        command.Parameters.AddWithValue("@USUARIO_ID", usuarioId);
+                        command.Parameters.AddWithValue("@CLIENTE_ID", clienteId);
+                        command.Parameters.AddWithValue("@LIBRO_ID", libroId);
+                        command.Parameters.AddWithValue("@CANTIDAD", cantidad);
+                        command.Parameters.AddWithValue("@PRECIOTOTAL", precioTotal);
+                        command.Parameters.AddWithValue("@FECHA_RESERVA", fechaReserva);
+                        command.Parameters.AddWithValue("@ESTADO", estado);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();
@@ -102,10 +108,10 @@ namespace Datos.ConexionesDeConsulta.Reserva
             {
                 using (var conexion = GetConnection())
                 {
-                    using (SqlCommand command = new SqlCommand("EliminarReserva", conexion))
+                    using (SqlCommand command = new SqlCommand("SP_ELIMINAR_RESERVA", conexion))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@ID", id);
 
                         conexion.Open();
                         int resultado = command.ExecuteNonQuery();

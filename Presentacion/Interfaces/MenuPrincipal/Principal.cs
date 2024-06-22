@@ -22,6 +22,7 @@ using Presentacion.Metodos.MenuPrincipal;
 using Presentacion.Metodos.MenuPrincipal.MenusDesplegables;
 using Presentacion.Metodos.MenuPrincipal.AplicarRoles;
 using Presentacion.Metodos.MenuPrincipal.AccionesDelFormulario;
+using Presentacion.Interfaces.Modulos.Reserva.RegistroReserva;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -168,7 +169,7 @@ namespace Presentacion.MenuPrincipal
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
 
-            Facturacion facturacion = new Facturacion();
+            RegistroReserva facturacion = new RegistroReserva();
             //Llamado del metodo para abrir los formularios
             AbrirFormulariosEnPanel.AbrirFormularioEnPanel(panelContenedor, facturacion);
             //Llamada al metodo para esconder los paneles que sirven de menu

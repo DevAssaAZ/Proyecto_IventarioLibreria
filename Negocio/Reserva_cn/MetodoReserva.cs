@@ -9,32 +9,63 @@ using System.Threading.Tasks;
 
 namespace Negocio.Reserva_cn
 {
-    public class MetodosReservas : Reserva_N
+    public class MetodoReserva : Reserva_N
     {
         ConsultaReserva consultasReserva = new ConsultaReserva();
 
         // Método para mostrar reservas
         public DataTable MostrarReservas()
         {
-            return consultasReserva.MostrarReservas();
+            try
+            {
+                return consultasReserva.MostrarReservas();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al mostrar reservas: " + ex.Message);
+            }
         }
 
         // Método para insertar reserva
-        public bool InsertarReserva()
+        public bool InsertarReserva(int usuarioId, int clienteId, int libroId, int cantidad, decimal precioTotal, DateTime fechaReserva, string estado)
         {
-            return consultasReserva.InsertarReserva(UsuarioId, LibroId, FechaReserva, Estado);
+            try
+            {
+                return consultasReserva.InsertarReserva(usuarioId, clienteId, libroId, cantidad, precioTotal, fechaReserva, estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar reserva: " + ex.Message);
+            }
         }
 
+
         // Método para editar reserva
-        public bool EditarReserva()
+        public bool EditarReserva(int id, int usuarioId, int clienteId, int libroId, int cantidad, decimal precioTotal, DateTime fechaReserva, string estado)
         {
-            return consultasReserva.EditarReserva(Id, UsuarioId, LibroId, FechaReserva, Estado);
+            try
+            {
+                return consultasReserva.EditarReserva(id, usuarioId, clienteId, libroId, cantidad, precioTotal, fechaReserva, estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar reserva: " + ex.Message);
+            }
         }
 
         // Método para eliminar reserva
-        public bool EliminarReserva()
+        public bool EliminarReserva(int id)
         {
-            return consultasReserva.EliminarReserva(Id);
+            try
+            {
+                return consultasReserva.EliminarReserva(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar reserva: " + ex.Message);
+            }
         }
+
+
     }
 }
