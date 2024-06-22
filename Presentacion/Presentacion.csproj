@@ -98,6 +98,12 @@
     <Compile Include="Interfaces\MenuPrincipal\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Modulos\Reserva\RegistroReserva\RegistroReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Modulos\Reserva\RegistroReserva\RegistroReserva.Designer.cs">
+      <DependentUpon>RegistroReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos\AbrirYCerrarFormularios\AbrirFormulariosEnPanel.cs" />
     <Compile Include="Metodos\AbrirYCerrarFormularios\CerrarFormularios.cs" />
     <Compile Include="Metodos\AbrirYCerrarFormularios\MostrarLogo\MostrarLogo.cs" />
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Modulos\AdministrarInventario\Stock\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Modulos\Reserva\RegistroReserva\RegistroReserva.resx">
+      <DependentUpon>RegistroReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>

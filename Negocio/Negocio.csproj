@@ -48,6 +48,8 @@
     <Compile Include="Libros_cn\MetodosLibro.cs" />
     <Compile Include="Login_cn\MetodosLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reserva_cn\MetodoReserva.cs" />
+    <Compile Include="Reserva_cn\Reserva_N.cs" />
     <Compile Include="Stock_cn\StockEntrada\MetodosStockEntrada.cs" />
     <Compile Include="Stock_cn\StockEntrada\StockEntrada.cs" />
     <Compile Include="Usuarios_cn\MetodosUsuario.cs" />

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ConexionesDeConsultas\Clientes\ConsultaCliente.cs" />
     <Compile Include="ConexionesDeConsultas\Libros\ConsultaLibro.cs" />
+    <Compile Include="ConexionesDeConsultas\Reserva\ConsultaReserva.cs" />
     <Compile Include="ConexionesDeConsultas\Stock\ConsultaStockEntrada.cs" />
     <Compile Include="ConexionesDeConsultas\Ventas\ConsultasVenta.cs" />
     <Compile Include="ConexionPerfilEdit\PerfilEdit.cs" />
