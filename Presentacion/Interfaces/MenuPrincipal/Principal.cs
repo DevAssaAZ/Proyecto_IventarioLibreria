@@ -169,11 +169,6 @@ namespace Presentacion.MenuPrincipal
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
 
-            RegistroReserva facturacion = new RegistroReserva();
-            //Llamado del metodo para abrir los formularios
-            AbrirFormulariosEnPanel.AbrirFormularioEnPanel(panelContenedor, facturacion);
-            //Llamada al metodo para esconder los paneles que sirven de menu
-            MenuHider.HideMenu(panelSubInventario, panelClientes, panelVentas);
         }
 
 
@@ -186,6 +181,16 @@ namespace Presentacion.MenuPrincipal
             form.FormClosed += Form_FormClosed;
             //Llamada de metodo para abrir el formulario en el panel
             AbrirFormulariosEnPanel.AbrirFormularioEnPanel(panelContenedor, form);
+        }
+
+        private void btnReserva_Click(object sender, EventArgs e)
+        {
+            RegistroReserva reserva = new RegistroReserva();
+            //Llamado del metodo para abrir los formularios
+            AbrirFormulariosEnPanel.AbrirFormularioEnPanel(panelContenedor, reserva);
+            //Llamada al metodo para esconder los paneles que sirven de menu
+            MenuHider.HideMenu(panelSubInventario, panelClientes, panelVentas);
+
         }
 
         //Evento para manejar que al cerrar un formulario regrese el logo

@@ -58,6 +58,7 @@
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnReserva = new System.Windows.Forms.Button();
             this.panelMenuVertical.SuspendLayout();
             this.panelVentas.SuspendLayout();
             this.panelClientes.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // panelMenuVertical
             // 
+            this.panelMenuVertical.AllowDrop = true;
             this.panelMenuVertical.AutoScroll = true;
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelMenuVertical.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -103,11 +105,11 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 619);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 635);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCerrarSesion.Size = new System.Drawing.Size(317, 59);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(300, 59);
             this.btnCerrarSesion.TabIndex = 14;
             this.btnCerrarSesion.Text = "          Cerrar Sesión";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,9 +124,9 @@
             this.panelVentas.Controls.Add(this.btnFacturacion);
             this.panelVentas.Controls.Add(this.btnRegistrarVentas);
             this.panelVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVentas.Location = new System.Drawing.Point(0, 501);
+            this.panelVentas.Location = new System.Drawing.Point(0, 547);
             this.panelVentas.Name = "panelVentas";
-            this.panelVentas.Size = new System.Drawing.Size(317, 88);
+            this.panelVentas.Size = new System.Drawing.Size(300, 88);
             this.panelVentas.TabIndex = 27;
             this.panelVentas.Visible = false;
             // 
@@ -143,7 +145,7 @@
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnFacturacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnFacturacion.Size = new System.Drawing.Size(317, 48);
+            this.btnFacturacion.Size = new System.Drawing.Size(300, 48);
             this.btnFacturacion.TabIndex = 11;
             this.btnFacturacion.Text = "  Facturacion";
             this.btnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,7 +168,7 @@
             this.btnRegistrarVentas.Name = "btnRegistrarVentas";
             this.btnRegistrarVentas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnRegistrarVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRegistrarVentas.Size = new System.Drawing.Size(317, 40);
+            this.btnRegistrarVentas.Size = new System.Drawing.Size(300, 40);
             this.btnRegistrarVentas.TabIndex = 10;
             this.btnRegistrarVentas.Text = "  Registrar";
             this.btnRegistrarVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,11 +187,11 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 461);
+            this.btnVentas.Location = new System.Drawing.Point(0, 507);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnVentas.Size = new System.Drawing.Size(317, 40);
+            this.btnVentas.Size = new System.Drawing.Size(300, 40);
             this.btnVentas.TabIndex = 26;
             this.btnVentas.Text = "          Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,9 +205,9 @@
             this.panelClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelClientes.Controls.Add(this.btnRegistrarClientes);
             this.panelClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClientes.Location = new System.Drawing.Point(0, 412);
+            this.panelClientes.Location = new System.Drawing.Point(0, 458);
             this.panelClientes.Name = "panelClientes";
-            this.panelClientes.Size = new System.Drawing.Size(317, 49);
+            this.panelClientes.Size = new System.Drawing.Size(300, 49);
             this.panelClientes.TabIndex = 25;
             this.panelClientes.Visible = false;
             // 
@@ -242,11 +244,11 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 372);
+            this.btnClientes.Location = new System.Drawing.Point(0, 418);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClientes.Size = new System.Drawing.Size(317, 40);
+            this.btnClientes.Size = new System.Drawing.Size(300, 40);
             this.btnClientes.TabIndex = 24;
             this.btnClientes.Text = "          Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,12 +260,13 @@
             // 
             this.panelSubInventario.AutoSize = true;
             this.panelSubInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelSubInventario.Controls.Add(this.btnReserva);
             this.panelSubInventario.Controls.Add(this.btnStock);
             this.panelSubInventario.Controls.Add(this.btnLibros);
             this.panelSubInventario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubInventario.Location = new System.Drawing.Point(0, 280);
             this.panelSubInventario.Name = "panelSubInventario";
-            this.panelSubInventario.Size = new System.Drawing.Size(317, 92);
+            this.panelSubInventario.Size = new System.Drawing.Size(300, 138);
             this.panelSubInventario.TabIndex = 22;
             this.panelSubInventario.Visible = false;
             // 
@@ -282,7 +285,7 @@
             this.btnStock.Name = "btnStock";
             this.btnStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnStock.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStock.Size = new System.Drawing.Size(317, 52);
+            this.btnStock.Size = new System.Drawing.Size(300, 52);
             this.btnStock.TabIndex = 11;
             this.btnStock.Text = "  Stock";
             this.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -305,7 +308,7 @@
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnLibros.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnLibros.Size = new System.Drawing.Size(317, 40);
+            this.btnLibros.Size = new System.Drawing.Size(300, 40);
             this.btnLibros.TabIndex = 10;
             this.btnLibros.Text = "  Libros";
             this.btnLibros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,7 +331,7 @@
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnInventario.Size = new System.Drawing.Size(317, 40);
+            this.btnInventario.Size = new System.Drawing.Size(300, 40);
             this.btnInventario.TabIndex = 9;
             this.btnInventario.Text = "          Administrar Inventario";
             this.btnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +353,7 @@
             this.btnRegistroUsuarios.Location = new System.Drawing.Point(0, 200);
             this.btnRegistroUsuarios.Name = "btnRegistroUsuarios";
             this.btnRegistroUsuarios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnRegistroUsuarios.Size = new System.Drawing.Size(317, 40);
+            this.btnRegistroUsuarios.Size = new System.Drawing.Size(300, 40);
             this.btnRegistroUsuarios.TabIndex = 8;
             this.btnRegistroUsuarios.Text = "          Registrar Usuarios";
             this.btnRegistroUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,7 +374,7 @@
             this.panelPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPerfil.Location = new System.Drawing.Point(0, 0);
             this.panelPerfil.Name = "panelPerfil";
-            this.panelPerfil.Size = new System.Drawing.Size(317, 200);
+            this.panelPerfil.Size = new System.Drawing.Size(300, 200);
             this.panelPerfil.TabIndex = 23;
             // 
             // label2
@@ -538,6 +541,28 @@
             this.panelContenedor.Size = new System.Drawing.Size(979, 632);
             this.panelContenedor.TabIndex = 2;
             // 
+            // btnReserva
+            // 
+            this.btnReserva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReserva.FlatAppearance.BorderSize = 0;
+            this.btnReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserva.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserva.ForeColor = System.Drawing.Color.White;
+            this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
+            this.btnReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserva.Location = new System.Drawing.Point(0, 89);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnReserva.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReserva.Size = new System.Drawing.Size(321, 46);
+            this.btnReserva.TabIndex = 28;
+            this.btnReserva.Text = "  Reserva";
+            this.btnReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReserva.UseVisualStyleBackColor = true;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,5 +625,6 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnReserva;
     }
 }

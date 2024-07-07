@@ -263,6 +263,7 @@
     <Content Include="Interfaces\Imagenes\ImgCRUD\Ver2.png" />
     <Content Include="Interfaces\Imagenes\ImgModulos\ImgClientes\Clientes.png" />
     <Content Include="Interfaces\Imagenes\ImgModulos\ImgClientes\RegistrarCliente.png" />
+    <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\icono libro.png" />
     <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Inventario.png" />
     <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Libros.png" />
     <Content Include="Interfaces\Imagenes\ImgModulos\ImgInventario\Stock.png" />
