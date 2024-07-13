@@ -36,6 +36,7 @@
             this.btnRegistrarVentas = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.btnReserva = new System.Windows.Forms.Button();
             this.btnRegistrarClientes = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panelSubInventario = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnReserva = new System.Windows.Forms.Button();
             this.panelMenuVertical.SuspendLayout();
             this.panelVentas.SuspendLayout();
             this.panelClientes.SuspendLayout();
@@ -79,6 +79,7 @@
             this.panelMenuVertical.AutoScroll = true;
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelMenuVertical.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMenuVertical.Controls.Add(this.btnReserva);
             this.panelMenuVertical.Controls.Add(this.btnCerrarSesion);
             this.panelMenuVertical.Controls.Add(this.panelVentas);
             this.panelMenuVertical.Controls.Add(this.btnVentas);
@@ -105,7 +106,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 635);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 628);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -124,7 +125,7 @@
             this.panelVentas.Controls.Add(this.btnFacturacion);
             this.panelVentas.Controls.Add(this.btnRegistrarVentas);
             this.panelVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVentas.Location = new System.Drawing.Point(0, 547);
+            this.panelVentas.Location = new System.Drawing.Point(0, 495);
             this.panelVentas.Name = "panelVentas";
             this.panelVentas.Size = new System.Drawing.Size(300, 88);
             this.panelVentas.TabIndex = 27;
@@ -187,7 +188,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 507);
+            this.btnVentas.Location = new System.Drawing.Point(0, 455);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -205,11 +206,34 @@
             this.panelClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panelClientes.Controls.Add(this.btnRegistrarClientes);
             this.panelClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelClientes.Location = new System.Drawing.Point(0, 458);
+            this.panelClientes.Location = new System.Drawing.Point(0, 406);
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Size = new System.Drawing.Size(300, 49);
             this.panelClientes.TabIndex = 25;
             this.panelClientes.Visible = false;
+            // 
+            // btnReserva
+            // 
+            this.btnReserva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReserva.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReserva.FlatAppearance.BorderSize = 0;
+            this.btnReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReserva.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReserva.ForeColor = System.Drawing.Color.White;
+            this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
+            this.btnReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserva.Location = new System.Drawing.Point(0, 583);
+            this.btnReserva.Name = "btnReserva";
+            this.btnReserva.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnReserva.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReserva.Size = new System.Drawing.Size(300, 45);
+            this.btnReserva.TabIndex = 28;
+            this.btnReserva.Text = "          Reserva";
+            this.btnReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReserva.UseVisualStyleBackColor = true;
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
             // 
             // btnRegistrarClientes
             // 
@@ -244,7 +268,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 418);
+            this.btnClientes.Location = new System.Drawing.Point(0, 366);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -260,13 +284,12 @@
             // 
             this.panelSubInventario.AutoSize = true;
             this.panelSubInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelSubInventario.Controls.Add(this.btnReserva);
             this.panelSubInventario.Controls.Add(this.btnStock);
             this.panelSubInventario.Controls.Add(this.btnLibros);
             this.panelSubInventario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubInventario.Location = new System.Drawing.Point(0, 280);
+            this.panelSubInventario.Location = new System.Drawing.Point(0, 274);
             this.panelSubInventario.Name = "panelSubInventario";
-            this.panelSubInventario.Size = new System.Drawing.Size(300, 138);
+            this.panelSubInventario.Size = new System.Drawing.Size(300, 92);
             this.panelSubInventario.TabIndex = 22;
             this.panelSubInventario.Visible = false;
             // 
@@ -327,7 +350,7 @@
             this.btnInventario.ForeColor = System.Drawing.Color.White;
             this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(0, 240);
+            this.btnInventario.Location = new System.Drawing.Point(0, 234);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -350,7 +373,7 @@
             this.btnRegistroUsuarios.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegistroUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroUsuarios.Image")));
             this.btnRegistroUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistroUsuarios.Location = new System.Drawing.Point(0, 200);
+            this.btnRegistroUsuarios.Location = new System.Drawing.Point(0, 194);
             this.btnRegistroUsuarios.Name = "btnRegistroUsuarios";
             this.btnRegistroUsuarios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnRegistroUsuarios.Size = new System.Drawing.Size(300, 40);
@@ -374,7 +397,7 @@
             this.panelPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPerfil.Location = new System.Drawing.Point(0, 0);
             this.panelPerfil.Name = "panelPerfil";
-            this.panelPerfil.Size = new System.Drawing.Size(300, 200);
+            this.panelPerfil.Size = new System.Drawing.Size(300, 194);
             this.panelPerfil.TabIndex = 23;
             // 
             // label2
@@ -540,28 +563,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(979, 632);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // btnReserva
-            // 
-            this.btnReserva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReserva.FlatAppearance.BorderSize = 0;
-            this.btnReserva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserva.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserva.ForeColor = System.Drawing.Color.White;
-            this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
-            this.btnReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReserva.Location = new System.Drawing.Point(0, 89);
-            this.btnReserva.Name = "btnReserva";
-            this.btnReserva.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnReserva.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnReserva.Size = new System.Drawing.Size(321, 46);
-            this.btnReserva.TabIndex = 28;
-            this.btnReserva.Text = "  Reserva";
-            this.btnReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReserva.UseVisualStyleBackColor = true;
-            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // Principal
             // 

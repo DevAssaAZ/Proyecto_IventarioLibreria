@@ -363,5 +363,11 @@ namespace Presentacion.Interfaces.Modulos.Reserva.RegistroReserva
                    comboLibros.SelectedItem != null &&
                    comboClientes.SelectedItem != null;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            //Llamada al metodo para cerrar formularios
+            CerrarFormularios.Cerrarform(this);
+        }
     }
 }

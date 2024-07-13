@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.botonRegistrarReserva = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.comboEstado = new System.Windows.Forms.ComboBox();
             this.textFecha = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,6 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelData = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
             this.VER = new System.Windows.Forms.DataGridViewImageColumn();
@@ -61,9 +64,6 @@
             this.panelBarra = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelVenta = new System.Windows.Forms.Panel();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelData.SuspendLayout();
@@ -121,6 +121,28 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(467, 518);
             this.panelContenedor.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(21, 484);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(442, 16);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "*Al momento de Actualizar el campo de Cantidad, seleccionar de nuevo el libro";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(21, 463);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(316, 16);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "*En fecha de Reserva numerar en formato (Año-Mes-Dia)";
             // 
             // comboEstado
             // 
@@ -316,6 +338,25 @@
             this.panelData.Size = new System.Drawing.Size(1150, 518);
             this.panelData.TabIndex = 22;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnActualizar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnActualizar.Location = new System.Drawing.Point(604, 470);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(113, 31);
+            this.btnActualizar.TabIndex = 41;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -416,6 +457,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(18, 18);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelBarra
             // 
@@ -451,47 +493,6 @@
             this.panelVenta.Name = "panelVenta";
             this.panelVenta.Size = new System.Drawing.Size(582, 383);
             this.panelVenta.TabIndex = 16;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnActualizar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnActualizar.Location = new System.Drawing.Point(604, 470);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(113, 31);
-            this.btnActualizar.TabIndex = 41;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(21, 463);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(316, 16);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "*En fecha de Reserva numerar en formato (Año-Mes-Dia)";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(21, 484);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(442, 16);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "*Al momento de Actualizar el campo de Cantidad, seleccionar de nuevo el libro";
             // 
             // RegistroReserva
             // 
