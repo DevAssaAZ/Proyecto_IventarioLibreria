@@ -104,6 +104,12 @@
     <Compile Include="Interfaces\Modulos\Reserva\RegistroReserva\RegistroReserva.Designer.cs">
       <DependentUpon>RegistroReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\HistorialFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\HistorialFacturacion.Designer.cs">
+      <DependentUpon>HistorialFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos\AbrirYCerrarFormularios\AbrirFormulariosEnPanel.cs" />
     <Compile Include="Metodos\AbrirYCerrarFormularios\CerrarFormularios.cs" />
     <Compile Include="Metodos\AbrirYCerrarFormularios\MostrarLogo\MostrarLogo.cs" />
@@ -153,11 +159,11 @@
     <Compile Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.cs">
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.Designer.cs">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <Compile Include="Interfaces\Modulos\Ventas\Facturacion\facturacion.Designer.cs">
+      <DependentUpon>facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.cs">
       <SubType>Form</SubType>
@@ -213,8 +219,11 @@
     <EmbeddedResource Include="Interfaces\Modulos\Usuarios\RegistroUsuarios\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Modulos\Ventas\Facturacion\Facturacion.resx">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Modulos\Ventas\Facturacion\facturacion.resx">
+      <DependentUpon>facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Modulos\Ventas\Facturacion\HistorialFacturacion.resx">
+      <DependentUpon>HistorialFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Modulos\Ventas\RegistroVentas\RegistroVentas.resx">
       <DependentUpon>RegistroVentas.cs</DependentUpon>

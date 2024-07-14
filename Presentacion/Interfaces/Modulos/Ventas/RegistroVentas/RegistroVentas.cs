@@ -15,7 +15,10 @@ using Negocio.Stock_cn.StockEntrada;
 using Negocio.Usuarios_cn;
 using Negocio.Ventas_cn;
 using Soporte.Cache;
+using Presentacion.Modulos.RegistroVentas.Facturacion;
 using Presentacion.Metodos.AbrirYCerrarFormularios;
+using Negocio.Reserva_cn;
+using Presentacion.MenuPrincipal;
 
 namespace Presentacion.Modulos.RegistroVentas
 {
@@ -299,6 +302,17 @@ namespace Presentacion.Modulos.RegistroVentas
 
 
             }
+        }
+
+        private void btnFormularioaFacturacion_Click(object sender, EventArgs e)
+        {
+            using (facturacion fac = new facturacion())
+            {
+                fac.StartPosition = FormStartPosition.CenterParent;
+                fac.ShowDialog(this);
+            }
+
+
         }
     }
 }

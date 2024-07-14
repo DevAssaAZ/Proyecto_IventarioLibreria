@@ -9,29 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentacion.Modulos.RegistroVentas.Facturacion
+namespace Presentacion.Interfaces.Modulos.Ventas.Facturacion
 {
-    public partial class facturacion : Form
+    public partial class HistorialFacturacion : Form
     {
-        public facturacion()
+        public HistorialFacturacion()
         {
             InitializeComponent();
-            ComboBoxSeleccionar();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             //Llamada al metodo para cerrar formularios
             CerrarFormularios.Cerrarform(this);
-        }
-
-        private void ComboBoxSeleccionar()
-        {
-            cbDescuento.SelectedIndex = 0;
-
-            cbPago.SelectedIndex = 0;
-
-
         }
     }
 }

@@ -23,6 +23,7 @@ using Presentacion.Metodos.MenuPrincipal.MenusDesplegables;
 using Presentacion.Metodos.MenuPrincipal.AplicarRoles;
 using Presentacion.Metodos.MenuPrincipal.AccionesDelFormulario;
 using Presentacion.Interfaces.Modulos.Reserva.RegistroReserva;
+using Presentacion.Interfaces.Modulos.Ventas.Facturacion;
 
 namespace Presentacion.MenuPrincipal
 {
@@ -168,7 +169,11 @@ namespace Presentacion.MenuPrincipal
 
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
-
+            HistorialFacturacion form = new HistorialFacturacion();
+            //Mostrar logo al cerrar este form
+            form.FormClosed += Form_FormClosed;
+            //Llamada de metodo para abrir el formulario en el panel
+            AbrirFormulariosEnPanel.AbrirFormularioEnPanel(panelContenedor, form);
         }
 
 
