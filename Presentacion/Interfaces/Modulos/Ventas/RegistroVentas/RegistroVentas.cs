@@ -306,11 +306,24 @@ namespace Presentacion.Modulos.RegistroVentas
 
         private void btnFormularioaFacturacion_Click(object sender, EventArgs e)
         {
-            using (facturacion fac = new facturacion())
+            if (dgvVenta.SelectedRows.Count > 0)
             {
-                fac.StartPosition = FormStartPosition.CenterParent;
-                fac.ShowDialog(this);
+                DataGridViewRow selectedRow = dgvVenta.SelectedRows[0];
+                int ventaId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+
+                using (facturacion fac = new facturacion(ventaId))
+                {
+                    fac.StartPosition = FormStartPosition.CenterParent;
+                    fac.ShowDialog(this);
+                }
             }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una fila antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+
 
 
         }

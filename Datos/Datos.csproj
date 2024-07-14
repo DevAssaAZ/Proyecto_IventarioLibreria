@@ -46,6 +46,7 @@
     <Compile Include="ConexionesDeConsultas\Reserva\ConsultaReserva.cs" />
     <Compile Include="ConexionesDeConsultas\Stock\ConsultaStockEntrada.cs" />
     <Compile Include="ConexionesDeConsultas\Ventas\ConsultasVenta.cs" />
+    <Compile Include="ConexionesDeConsultas\Ventas\Facturacion\ConsultasDeFacturacion.cs" />
     <Compile Include="ConexionPerfilEdit\PerfilEdit.cs" />
     <Compile Include="ConexionSQL\ConnectionToSql.cs" />
     <Compile Include="ConexionesDeConsultas\Usuarios\ConsultasUsuario.cs" />
