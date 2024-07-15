@@ -129,28 +129,6 @@ namespace Presentacion.Modulos.RegistroVentas
                     {
 
 
-                        //if (dgvEntradaStock.Columns[e.ColumnIndex].Name == "Editar")
-                        //{
-                        //    if (e.RowIndex >= 0)
-                        //    {
-
-                        //        txtNombreLibro.Text = nombrelibro;
-                        //        txtCantidad.Text = row.Cells["CANTIDAD"].Value?.ToString() ?? string.Empty;
-                        //        //dtFecha = row.Cells["ANIO"].Value?.ToString() ?? string.Empty; 
-                        //        txtProvedor.Text = row.Cells["PROVEEDOR"].Value?.ToString() ?? string.Empty;
-                        //        rtComentarios.Text = row.Cells["COMENTARIOS"].Value?.ToString() ?? string.Empty;
-                        //        txtIdStock.Text = row.Cells["ID"].Value.ToString();
-                        //        btnNuevaEntrada.Visible = false;
-                        //        btnCancelar.Visible = true;
-                        //        dgvEntradaStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                        //        panelContenedor.Visible = true;
-                        //        panelPrincipal.Size = new Size(437, 463);
-                        //        btnRegistrarStockEntrada.Text = "Actualizar";
-                        //        btnRegistrarStockEntrada.Enabled = false;
-
-                        //    }
-
-                        //}
                         if (dgvVenta.Columns[e.ColumnIndex].Name == "ELIMINAR")
                         {
                             if (e.RowIndex >= 0)

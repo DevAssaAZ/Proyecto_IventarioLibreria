@@ -1,6 +1,7 @@
 ﻿using Negocio.Ventas_cn;
 using Negocio.Ventas_cn.Facturacion;
 using Presentacion.Metodos.AbrirYCerrarFormularios;
+using Presentacion.Metodos.RegistroVentas.Facturacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,17 +19,22 @@ namespace Presentacion.Modulos.RegistroVentas.Facturacion
         MetodosFacturacion factura = new MetodosFacturacion();
         private decimal descuentoCalculado;
         private decimal precioConDescuento;
+
+
         public facturacion(int ventaId)
         {
             InitializeComponent();
-            MostrarInformacionVenta(ventaId);
-            ComboBoxSeleccionar();
+            //Llamada del metodo que me muestra los datos de la venta en la facturacion
+            VentasFacturacion.MostrarInformacionVenta(ventaId, txtCedula, txtCliente, txtLibro, txtCantidad, txtPrecioCantidad, txtFactura);
+            //Llamada del metodo para tener un item de inicio en los combobox
+            IniciarComboBox.ComboBoxSeleccionar(cbDescuento, cbPago);
         }
 
         public facturacion()
         {
             InitializeComponent();
-            ComboBoxSeleccionar();
+            //Llamada del metodo para tener un item de inicio en los combobox
+            IniciarComboBox.ComboBoxSeleccionar(cbDescuento, cbPago);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -37,93 +43,22 @@ namespace Presentacion.Modulos.RegistroVentas.Facturacion
             CerrarFormularios.Cerrarform(this);
         }
 
-        private void MostrarInformacionVenta(int ventaId)
-        {
-            DataTable dt = factura.ObtenerInformacionVenta(ventaId);
-
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0];
-                txtCedula.Text = row["CEDULA"].ToString();
-                txtCliente.Text = row["ClienteNombre"].ToString();
-                txtLibro.Text = row["LibroTitulo"].ToString();
-                txtCantidad.Text = row["CANTIDAD"].ToString();
-                txtPrecioCantidad.Text = row["PRECIOTOTAL"].ToString();
-                txtFactura.Text = GenerateRandomInvoiceNumber();
-            }
-        }
-        private string GenerateRandomInvoiceNumber()
-        {
-            Random random = new Random();
-            int invoiceNumber = random.Next(100000000, 1000000000); // Generar un número de 9 dígitos
-            return invoiceNumber.ToString();
-        }
-
-        private void ComboBoxSeleccionar()
-        {
-            cbDescuento.SelectedIndex = 0;
-
-            cbPago.SelectedIndex = 0;
-
-
-        }
-
         private void cbDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Si el ítem seleccionado es "Aplica", activar los botones
-            if (cbDescuento.SelectedItem.ToString() == "APLICA")
-            {
-                lblDescuento.Enabled = true;
-                txtDescuentoAplicar.Enabled = true;
-                btnAplicar.Enabled = true;
-                txtPrecio.Text = txtPrecioCantidad.Text;
-                txtDescuento.Text = descuentoCalculado.ToString("F2");
-                txtPrecioTotal.Text = precioConDescuento.ToString("F2");
-
-            }
-            else if (cbDescuento.SelectedItem.ToString() == "SELECCIONAR")
-            {
-                lblDescuento.Enabled = false;
-                txtDescuentoAplicar.Enabled = false;
-                btnAplicar.Enabled = false;
-                txtDescuentoAplicar.Text = "";
-                txtPrecio.Text = "";
-                txtPrecioTotal.Text = "";
-                txtDescuento.Text = "";
-            }
-            else
-            {
-                lblDescuento.Enabled = false;
-                txtDescuentoAplicar.Enabled = false;
-                btnAplicar.Enabled = false;
-                txtDescuento.Text = "";
-                txtDescuentoAplicar.Text = "";
-                txtPrecio.Text = txtPrecioCantidad.Text;
-                txtPrecioTotal.Text = txtPrecioCantidad.Text;
-            }
+            // Llamada para el metodo Si el ítem seleccionado es "Aplica", activar los botones
+            ComboBoxDescuentos.HandleDescuentoSelectedIndexChanged(cbDescuento, lblDescuento, txtDescuentoAplicar, btnAplicar, txtPrecioCantidad, txtPrecio, txtDescuento, txtPrecioTotal, descuentoCalculado, precioConDescuento);
         }
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            CalculoFacturacion calculo = new CalculoFacturacion();
-            try
-            {
-                decimal porcentajeDescuento = Convert.ToDecimal(txtDescuentoAplicar.Text);
-                decimal precioTotal = Convert.ToDecimal(txtPrecioCantidad.Text);
-                descuentoCalculado = calculo.CalcularDescuento(precioTotal, porcentajeDescuento);
-                precioConDescuento = precioTotal - descuentoCalculado;
-                txtPrecio.Text = txtPrecioCantidad.Text;
-                txtDescuento.Text = descuentoCalculado.ToString("F2");
-                txtPrecioTotal.Text = precioConDescuento.ToString("F2");
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Por favor, ingrese un porcentaje de descuento válido.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al calcular el descuento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //Llamada del metodo para Aplicar los descuentos
+            DescuentoAplicar.AplicarDescuento(txtDescuentoAplicar, txtPrecioCantidad, txtPrecio, txtDescuento, txtPrecioTotal);
+        }
+
+        private void btnProcesar_Click(object sender, EventArgs e)
+        {
+            //Llamada del metodo para procesar (insertar) La factura
+            ProcesarFactura.ProcesarFacturacion(cbDescuento, cbPago, txtFactura, txtCedula, txtCliente, txtLibro, txtCantidad, txtPrecioCantidad, rtbDetalles, txtDescuento, txtPrecioTotal);
         }
     }
 }

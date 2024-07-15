@@ -56,6 +56,7 @@
     <Compile Include="Usuarios_cn\Usuario_N.cs" />
     <Compile Include="Ventas_cn\CalculosVentas.cs" />
     <Compile Include="Ventas_cn\Facturacion\CalculoFacturacion.cs" />
+    <Compile Include="Ventas_cn\Facturacion\Facturacion_N.cs" />
     <Compile Include="Ventas_cn\Facturacion\MetodosFacturacion.cs" />
     <Compile Include="Ventas_cn\MetodosVenta.cs" />
     <Compile Include="Ventas_cn\Ventas_N.cs" />

@@ -47,5 +47,47 @@ namespace Datos.ConexionesDeConsultas.Ventas.Facturacion
                 }
             }
         }
+
+        //Metodo para insertar las facturas
+        public void InsertarFacturacion(string numFactura, string cedula, string cliente, string libro, int cantidad, decimal precioCantidad, string detalles, decimal descuento, decimal precioTotal, string metodoDePago)
+        {
+            using (var conexion = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertarFacturacion", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@NumFactura", numFactura);
+                    cmd.Parameters.AddWithValue("@Cedula", cedula);
+                    cmd.Parameters.AddWithValue("@Cliente", cliente);
+                    cmd.Parameters.AddWithValue("@Libro", libro);
+                    cmd.Parameters.AddWithValue("@Cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@PrecioCantidad", precioCantidad);
+                    cmd.Parameters.AddWithValue("@Detalles", detalles);
+                    cmd.Parameters.AddWithValue("@Descuento", descuento);
+                    cmd.Parameters.AddWithValue("@PrecioTotal", precioTotal);
+                    cmd.Parameters.AddWithValue("@MetodoDePago", metodoDePago);
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //Metodo para Eliminar Facturas
+        public bool EliminarFacturacion(int id)
+        {
+            using (var conexion = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("EliminarFacturacion", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", id);
+
+                    conexion.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
     }
 }

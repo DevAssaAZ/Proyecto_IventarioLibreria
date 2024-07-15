@@ -30,16 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(facturacion));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDescuentoAplicar = new System.Windows.Forms.TextBox();
+            this.btnAplicar = new System.Windows.Forms.Button();
             this.btnProcesar = new System.Windows.Forms.Button();
             this.rtbDetalles = new System.Windows.Forms.RichTextBox();
             this.cbPago = new System.Windows.Forms.ComboBox();
             this.cbDescuento = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblDescuento = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFactura = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.txtPrecioTotal = new System.Windows.Forms.TextBox();
             this.txtPrecioCantidad = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,15 +62,6 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelVenta = new System.Windows.Forms.Panel();
-            this.lblDescuento = new System.Windows.Forms.Label();
-            this.txtDescuentoAplicar = new System.Windows.Forms.TextBox();
-            this.btnAplicar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtPrecioTotal = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -106,6 +106,35 @@
             this.panel1.Size = new System.Drawing.Size(920, 557);
             this.panel1.TabIndex = 0;
             // 
+            // txtDescuentoAplicar
+            // 
+            this.txtDescuentoAplicar.Enabled = false;
+            this.txtDescuentoAplicar.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDescuentoAplicar.Location = new System.Drawing.Point(189, 467);
+            this.txtDescuentoAplicar.Name = "txtDescuentoAplicar";
+            this.txtDescuentoAplicar.Size = new System.Drawing.Size(68, 27);
+            this.txtDescuentoAplicar.TabIndex = 48;
+            // 
+            // btnAplicar
+            // 
+            this.btnAplicar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAplicar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAplicar.Enabled = false;
+            this.btnAplicar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.btnAplicar.FlatAppearance.BorderSize = 0;
+            this.btnAplicar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAplicar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicar.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnAplicar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAplicar.Location = new System.Drawing.Point(274, 466);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(82, 32);
+            this.btnAplicar.TabIndex = 47;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
             // btnProcesar
             // 
             this.btnProcesar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -123,6 +152,7 @@
             this.btnProcesar.TabIndex = 47;
             this.btnProcesar.Text = "Procesar";
             this.btnProcesar.UseVisualStyleBackColor = false;
+            this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
             // rtbDetalles
             // 
@@ -174,6 +204,18 @@
             this.label10.TabIndex = 43;
             this.label10.Text = "Metodo de pago:";
             // 
+            // lblDescuento
+            // 
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.Enabled = false;
+            this.lblDescuento.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.lblDescuento.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDescuento.Location = new System.Drawing.Point(68, 469);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(115, 22);
+            this.lblDescuento.TabIndex = 42;
+            this.lblDescuento.Text = "Descuento:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -216,6 +258,33 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "Num. Factura:";
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtPrecio.Location = new System.Drawing.Point(769, 257);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.ReadOnly = true;
+            this.txtPrecio.Size = new System.Drawing.Size(102, 27);
+            this.txtPrecio.TabIndex = 38;
+            // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDescuento.Location = new System.Drawing.Point(769, 297);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.ReadOnly = true;
+            this.txtDescuento.Size = new System.Drawing.Size(102, 27);
+            this.txtDescuento.TabIndex = 38;
+            // 
+            // txtPrecioTotal
+            // 
+            this.txtPrecioTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtPrecioTotal.Location = new System.Drawing.Point(769, 336);
+            this.txtPrecioTotal.Name = "txtPrecioTotal";
+            this.txtPrecioTotal.ReadOnly = true;
+            this.txtPrecioTotal.Size = new System.Drawing.Size(102, 27);
+            this.txtPrecioTotal.TabIndex = 38;
+            // 
             // txtPrecioCantidad
             // 
             this.txtPrecioCantidad.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -224,6 +293,39 @@
             this.txtPrecioCantidad.ReadOnly = true;
             this.txtPrecioCantidad.Size = new System.Drawing.Size(183, 27);
             this.txtPrecioCantidad.TabIndex = 38;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(624, 262);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 22);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Precio Total:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(624, 302);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 22);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Descuento:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(624, 338);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 22);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Total a pagar:";
             // 
             // label6
             // 
@@ -363,107 +465,6 @@
             this.panelVenta.Name = "panelVenta";
             this.panelVenta.Size = new System.Drawing.Size(582, 383);
             this.panelVenta.TabIndex = 16;
-            // 
-            // lblDescuento
-            // 
-            this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Enabled = false;
-            this.lblDescuento.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.lblDescuento.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDescuento.Location = new System.Drawing.Point(68, 469);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(115, 22);
-            this.lblDescuento.TabIndex = 42;
-            this.lblDescuento.Text = "Descuento:";
-            // 
-            // txtDescuentoAplicar
-            // 
-            this.txtDescuentoAplicar.Enabled = false;
-            this.txtDescuentoAplicar.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtDescuentoAplicar.Location = new System.Drawing.Point(189, 467);
-            this.txtDescuentoAplicar.Name = "txtDescuentoAplicar";
-            this.txtDescuentoAplicar.Size = new System.Drawing.Size(68, 27);
-            this.txtDescuentoAplicar.TabIndex = 48;
-            // 
-            // btnAplicar
-            // 
-            this.btnAplicar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAplicar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAplicar.Enabled = false;
-            this.btnAplicar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.btnAplicar.FlatAppearance.BorderSize = 0;
-            this.btnAplicar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAplicar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAplicar.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnAplicar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAplicar.Location = new System.Drawing.Point(274, 466);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(82, 32);
-            this.btnAplicar.TabIndex = 47;
-            this.btnAplicar.Text = "Aplicar";
-            this.btnAplicar.UseVisualStyleBackColor = false;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(624, 338);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 22);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Total a pagar:";
-            // 
-            // txtPrecioTotal
-            // 
-            this.txtPrecioTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtPrecioTotal.Location = new System.Drawing.Point(769, 336);
-            this.txtPrecioTotal.Name = "txtPrecioTotal";
-            this.txtPrecioTotal.ReadOnly = true;
-            this.txtPrecioTotal.Size = new System.Drawing.Size(102, 27);
-            this.txtPrecioTotal.TabIndex = 38;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(624, 302);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 22);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Descuento:";
-            // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtDescuento.Location = new System.Drawing.Point(769, 297);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.ReadOnly = true;
-            this.txtDescuento.Size = new System.Drawing.Size(102, 27);
-            this.txtDescuento.TabIndex = 38;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(624, 262);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 22);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Precio Total:";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtPrecio.Location = new System.Drawing.Point(769, 257);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(102, 27);
-            this.txtPrecio.TabIndex = 38;
             // 
             // facturacion
             // 
