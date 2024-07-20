@@ -1,5 +1,6 @@
 ﻿using Negocio.Ventas_cn;
 using Negocio.Ventas_cn.Facturacion;
+using Presentacion.Interfaces.Modulos.Ventas.Facturacion;
 using Presentacion.Metodos.AbrirYCerrarFormularios;
 using Presentacion.Metodos.RegistroVentas.Facturacion;
 using System;
@@ -19,6 +20,17 @@ namespace Presentacion.Modulos.RegistroVentas.Facturacion
         MetodosFacturacion factura = new MetodosFacturacion();
         private decimal descuentoCalculado;
         private decimal precioConDescuento;
+
+        public facturacion( string id, string num_factura, string cedula, string cliente, string libro, string cantidad, string precio_cantidad, string detalles, string descuento, string precio_total, string metodo_pago, string estado)
+        {
+            InitializeComponent();
+            //Llamada del metodo Para Mostrar los campos llenos al darle a la opcion de Ver, en el historial de facturacion
+            InicializarAlVer.InitializeForm(this, txtCedula, txtCliente, txtLibro, txtCantidad, txtPrecioCantidad, txtPrecioTotal, txtDescuento, txtPrecio, rtbDetalles, cbPago, txtFactura, btnProcesar, btnAplicar, cbDescuento, txtDescuentoAplicar, lblDescuento, cedula, cliente, libro, cantidad, precio_cantidad, detalles, descuento, precio_total, metodo_pago, num_factura);
+
+        }
+
+
+
 
 
         public facturacion(int ventaId)

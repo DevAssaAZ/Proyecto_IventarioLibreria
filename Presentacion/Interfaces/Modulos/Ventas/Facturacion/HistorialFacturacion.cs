@@ -34,7 +34,12 @@ namespace Presentacion.Interfaces.Modulos.Ventas.Facturacion
         private void dgvFacturacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Llamada del metodo para las acciones que hay dentro de la tabla (Ver, Eliminar)
-            AccionesDelDataGridViewFacturacion.Acciones(dgvFacturacion, e);
+            AccionesDelDataGridViewFacturacion.Acciones(this, dgvFacturacion, e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

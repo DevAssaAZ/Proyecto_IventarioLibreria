@@ -175,6 +175,7 @@
     <Compile Include="Metodos\RegistroVentas\Facturacion\ComboBoxDescuentos.cs" />
     <Compile Include="Metodos\RegistroVentas\Facturacion\DatosLoaderFacturacion.cs" />
     <Compile Include="Metodos\RegistroVentas\Facturacion\DescuentoAplicar.cs" />
+    <Compile Include="Metodos\RegistroVentas\Facturacion\InicializarAlVer.cs" />
     <Compile Include="Metodos\RegistroVentas\Facturacion\IniciarComboBox.cs" />
     <Compile Include="Metodos\RegistroVentas\Facturacion\ProcesarFactura.cs" />
     <Compile Include="Metodos\RegistroVentas\Facturacion\VentasFacturacion.cs" />
