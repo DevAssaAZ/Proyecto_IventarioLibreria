@@ -367,9 +367,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(471, 17);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(298, 25);
+            this.label8.Size = new System.Drawing.Size(414, 25);
             this.label8.TabIndex = 39;
-            this.label8.Text = "INFORMACION DE RESERVAS";
+            this.label8.Text = "INFORMACION DE RESERVAS (ALQUILER)";
             // 
             // dgvReservas
             // 
@@ -482,9 +482,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 25);
+            this.label1.Size = new System.Drawing.Size(375, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "REGISTRO DE RESERVAS";
+            this.label1.Text = "REGISTRO DE RESERVAS (ALQUILER)";
             // 
             // panelVenta
             // 

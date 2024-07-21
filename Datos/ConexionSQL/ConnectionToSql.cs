@@ -15,8 +15,8 @@ namespace Datos.ConexionSQL
         private readonly string conexionString;
         public ConnectionToSql()
         {
-            conexionString = "server=DESKTOP-6BN7PE1\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=12345678;";
-            //conexionString = "server=DESKTOP-H040T0U; database=PROYECTO_INVENTARIO; user=SA; password=evita;";
+            //conexionString = "server=DESKTOP-6BN7PE1\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=12345678;";
+            conexionString = "server=DESKTOP-H040T0U; database=PROYECTO_INVENTARIO; user=SA; password=evita;";
             //conexionString = "server=DESKTOP-4J9EM3K\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=12345678;";
             //conexionString = "server=LAPTOP-49A9F0A5\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=onepiece123;";
             //conexionString = "server=DESKTOP-QVI4RVC\\SQLEXPRESS; database=PROYECTO_INVENTARIO; user=SA; password=123456789;";
