@@ -1,0 +1,26 @@
+Este proyecto subido a GitHub puede abrirse en el IDE Visual Studio Community 2022.
+
+Primero clonar el Repositorio desde GitHub:
+Abre Visual Studio Community 2022.
+En la pantalla de inicio, selecciona "Clonar un repositorio".
+Introduce la URL del repositorio de GitHub en el campo correspondiente.
+Selecciona una ubicación en tu equipo donde deseas clonar el repositorio.
+Haz clic en "Clonar".
+
+Abrir el Proyecto Clonado:
+Una vez clonado, Visual Studio abrirá automáticamente el proyecto.
+Si no se abre automáticamente, navega a la ubicación donde se clonó el repositorio y abre el archivo de solución (.sln).
+
+Configurar Dependencias del Proyecto:
+Asegúrate de que todas las dependencias del proyecto estén instaladas.
+Si el proyecto utiliza paquetes NuGet, abre el "Administrador de Paquetes NuGet" (clic derecho en la solución en el Explorador de Soluciones -> "Administrar paquetes NuGet").
+Instala los paquetes necesarios desde la pestaña "Restaurar" si no se restauran automáticamente.
+
+Configurar la Base de Datos:
+Abre la clase ConnectionToSql y asegúrate de que la cadena de conexión a la base de datos SQL Server esté correctamente configurada.
+Si es necesario, modifica la cadena de conexión para que apunte a tu instancia local de SQL Server.
+
+Compilar y Ejecutar el Proyecto:
+Asegúrate de que el proyecto se ejecute y compile.
+Ejecuta el proyecto presionando F5 o haciendo clic en el botón "Iniciar" en la barra de herramientas.
+Siguiendo estos pasos, podrás abrir y configurar nuestro proyecto de GitHub en Visual Studio Community 2022 sin problemas.
