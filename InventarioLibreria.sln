@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soporte", "Soporte\Soporte.csproj", "{8E52DB93-E5F8-494C-9AAC-0844245ACCA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaInventarioPruebas", "LibraryInventoryTests\BibliotecaInventarioPruebas.csproj", "{4798CA28-FE92-4C0D-81A7-11DC97D20B41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8E52DB93-E5F8-494C-9AAC-0844245ACCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E52DB93-E5F8-494C-9AAC-0844245ACCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E52DB93-E5F8-494C-9AAC-0844245ACCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4798CA28-FE92-4C0D-81A7-11DC97D20B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4798CA28-FE92-4C0D-81A7-11DC97D20B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4798CA28-FE92-4C0D-81A7-11DC97D20B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4798CA28-FE92-4C0D-81A7-11DC97D20B41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

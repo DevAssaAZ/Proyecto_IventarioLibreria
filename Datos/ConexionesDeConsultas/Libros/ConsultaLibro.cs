@@ -98,11 +98,70 @@ namespace Datos.ConexionesDeConsultas
             }
         }
 
-        // Método para eliminar libro
+        public bool EliminarStockEntradaRelacionados(int libroId)
+        {
+            try
+            {
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand("DELETE FROM TB_STOCK_ENTRADA WHERE ID_LIBRO = @libroId", conexion))
+                    {
+                        command.Parameters.AddWithValue("@libroId", libroId);
+                        conexion.Open();
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar entradas de stock relacionadas: " + ex.Message);
+            }
+        }
+
+        public bool EliminarStockSalidaRelacionados(int libroId)
+        {
+            try
+            {
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand("DELETE FROM TB_STOCK_SALIDA WHERE ID_LIBRO = @libroId", conexion))
+                    {
+                        command.Parameters.AddWithValue("@libroId", libroId);
+                        conexion.Open();
+                        int resultado = command.ExecuteNonQuery();
+                        return resultado > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar salidas de stock relacionadas: " + ex.Message);
+            }
+        }
+
         public bool EliminarLibro(int id)
         {
             try
             {
+                // Eliminar registros dependientes primero
+                using (var conexion = GetConnection())
+                {
+                    using (SqlCommand command = new SqlCommand("DELETE FROM TB_STOCK_ENTRADA WHERE ID_LIBRO = @id", conexion))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        conexion.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                    using (SqlCommand command = new SqlCommand("DELETE FROM TB_STOCK_SALIDA WHERE ID_LIBRO = @id", conexion))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Ahora eliminar el libro
                 using (var conexion = GetConnection())
                 {
                     using (SqlCommand command = new SqlCommand("EliminarLibro", conexion))
@@ -121,7 +180,6 @@ namespace Datos.ConexionesDeConsultas
                 throw new Exception("Error al eliminar libro: " + ex.Message);
             }
         }
-
 
 
 

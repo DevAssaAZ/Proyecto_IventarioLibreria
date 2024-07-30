@@ -197,9 +197,11 @@ namespace Presentacion.Login
             var crearcuenta = new CrearCuenta(_mainForm);
             crearcuenta.ShowDialog();
         }
-        
 
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
     
 }
